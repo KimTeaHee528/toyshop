@@ -8,8 +8,8 @@
 codegroup
 
 <br>
-
+<br>
 <c:forEach items="${list}" var="list" varStatus="status">
-	<c:out value="${list.seq }"/> / <c:out value="${list.code_group_name }"/>
+	<c:out value="${list.seq }"/> / <c:out value="${list.code_group_name }"/> / <c:out value="${list.use_ny }"/> / <c:out value="${list.reg_date }"/> / <c:out value="${list.reg_date }"/>
 	<br>		
 </c:forEach>
