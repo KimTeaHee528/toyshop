@@ -6,9 +6,11 @@ public class CodeGroup {
 
 	private Integer seq;
 	private String code_group_name;
+	private String code_en_name;
 	private Integer use_ny;
 	private Date reg_date;
 	private Date mod_date;
+	private Integer cnt;
 //======================================
 	public Integer getSeq() {
 		return seq;
@@ -34,11 +36,23 @@ public class CodeGroup {
 	public void setReg_date(Date reg_date) {
 		this.reg_date = reg_date;
 	}
+	public String getCode_en_name() {
+		return code_en_name;
+	}
+	public void setCode_en_name(String code_en_name) {
+		this.code_en_name = code_en_name;
+	}
 	public Date getMod_date() {
 		return mod_date;
 	}
 	public void setMod_date(Date mod_date) {
 		this.mod_date = mod_date;
+	}
+	public Integer getCnt() {
+		return cnt;
+	}
+	public void setCnt(Integer cnt) {
+		this.cnt = cnt;
 	}
 	
 }

@@ -10,10 +10,15 @@
 	
 	<select id="selectList" resultMap="resultMapObj">
 		SELECT
-			a.*
-		FROM tb_ccg a
-		WHERE 1=1
-			AND use_ny = 1
+			cg.seq
+			,cg.code_group_name
+			,cg.code_en_name
+			,cg.use_ny
+			,cg.reg_date
+			,cg.mod_date
+			,COUNT(*) cnt
+		FROM tb_ccg cg 
+		LEFT JOIN tb_cc c on cg.seq = c.ccg_seq
+		GROUP BY cg.seq
 	</select>
-
 </mapper>

@@ -108,7 +108,7 @@
 				<a><i class="icon-magnifier"></i></a>
 			</div>
 		</div>
-		<div class="adm-list-head" style="padding-top: 10px; height: 30px; padding-top: 10px; margin-bottom: 20px;">
+		<div class="adm-list-head" style="padding-top: 10px; height: 30px; padding-top: 10px; margin-bottom: 20px; margin-left: 130px;">
 			<div class="list-1">
 				<input type="checkbox">
 			</div>
@@ -134,85 +134,92 @@
 				수정일<br>
 			</div>
 		</div>
-		<div class="adm-list-body">
+		
+		
+<c:forEach items="${list}" var="list" varStatus="status">
+		<div class="adm-list-body" style="height: 45px;">
 			<div class="list-1">
 				<input type="checkbox">
 			</div>
 			<div class="list-2">
-				55
+				<c:out value="${list.seq }"/>
 			</div>
 			<div class="list-3">
-				1
+				<c:out value="${list.seq }"/>
 			</div>
 			<div class="list-4">
-				통신사
+				<c:out value="${list.code_group_name }"/>
 			</div>
 			<div class="list-5">
-				carrier
+				<c:out value="${list.code_en_name }"/>
 			</div>
 			<div class="list-6">
-				4
+				<c:out value="${list.cnt }"/>
 			</div>
 			<div class="list-7">
-				2022-08-30
+				<c:out value="${list.reg_date }"/>
 			</div>
 			<div class="list-8">
-				2022-08-30
+				<c:out value="${list.mod_date }"/>
 			</div>
 		</div>
-		<div class="adm-list-body">
-			<div class="list-1">
-				<input type="checkbox">
-			</div>
-			<div class="list-2">
-				55
-			</div>
-			<div class="list-3">
-				1
-			</div>
-			<div class="list-4">
-				통신사
-			</div>
-			<div class="list-5">
-				carrier
-			</div>
-			<div class="list-6">
-				4
-			</div>
-			<div class="list-7">
-				2022-08-30
-			</div>
-			<div class="list-8">
-				2022-08-30
-			</div>
-		</div>
-		<div class="adm-list-body">
-			<div class="list-1">
-				<input type="checkbox">
-			</div>
-			<div class="list-2">
-				55
-			</div>
-			<div class="list-3">
-				1
-			</div>
-			<div class="list-4">
-				통신사
-			</div>
-			<div class="list-5">
-				carrier
-			</div>
-			<div class="list-6">
-				4
-			</div>
-			<div class="list-7">
-				2022-08-30
-			</div>
-			<div class="list-8">
-				2022-08-30
-			</div>
-		</div>
-	</div>		
+</c:forEach>
+		
+		
+		
+<!-- 		<div class="adm-list-body"> -->
+<!-- 			<div class="list-1"> -->
+<!-- 				<input type="checkbox"> -->
+<!-- 			</div> -->
+<!-- 			<div class="list-2"> -->
+<!-- 				55 -->
+<!-- 			</div> -->
+<!-- 			<div class="list-3"> -->
+<!-- 				1 -->
+<!-- 			</div> -->
+<!-- 			<div class="list-4"> -->
+<!-- 				통신사 -->
+<!-- 			</div> -->
+<!-- 			<div class="list-5"> -->
+<!-- 				carrier -->
+<!-- 			</div> -->
+<!-- 			<div class="list-6"> -->
+<!-- 				4 -->
+<!-- 			</div> -->
+<!-- 			<div class="list-7"> -->
+<!-- 				2022-08-30 -->
+<!-- 			</div> -->
+<!-- 			<div class="list-8"> -->
+<!-- 				2022-08-30 -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+<!-- 		<div class="adm-list-body"> -->
+<!-- 			<div class="list-1"> -->
+<!-- 				<input type="checkbox"> -->
+<!-- 			</div> -->
+<!-- 			<div class="list-2"> -->
+<!-- 				55 -->
+<!-- 			</div> -->
+<!-- 			<div class="list-3"> -->
+<!-- 				1 -->
+<!-- 			</div> -->
+<!-- 			<div class="list-4"> -->
+<!-- 				통신사 -->
+<!-- 			</div> -->
+<!-- 			<div class="list-5"> -->
+<!-- 				carrier -->
+<!-- 			</div> -->
+<!-- 			<div class="list-6"> -->
+<!-- 				4 -->
+<!-- 			</div> -->
+<!-- 			<div class="list-7"> -->
+<!-- 				2022-08-30 -->
+<!-- 			</div> -->
+<!-- 			<div class="list-8"> -->
+<!-- 				2022-08-30 -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+<!-- 	</div>		 -->
 					
 					
 <!--   리스트 넣는곳   -->
