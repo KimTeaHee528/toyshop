@@ -66,152 +66,153 @@
 				</div>
 			</div>
 		</div>
+	</div>
 		<!--=========내용=========-->
-
-					<div class="ccg-top">
-						<div style="display: inline-block; margin-right: 25px; margin-bottom: 30px;">
-							<label>사용유무&nbsp;&nbsp;
-								<select>
-									<option>N</option>
-									<option>Y</option>
-								</select>
-							</label>
-						</div>
-						<div style="display: inline-block; margin-right: 25px;">
-							<label>수정일&nbsp;&nbsp;
-								<input type="date">
-							</label>
-						</div>
-						<div style="display: inline-block; margin-right: 25px;">
-							<label>시작일&nbsp;&nbsp;
-								<input type="date">
-							</label>
-						</div>
-						<div style="display: inline-block; margin-right: 25px;">
-							<label>종료일&nbsp;&nbsp;
-								<input type="date">
-							</label>
-						</div>
-						<div style="display: inline-block; margin-right: 25px;">
-							<label>검색구분&nbsp;&nbsp;
-								<select>
-									<option>N</option>
-									<option>Y</option>
-								</select>
-							</label>
-						</div>
-						<div style="display: block; margin-right: 25px; float: right;">
-							<label>검색어&nbsp;&nbsp;
-								<input type="text">
-							</label>
-							<a><i class="icon-magnifier"></i></a>
-						</div>
-					</div>
-					<div class="adm-list-head">
-						<div class="list-1">
-							<input type="checkbox">
-						</div>
-						<div class="list-2">
-							#
-						</div>
-						<div class="list-3">
-							코드그룹 코드
-						</div>
-						<div class="list-4">
-							코드그룹 이름(한글)
-						</div>
-						<div class="list-5">
-							코드그룹 이름(영문)
-						</div>
-						<div class="list-6">
-							코드 갯수
-						</div>
-						<div class="list-7">
-							등록일
-						</div>
-						<div class="list-8">
-							수정일<br>
-						</div>
-					</div>
-					<div class="adm-list-body">
-						<div class="list-1">
-							<input type="checkbox">
-						</div>
-						<div class="list-2">
-							55
-						</div>
-						<div class="list-3">
-							1
-						</div>
-						<div class="list-4">
-							통신사
-						</div>
-						<div class="list-5">
-							carrier
-						</div>
-						<div class="list-6">
-							4
-						</div>
-						<div class="list-7">
-							2022-08-30
-						</div>
-						<div class="list-8">
-							2022-08-30
-						</div>
-					</div>
-					<div class="adm-list-body">
-						<div class="list-1">
-							<input type="checkbox">
-						</div>
-						<div class="list-2">
-							55
-						</div>
-						<div class="list-3">
-							1
-						</div>
-						<div class="list-4">
-							통신사
-						</div>
-						<div class="list-5">
-							carrier
-						</div>
-						<div class="list-6">
-							4
-						</div>
-						<div class="list-7">
-							2022-08-30
-						</div>
-						<div class="list-8">
-							2022-08-30
-						</div>
-					</div>
-					<div class="adm-list-body">
-						<div class="list-1">
-							<input type="checkbox">
-						</div>
-						<div class="list-2">
-							55
-						</div>
-						<div class="list-3">
-							1
-						</div>
-						<div class="list-4">
-							통신사
-						</div>
-						<div class="list-5">
-							carrier
-						</div>
-						<div class="list-6">
-							4
-						</div>
-						<div class="list-7">
-							2022-08-30
-						</div>
-						<div class="list-8">
-							2022-08-30
-						</div>
-					</div>
-					
+	<div class="ccg">
+		<div class="ccg-top">
+			<div style="display: inline-block; margin-right: 25px; margin-bottom: 30px;">
+				<label>사용유무&nbsp;&nbsp;
+					<select>
+						<option>N</option>
+						<option>Y</option>
+					</select>
+				</label>
+			</div>
+			<div style="display: inline-block; margin-right: 25px;">
+				<label>수정일&nbsp;&nbsp;
+					<input type="date">
+				</label>
+			</div>
+			<div style="display: inline-block; margin-right: 25px;">
+				<label>시작일&nbsp;&nbsp;
+					<input type="date">
+				</label>
+			</div>
+			<div style="display: inline-block; margin-right: 25px;">
+				<label>종료일&nbsp;&nbsp;
+					<input type="date">
+				</label>
+			</div>
+			<div style="display: inline-block; margin-right: 25px;">
+				<label>검색구분&nbsp;&nbsp;
+					<select>
+						<option>N</option>
+						<option>Y</option>
+					</select>
+				</label>
+			</div>
+			<div style="display: block; margin-right: 25px; float: right;">
+				<label>검색어&nbsp;&nbsp;
+					<input type="text">
+				</label>
+				<a><i class="icon-magnifier"></i></a>
+			</div>
+		</div>
+		<div class="adm-list-head" style="padding-top: 10px; height: 30px; padding-top: 10px; margin-bottom: 20px;">
+			<div class="list-1">
+				<input type="checkbox">
+			</div>
+			<div class="list-2">
+				#
+			</div>
+			<div class="list-3">
+				코드그룹 코드
+			</div>
+			<div class="list-4">
+				코드그룹 이름(한글)
+			</div>
+			<div class="list-5">
+				코드그룹 이름(영문)
+			</div>
+			<div class="list-6">
+				코드 갯수
+			</div>
+			<div class="list-7">
+				등록일
+			</div>
+			<div class="list-8">
+				수정일<br>
+			</div>
+		</div>
+		<div class="adm-list-body">
+			<div class="list-1">
+				<input type="checkbox">
+			</div>
+			<div class="list-2">
+				55
+			</div>
+			<div class="list-3">
+				1
+			</div>
+			<div class="list-4">
+				통신사
+			</div>
+			<div class="list-5">
+				carrier
+			</div>
+			<div class="list-6">
+				4
+			</div>
+			<div class="list-7">
+				2022-08-30
+			</div>
+			<div class="list-8">
+				2022-08-30
+			</div>
+		</div>
+		<div class="adm-list-body">
+			<div class="list-1">
+				<input type="checkbox">
+			</div>
+			<div class="list-2">
+				55
+			</div>
+			<div class="list-3">
+				1
+			</div>
+			<div class="list-4">
+				통신사
+			</div>
+			<div class="list-5">
+				carrier
+			</div>
+			<div class="list-6">
+				4
+			</div>
+			<div class="list-7">
+				2022-08-30
+			</div>
+			<div class="list-8">
+				2022-08-30
+			</div>
+		</div>
+		<div class="adm-list-body">
+			<div class="list-1">
+				<input type="checkbox">
+			</div>
+			<div class="list-2">
+				55
+			</div>
+			<div class="list-3">
+				1
+			</div>
+			<div class="list-4">
+				통신사
+			</div>
+			<div class="list-5">
+				carrier
+			</div>
+			<div class="list-6">
+				4
+			</div>
+			<div class="list-7">
+				2022-08-30
+			</div>
+			<div class="list-8">
+				2022-08-30
+			</div>
+		</div>
+	</div>		
 					
 					
 <!--   리스트 넣는곳   -->
