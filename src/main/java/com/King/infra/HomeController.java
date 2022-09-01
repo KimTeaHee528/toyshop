@@ -63,7 +63,7 @@ public class HomeController {
 		@RequestMapping(value = "/codeGroupList", method = RequestMethod.GET)
 		public String codeGroupList(Locale locale, Model model) {
 			
-			return "codeGroupList";
+			return "infra/codegroup/xdmin/codeGroupListA";
 		}
 		@RequestMapping(value = "/cart", method = RequestMethod.GET)
 		public String cart(Locale locale, Model model) {
