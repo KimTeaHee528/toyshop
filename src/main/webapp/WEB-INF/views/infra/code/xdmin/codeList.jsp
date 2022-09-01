@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -122,10 +122,10 @@
 				코드그룹 이름(한글)
 			</div>
 			<div class="list-5">
-				코드그룹 이름(영문)
+				코드 이름(한글)
 			</div>
 			<div class="list-6">
-				코드 갯수
+				순서
 			</div>
 			<div class="list-7">
 				등록일
@@ -145,16 +145,16 @@
 				<c:out value="${list.seq }"/>
 			</div>
 			<div class="list-3">
-				<c:out value="${list.seq }"/>
+				<c:out value="${list.ccg_seq }"/>
 			</div>
 			<div class="list-4">
 				<c:out value="${list.code_group_name }"/>
 			</div>
 			<div class="list-5">
-				<c:out value="${list.code_en_name }"/>
+				<c:out value="${list.code_name }"/>
 			</div>
 			<div class="list-6">
-				<c:out value="${list.cnt }"/>
+				<c:out value="${list.sort }"/>
 			</div>
 			<div class="list-7">
 				<c:out value="${list.reg_date }"/>
@@ -165,62 +165,6 @@
 		</div>
 </c:forEach>
 		
-		
-		
-<!-- 		<div class="adm-list-body"> -->
-<!-- 			<div class="list-1"> -->
-<!-- 				<input type="checkbox"> -->
-<!-- 			</div> -->
-<!-- 			<div class="list-2"> -->
-<!-- 				55 -->
-<!-- 			</div> -->
-<!-- 			<div class="list-3"> -->
-<!-- 				1 -->
-<!-- 			</div> -->
-<!-- 			<div class="list-4"> -->
-<!-- 				통신사 -->
-<!-- 			</div> -->
-<!-- 			<div class="list-5"> -->
-<!-- 				carrier -->
-<!-- 			</div> -->
-<!-- 			<div class="list-6"> -->
-<!-- 				4 -->
-<!-- 			</div> -->
-<!-- 			<div class="list-7"> -->
-<!-- 				2022-08-30 -->
-<!-- 			</div> -->
-<!-- 			<div class="list-8"> -->
-<!-- 				2022-08-30 -->
-<!-- 			</div> -->
-<!-- 		</div> -->
-<!-- 		<div class="adm-list-body"> -->
-<!-- 			<div class="list-1"> -->
-<!-- 				<input type="checkbox"> -->
-<!-- 			</div> -->
-<!-- 			<div class="list-2"> -->
-<!-- 				55 -->
-<!-- 			</div> -->
-<!-- 			<div class="list-3"> -->
-<!-- 				1 -->
-<!-- 			</div> -->
-<!-- 			<div class="list-4"> -->
-<!-- 				통신사 -->
-<!-- 			</div> -->
-<!-- 			<div class="list-5"> -->
-<!-- 				carrier -->
-<!-- 			</div> -->
-<!-- 			<div class="list-6"> -->
-<!-- 				4 -->
-<!-- 			</div> -->
-<!-- 			<div class="list-7"> -->
-<!-- 				2022-08-30 -->
-<!-- 			</div> -->
-<!-- 			<div class="list-8"> -->
-<!-- 				2022-08-30 -->
-<!-- 			</div> -->
-<!-- 		</div> -->
-<!-- 	</div>		 -->
-					
 					
 <!--   리스트 넣는곳   -->
 					
