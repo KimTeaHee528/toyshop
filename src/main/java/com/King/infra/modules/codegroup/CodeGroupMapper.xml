@@ -4,10 +4,10 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.King.infra.modules.codegroup.CodeGroupMapper">
+<mapper namespace="com.King.infra.modules.codegroup.CodeGroupMapperIN">
 
     <resultMap id="resultMapObj" type="com.King.infra.modules.codegroup.CodeGroup"></resultMap>
-	<select id="selectList" resultMap="resultMapObj">
+	<select id="selectListMap" resultMap="resultMapObj">
 		SELECT
 			cg.seq
 			,cg.code_group_name
@@ -20,5 +20,4 @@
 		LEFT JOIN tb_cc c on cg.seq = c.ccg_seq
 		GROUP BY cg.seq
 	</select>
-
 </mapper>

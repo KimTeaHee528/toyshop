@@ -15,8 +15,8 @@ public class CodeGroupDao {
 	@Resource(name = "sqlSession")
 	private SqlSession sqlSession;
 	
-	private static String namespace = "com.King.infra.modules.codegroup.CodeGroupMapper";
+	private static String namespace = "com.King.infra.modules.codegroup.CodeGroupMapperIN";
 	
-	public List<CodeGroup> selectList(){ return sqlSession.selectList(namespace + ".selectList", ""); }
+	public List<CodeGroup> selectListDao(){ return sqlSession.selectList(namespace + ".selectListMap", ""); }
 
 }

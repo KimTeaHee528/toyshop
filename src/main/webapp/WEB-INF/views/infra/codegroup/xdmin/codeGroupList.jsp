@@ -1,6 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> 
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 <%@ page session="false" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -134,37 +137,44 @@
 				수정일<br>
 			</div>
 		</div>
-		
-		
-<c:forEach items="${list}" var="list" varStatus="status">
-		<div class="adm-list-body" style="height: 45px;">
-			<div class="list-1">
-				<input type="checkbox">
-			</div>
-			<div class="list-2">
-				<c:out value="${list.seq }"/>
-			</div>
-			<div class="list-3">
-				<c:out value="${list.seq }"/>
-			</div>
-			<div class="list-4">
-				<c:out value="${list.code_group_name }"/>
-			</div>
-			<div class="list-5">
-				<c:out value="${list.code_en_name }"/>
-			</div>
-			<div class="list-6">
-				<c:out value="${list.cnt }"/>
-			</div>
-			<div class="list-7">
-				<c:out value="${list.reg_date }"/>
-			</div>
-			<div class="list-8">
-				<c:out value="${list.mod_date }"/>
-			</div>
+<c:choose>
+	<c:when test="${fn:length(list) eq 0}">
+		<div class="adm-list-body" style="height: 45px; text-align:center;">
+			데이터가 없습니다.
 		</div>
-</c:forEach>
-		
+	</c:when>
+		<c:otherwise>
+			<c:forEach items="${list}" var="list" varStatus="status">
+					<div class="adm-list-body" style="height: 45px;">
+						<div class="list-1">
+							<input type="checkbox">
+						</div>
+						<div class="list-2">
+							<c:out value="${list.seq }"/>
+						</div>
+						<div class="list-3">
+							<c:out value="${list.seq }"/>
+						</div>
+						<div class="list-4">
+							<c:out value="${list.code_group_name }"/>
+						</div>
+						<div class="list-5">
+							<c:out value="${list.code_en_name }"/>
+						</div>
+						<div class="list-6">
+							<c:out value="${list.cnt }"/>
+						</div>
+						<div class="list-7">
+							<c:out value="${list.reg_date }"/>
+						</div>
+						<div class="list-8">
+							<c:out value="${list.mod_date }"/>
+						</div>
+					</div>
+			</c:forEach>
+		</c:otherwise>
+</c:choose>	
+				
 		
 		
 <!-- 		<div class="adm-list-body"> -->
