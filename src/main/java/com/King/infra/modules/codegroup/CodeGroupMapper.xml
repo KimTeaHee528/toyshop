@@ -19,5 +19,8 @@
 		FROM tb_ccg cg 
 		LEFT JOIN tb_cc c on cg.seq = c.ccg_seq
 		GROUP BY cg.seq
+		having 1=1
+			and cg.code_group_name LIKE CONCAT('%',#{sh_ccg_name_ko},'%')
+<!-- 			and cg.seq LIKE CONCAT('%',#{sh_seq},'%') -->
 	</select>
 </mapper>

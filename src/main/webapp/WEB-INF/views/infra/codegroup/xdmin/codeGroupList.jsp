@@ -72,6 +72,7 @@
 	</div>
 		<!--=========내용=========-->
 	<div class="ccg">
+	<form method="post" action="/codeGroup/codeGroupList">
 		<div class="ccg-top">
 			<div style="display: inline-block; margin-right: 25px; margin-bottom: 30px;">
 				<label>사용유무&nbsp;&nbsp;
@@ -106,11 +107,14 @@
 			</div>
 			<div style="display: block; margin-right: 25px; float: right;">
 				<label>검색어&nbsp;&nbsp;
-					<input type="text">
+					<input type="text" id="sh_ccg_name_ko" name="sh_ccg_name_ko" value="<c:out value="${vo.sh_ccg_name_ko}"/>">
 				</label>
-				<a><i class="icon-magnifier"></i></a>
+				<a href="#" onclick="return chk_form()"><i class="icon-magnifier"></i></a>
 			</div>
 		</div>
+		</form>
+		
+		
 		<div class="adm-list-head" style="padding-top: 10px; height: 30px; padding-top: 10px; margin-bottom: 20px; margin-left: 130px;">
 			<div class="list-1">
 				<input type="checkbox">
