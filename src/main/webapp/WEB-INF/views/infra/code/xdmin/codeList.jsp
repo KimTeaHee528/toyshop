@@ -189,15 +189,9 @@
 						</div>
 					</a>
 				</c:forEach>
-		
-		
-		
 					
 <!--   리스트 넣는곳   -->
 					
-
-
-
 	<section class="news-letter padding-top-150 padding-bottom-150">
 		<div class="container">
 			<div class="heading light-head text-center margin-bottom-30">
