@@ -6,7 +6,7 @@
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 <%@ page session="false" %>
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,7 +16,8 @@
 <title>관리 페이지</title>
 
 <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
-<link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css"
+	media="screen" />
 
 <!-- Bootstrap Core CSS -->
 <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
@@ -44,128 +45,152 @@
 
 </head>
 <body>
-
 	<!-- LOADER -->
 	<div id="loader">
 		<div class="position-center-center">
 			<div class="ldr"></div>
 		</div>
 	</div>
-
 	<!-- Wrap -->
 	<div id="wrap">
 		<!-- TOP Bar -->
 		<div class="top-bar">
-			<div class="container">
-
+			<div class="container-adm">
+				<!-- menu -->
+				<div class="login-info" style="float: left;">
+					<ul>
+						<li><a href="#.">사이트 관리</a></li>	
+						<li><a href="#.">회원 관리</a></li>
+						<li><a href="#.">코드 그룹 관리</a></li>
+						<li><a href="#.">코드 관리</a></li>	
+						<li><a href="#.">상품 관리</a></li>	
+						<li><a href="#.">주문 관리</a></li>	
+					</ul>
+				</div>
 				<!-- Login Info -->
 				<div class="login-info">
 					<ul>
 						<li><a href="#.">HOME</a></li>
 						<li><a href="#.">LOG OUT</a></li>
-						<li><a href="#."> MY ACCOUNT</a></li>	
 					</ul>
 				</div>
 			</div>
 		</div>
 	</div>
 		<!--=========내용=========-->
-	<div class="ccg">
-		<div class="ccg-top">
-			<div style="display: inline-block; margin-right: 25px; margin-bottom: 30px;">
-				<label>사용유무&nbsp;&nbsp;
-					<select>
-						<option>N</option>
-						<option>Y</option>
-					</select>
-				</label>
-			</div>
-			<div style="display: inline-block; margin-right: 25px;">
-				<label>수정일&nbsp;&nbsp;
-					<input type="date">
-				</label>
-			</div>
-			<div style="display: inline-block; margin-right: 25px;">
-				<label>시작일&nbsp;&nbsp;
-					<input type="date">
-				</label>
-			</div>
-			<div style="display: inline-block; margin-right: 25px;">
-				<label>종료일&nbsp;&nbsp;
-					<input type="date">
-				</label>
-			</div>
-			<div style="display: inline-block; margin-right: 25px;">
-				<label>검색구분&nbsp;&nbsp;
-					<select>
-						<option>N</option>
-						<option>Y</option>
-					</select>
-				</label>
-			</div>
-			<div style="display: block; margin-right: 25px; float: right;">
-				<label>검색어&nbsp;&nbsp;
-					<input type="text">
-				</label>
-				<a><i class="icon-magnifier"></i></a>
-			</div>
-		</div>
-		<div class="adm-list-head" style="padding-top: 10px; height: 30px; padding-top: 10px; margin-bottom: 20px; margin-left: 130px;">
-			<div class="list-1">
-				<input type="checkbox">
-			</div>
-			<div class="list-2">
-				#
-			</div>
-			<div class="list-3">
-				코드그룹 코드
-			</div>
-			<div class="list-4">
-				코드그룹 이름(한글)
-			</div>
-			<div class="list-5">
-				코드 이름(한글)
-			</div>
-			<div class="list-6">
-				순서
-			</div>
-			<div class="list-7">
-				등록일
-			</div>
-			<div class="list-8">
-				수정일<br>
-			</div>
-		</div>
+	<div style="display:block; width: 100%; text-align: center;">
+		<div style="display: inline-block; text-align: center; width: 1500px;">
+		<div style="display: block; float: top; float: left; font-size: 30px; margin-top: 30px;">코드 관리</div>
+			<div class="tab-pane" style="margin-bottom: 50px; margin-top: 40px;">
+				<div class="cc-top">
+					<div style="display: inline-block; margin-right: 25px; margin-bottom: 30px; float: left;">
+						<label>사용유무
+							<select>
+								<option>N</option>
+								<option>Y</option>
+							</select>
+						</label>
+					</div>
+					<div style="display: inline-block; margin-right: 25px; float: left;">
+						<label>수정일&nbsp;&nbsp;
+							<input type="date">
+						</label>
+					</div>
+					<div style="display: inline-block; margin-right: 25px; float: left;">
+						<label>시작일&nbsp;&nbsp;
+							<input type="date">
+						</label>
+					</div>
+					<div style="display: inline-block; margin-right: 25px; float: left;">
+						<label>종료일&nbsp;&nbsp;
+							<input type="date">
+						</label>
+					</div>
+					<div style="display: inline-block; margin-right: 25px; float: left;">
+						<label>검색구분&nbsp;&nbsp;
+							<select>
+								<option>N</option>
+								<option>Y</option>
+							</select>
+						</label>
+					</div>
+					<div style="display: block; float: right;">
+						<label>검색어&nbsp;&nbsp;
+							<input type="text">
+						</label>
+						<a><i class="icon-magnifier"></i></a>
+					</div>
+				</div>
+				<div class="cc-list-head">
+					<div class="list-1">
+						<input type="checkbox">
+					</div>
+					<div class="list-2">
+						#
+					</div>
+					<div class="list-3">
+						코드그룹 코드
+					</div>
+					<div class="list-4">
+						코드그룹 이름(한글)
+					</div>
+					<div class="list-5">
+						코드
+					</div>
+					<div class="list-6">
+						대체코드
+					</div>
+					<div class="list-7">
+						코드이름(한글)
+					</div>
+					<div class="list-8">
+						코드이름(영문)
+					</div>
+					<div class="list-9">
+						사용 유무
+					</div>
+					<div class="list-10">
+						순서
+					</div>
+					<div class="list-11">
+						등록일
+					</div>
+					<div class="list-12">
+						수정일
+					</div>
+				</div>
+				<c:forEach items="${list}" var="list" varStatus="status">
+					<a href="">
+						<div class="cc-list-body" style="height: 45px;">
+							<div class="list-1">
+								<input type="checkbox">
+							</div>
+							<div class="list-2">
+								<c:out value="${list.seq }"/>
+							</div>
+							<div class="list-3">
+								<c:out value="${list.ccg_seq }"/>
+							</div>
+							<div class="list-4">
+								<c:out value="${list.code_group_name }"/>
+							</div>
+							<div class="list-5">
+								<c:out value="${list.code_name }"/>
+							</div>
+							<div class="list-6">
+								<c:out value="${list.sort }"/>
+							</div>
+							<div class="list-7">
+								<c:out value="${list.reg_date }"/>
+							</div>
+							<div class="list-8">
+								<c:out value="${list.mod_date }"/>
+							</div>
+						</div>
+					</a>
+				</c:forEach>
 		
 		
-<c:forEach items="${list}" var="list" varStatus="status">
-		<div class="adm-list-body" style="height: 45px;">
-			<div class="list-1">
-				<input type="checkbox">
-			</div>
-			<div class="list-2">
-				<c:out value="${list.seq }"/>
-			</div>
-			<div class="list-3">
-				<c:out value="${list.ccg_seq }"/>
-			</div>
-			<div class="list-4">
-				<c:out value="${list.code_group_name }"/>
-			</div>
-			<div class="list-5">
-				<c:out value="${list.code_name }"/>
-			</div>
-			<div class="list-6">
-				<c:out value="${list.sort }"/>
-			</div>
-			<div class="list-7">
-				<c:out value="${list.reg_date }"/>
-			</div>
-			<div class="list-8">
-				<c:out value="${list.mod_date }"/>
-			</div>
-		</div>
-</c:forEach>
 		
 					
 <!--   리스트 넣는곳   -->
