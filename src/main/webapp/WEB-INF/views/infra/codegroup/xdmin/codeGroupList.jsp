@@ -111,8 +111,8 @@
 							<label>검색구분&nbsp;&nbsp;
 								<select name="sh_div">
 									<option value="" <c:if test="${empty vo.sh_div}">selected</c:if>>--</option>
-									<option value="1" <c:if test="${vo.sh_div eq 1}">selected</c:if>>코드그룹 이름(한글)</option>
-									<option value="2" <c:if test="${vo.sh_div eq 2}">selected</c:if>>코드그룹 이름(영문)</option>
+									<option value=1 <c:if test="${vo.sh_div eq 1}">selected</c:if>>코드그룹 이름(한글)</option>
+									<option value=2 <c:if test="${vo.sh_div eq 2}">selected</c:if>>코드그룹 이름(영문)</option>
 								</select>
 							</label>
 						</div>

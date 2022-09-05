@@ -22,12 +22,12 @@ public class CodeGroupDao {
 	}
 	public List<CodeGroup> selectListDao(codeGroupVo vo) {
 		
-//		if (vo.getSh_div()=="1") {
+		if (vo.getSh_div()==1) {
 			return sqlSession.selectList(namespace + ".selectListMap", vo);
-//		}else if (vo.getSh_div()=="2") {
-//			return sqlSession.selectList(namespace + ".selectListMapEn", vo);
-//		}else {
-//			return sqlSession.selectList(namespace + ".selectListMap0", vo);
-//		}
+		}else if (vo.getSh_div()==2) {
+			return sqlSession.selectList(namespace + ".selectListMapEn", vo);
+		}else {
+			return sqlSession.selectList(namespace + ".selectListMap0", vo);
+		}
 	}
 }
