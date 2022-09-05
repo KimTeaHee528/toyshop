@@ -1218,7 +1218,7 @@ header .is-sticky .sticky .user-basket .dropdown-menu {
 }
 .arrival-block .item {
 	position: relative;
-	width: 30%;
+	width: 25%;
 	float: left;
 	overflow: hidden;
 	border-right: 1px solid #d1d5db;
@@ -2063,7 +2063,7 @@ header .is-sticky .sticky .user-basket .dropdown-menu {
 }
 .cultur-block li {
 	float: left;
-	width: 30%;
+	width: 25%;
 }
 .cultur-block li img {
 	width: 100%;
@@ -2482,7 +2482,7 @@ header .is-sticky .sticky .user-basket .dropdown-menu {
 }
 .clients-img li {
 	float: left;
-	width: 30%;
+	width: 25%;
 	text-align: center;
 }
 .huge-text {
@@ -3027,7 +3027,7 @@ header .is-sticky .sticky .user-basket .dropdown-menu {
 	margin: 0px;
 }
 .small-cart .cart-ship-info form button.btn {
-	width: 30%;
+	width: 25%;
 	height: 44px;
 	float: left;
 	margin-left: 10px;
@@ -3035,7 +3035,7 @@ header .is-sticky .sticky .user-basket .dropdown-menu {
 	color: black;
 }
 .small-cart .cart-ship-info form button a {
-	width: 30%;
+	width: 25%;
 	height: 44px;
 	float: left;
 	margin-left: 10px;
@@ -3404,7 +3404,7 @@ header .is-sticky .sticky .user-basket .dropdown-menu {
       SUB BANNER
 ========================================================*/
 .sub-bnr {
-	background: url(/resources/images/product_list_top.png) no-repeat;
+	background: url(../images/product_list_top.png) no-repeat;
 	background-size: cover !important;
 	min-height: 610px;
 	text-align: center;
@@ -4466,83 +4466,85 @@ main {
 	-ms-transition: all 0.4s ease-in-out;
 	transition: all 0.4s ease-in-out;
  }
-.adm-list-head .list-1{
+
+
+
+.container-adm{
+	width: 1500px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+	
+}
+
+
+
+
+
+
+
+
+ 
+ 
+.ccg-list-head .list-1{
  	width: 30px;
- 	display: block;
- 	float:left;
+ 	display: inline-block;
  	height: 20px;
  	margin-top: 10;
  	top: 10px;
  	vertical-align: bottom;
- 	margin-bottom: 10px;
  }
-.adm-list-head .list-2{
+.ccg-list-head .list-2{
  	width: 55px;
- 	display: block;
- 	float:left;
+ 	display: inline-block;
  	height: 20px;
  	margin-top: 10;
- 	margin-bottom: 10px;
  }
-.adm-list-head .list-3{
+.ccg-list-head .list-3{
  	width: 100px;
- 	display: block;
- 	float:left;
+ 	display: inline-block;
  	height: 20px;
  	margin-top: 10;
- 	margin-bottom: 10px;
  }
-.adm-list-head .list-4{
- 	width: 30%;
- 	display: block;
- 	float:left;
+.ccg-list-head .list-4{
+ 	width: 150px;
+ 	display: inline-block;
  	height: 20px;
  	margin-top: 10;
- 	margin-bottom: 10px;
  }
-.adm-list-head .list-5{
- 	width: 30%;
- 	display: block;
- 	float:left;
+.ccg-list-head .list-5{
+ 	width: 150px;
+ 	display: inline-block;
  	height: 20px;
  	margin-top: 10;
- 	margin-bottom: 10px;
  }
-.adm-list-head .list-6{
+.ccg-list-head .list-6{
  	width: 100px;
- 	display: block;
- 	float:left;
+ 	display: inline-block;
  	height: 20px;
  	margin-top: 10;
- 	margin-bottom: 10px;
  }
-.adm-list-head .list-7{
- 	width: 150px;
- 	display: block;
- 	float:left;
+.ccg-list-head .list-7{
+ 	width: 20%;
+ 	display: inline-block;
  	height: 20px;
  	margin-top: 10;
- 	margin-bottom: 10px;
  }
-.adm-list-head .list-8{
- 	width: 150px;
- 	display: block;
- 	float:left;
+.ccg-list-head .list-8{
+ 	width: 20%;
+ 	display: inline-block;
  	height: 20px;
  	margin-top: 10;
- 	margin-bottom: 10px;
  }
  
-.ccg .adm-list-head{
-	display:inline-block;
+.ccg-list-head{
+ 	display:block;
   	font-size: 12px;
-	border-bottom: 0.5px solid rgb(150,150,150);
-	margin-bottom: 15px;
-	margin-left: 0px;
+	margin-bottom: 3px;
 	font-weight: bolder;
-	width: 80%;
-	height: 30px;
-	padding-top: 10px;
+	border-bottom:0.2px solid black;
  }
  
  .item-decribe input[type="checkbox"]{
@@ -4551,14 +4553,10 @@ main {
 
 .ccg-top{
   	font-size: 12px;
-	margin-bottom: 5px;
+	margin-bottom: 55px;
 	margin-top: 0px;
-	margin-left: 130px;
 	font-weight: bolder;
 	padding-top: 60px;
-	padding-left: 120px;
-	padding-right: 120px;
-	width: 80%;
  }
 .ccg-top select{
 	border-bottom:0.2px solid rgb(200,200,200);
@@ -4575,73 +4573,449 @@ main {
 
 
 
-
-.adm-list-body .list-1{
+.ccg-list-body .list-1{
  	width: 30px;
- 	display: block;
- 	float:left;
- 	height: 25px;
+ 	display: inline-block;
+ 	height: 20px;
  	margin-top: 10;
  	top: 10px;
  	vertical-align: bottom;
  }
-.adm-list-body .list-2{
+.ccg-list-body .list-2{
  	width: 55px;
- 	display: block;
- 	float:left;
+ 	display: inline-block;
  	height: 20px;
  	margin-top: 10;
  }
-.adm-list-body .list-3{
+.ccg-list-body .list-3{
  	width: 100px;
- 	display: block;
- 	float:left;
+ 	display: inline-block;
  	height: 20px;
  	margin-top: 10;
  }
-.adm-list-body .list-4{
- 	width: 30%;
- 	display: block;
- 	float:left;
+.ccg-list-body .list-4{
+ 	width: 150px;
+ 	display: inline-block;
  	height: 20px;
  	margin-top: 10;
  }
-.adm-list-body .list-5{
- 	width: 30%;
- 	display: block;
- 	float:left;
+.ccg-list-body .list-5{
+ 	width: 150px;
+ 	display: inline-block;
  	height: 20px;
  	margin-top: 10;
  }
-.adm-list-body .list-6{
+.ccg-list-body .list-6{
  	width: 100px;
- 	display: block;
- 	float:left;
+ 	display: inline-block;
  	height: 20px;
  	margin-top: 10;
  }
-.adm-list-body .list-7{
- 	width: 150px;
- 	display: block;
- 	float:left;
+.ccg-list-body .list-7{
+ 	width: 20%;
+ 	display: inline-block;
  	height: 20px;
  	margin-top: 10;
  }
-.adm-list-body .list-8{
- 	width: 150px;
- 	display: block;
- 	float:left;
+.ccg-list-body .list-8{
+ 	width: 20%;
+ 	display: inline-block;
  	height: 20px;
  	margin-top: 10;
  }
  
- .adm-list-body{
-	display:inline-block;
+ .ccg-list-body{
   	font-size: 12px;
 	border-bottom: 1px solid rgb(200,200,200);
-	margin-bottom: 15px;
-	margin-top:5px;
-	margin-left: 130px;
-	height: 25px;
-	width: 80%;
+	margin-bottom: 3px;
  }
+ 
+  
+ 
+.cc-list-head .list-1{
+ 	width: 100px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ 	top: 10px;
+ 	vertical-align: bottom;
+ }
+.cc-list-head .list-2{
+ 	width: 100px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.cc-list-head .list-3{
+ 	width: 100px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.cc-list-head .list-4{
+ 	width: 120px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.cc-list-head .list-5{
+ 	width: 100px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.cc-list-head .list-6{
+ 	width: 100px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.cc-list-head .list-7{
+ 	width: 120px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.cc-list-head .list-8{
+ 	width: 120px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.cc-list-head .list-9{
+ 	width: 100px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.cc-list-head .list-10{
+ 	width: 100px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.cc-list-head .list-11{
+ 	width: 180px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.cc-list-head .list-12{
+ 	width: 180px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+ 
+.cc-list-head{
+ 	display:block;
+  	font-size: 12px;
+	border-bottom:0.2px solid black;
+	margin-bottom: 3px;
+	font-weight: bolder;
+ }
+
+.cc-top{
+  	font-size: 12px;
+	margin-bottom: 55px;
+	margin-top: 0px;
+	font-weight: bolder;
+	padding-top: 60px;
+ }
+.cc-top select{
+	border-bottom:0.2px solid rgb(200,200,200);
+	border-left: none;
+	border-top: none;
+	border-right: none;
+}
+.cc-top input[type="date"]{
+	border-bottom:0.2px solid rgb(200,200,200);
+	border-left: none;
+	border-top: none;
+	border-right: none;
+}
+
+.cc-list-body .list-1{
+ 	width: 100px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ 	top: 10px;
+ 	vertical-align: bottom;
+ }
+.cc-list-body .list-2{
+ 	width: 100px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.cc-list-body .list-3{
+ 	width: 100px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.cc-list-body .list-4{
+ 	width: 120px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.cc-list-body .list-5{
+ 	width: 100px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.cc-list-body .list-6{
+ 	width: 100px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.cc-list-body .list-7{
+ 	width: 120px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.cc-list-body .list-8{
+ 	width: 120px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.cc-list-body .list-9{
+ 	width: 100px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.cc-list-body .list-10{
+ 	width: 100px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.cc-list-body .list-11{
+ 	width: 180px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.cc-list-body .list-12{
+ 	width: 180px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+ 
+ .cc-list-body{
+ 	display:block;
+  	font-size: 12px;
+	border-bottom: 1px solid rgb(200,200,200);
+	margin-bottom: 3px;
+ }
+ 
+ 
+ 
+ 
+ 
+.member-list-head .list-1{
+ 	width: 30px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ 	top: 10px;
+ 	vertical-align: bottom;
+ }
+.member-list-head .list-2{
+ 	width: 50px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.member-list-head .list-3{
+ 	width: 80px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.member-list-head .list-4{
+ 	width: 120px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.member-list-head .list-5{
+ 	width: 80px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.member-list-head .list-6{
+ 	width: 80px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.member-list-head .list-7{
+ 	width: 200px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.member-list-head .list-8{
+ 	width: 120px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.member-list-head .list-9{
+ 	width: 150px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.member-list-head .list-10{
+ 	width: 100px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.member-list-head .list-11{
+ 	width: 200px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.member-list-head .list-12{
+ 	width: 200px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+ 
+.member-list-head{
+ 	display:block;
+  	font-size: 12px;
+	border-bottom:0.2px solid black;
+	margin-bottom: 3px;
+	font-weight: bolder;
+ }
+
+.member-top{
+  	font-size: 12px;
+	margin-bottom: 55px;
+	margin-top: 0px;
+	font-weight: bolder;
+	padding-top: 60px;
+ }
+.member-top select{
+	border-bottom:0.2px solid rgb(200,200,200);
+	border-left: none;
+	border-top: none;
+	border-right: none;
+}
+.member-top input[type="date"]{
+	border-bottom:0.2px solid rgb(200,200,200);
+	border-left: none;
+	border-top: none;
+	border-right: none;
+}
+
+.member-list-body .list-1{
+ 	width: 30px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ 	top: 10px;
+ 	vertical-align: bottom;
+ }
+.member-list-body .list-2{
+ 	width: 50px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.member-list-body .list-3{
+ 	width: 80px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.member-list-body .list-4{
+ 	width: 120px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.member-list-body .list-5{
+ 	width: 80px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.member-list-body .list-6{
+ 	width: 80px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.member-list-body .list-7{
+ 	width: 200px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.member-list-body .list-8{
+ 	width: 120px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.member-list-body .list-9{
+ 	width: 150px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.member-list-body .list-10{
+ 	width: 100px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.member-list-body .list-11{
+ 	width: 200px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+.member-list-body .list-12{
+ 	width: 200px;
+ 	display: inline-block;
+ 	height: 20px;
+ 	margin-top: 10;
+ }
+ 
+ .member-list-body{
+ 	display:block;
+  	font-size: 12px;
+	border-bottom: 1px solid rgb(200,200,200);
+	margin-bottom: 3px;
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ .tab-pane a:hover {
+	color:black;
+	font-weight: bolder;
+}
