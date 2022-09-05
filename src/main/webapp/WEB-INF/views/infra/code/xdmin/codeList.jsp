@@ -186,6 +186,18 @@
 							<div class="list-8">
 								<c:out value="${list.mod_date }"/>
 							</div>
+							<div class="list-9">
+								<c:out value="${list.mod_date }"/>
+							</div>
+							<div class="list-10">
+								<c:out value="${list.mod_date }"/>
+							</div>
+							<div class="list-11">
+								<c:out value="${list.mod_date }"/>
+							</div>
+							<div class="list-12">
+								<c:out value="${list.mod_date }"/>
+							</div>
 						</div>
 					</a>
 				</c:forEach>
