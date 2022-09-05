@@ -61,7 +61,7 @@
 					<ul>
 						<li><a href="#.">사이트 관리</a></li>	
 						<li><a href="#.">회원 관리</a></li>
-						<li><a href="#.">코드 그룹 관리</a></li>
+						<li><a href="/codeGroup/codeGroupList">코드 그룹 관리</a></li>
 						<li><a href="#.">코드 관리</a></li>	
 						<li><a href="#.">상품 관리</a></li>	
 						<li><a href="#.">주문 관리</a></li>	
@@ -181,16 +181,16 @@
 								<c:out value="${list.sort }"/>
 							</div>
 							<div class="list-7">
-								<c:out value="${list.reg_date }"/>
+								<c:out value=""/>
 							</div>
 							<div class="list-8">
-								<c:out value="${list.mod_date }"/>
+								<c:out value=""/>
 							</div>
 							<div class="list-9">
-								<c:out value="${list.mod_date }"/>
+								<c:out value=""/>
 							</div>
 							<div class="list-10">
-								<c:out value="${list.mod_date }"/>
+								<c:out value=""/>
 							</div>
 							<div class="list-11">
 								<c:out value="${list.mod_date }"/>

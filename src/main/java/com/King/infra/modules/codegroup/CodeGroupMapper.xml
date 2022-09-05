@@ -7,6 +7,18 @@
 <mapper namespace="com.King.infra.modules.codegroup.CodeGroupMapperIN">
 
     <resultMap id="resultMapObj" type="com.King.infra.modules.codegroup.CodeGroup"></resultMap>
+	<select id="selectListMap0" resultMap="resultMapObj">
+		SELECT
+			cg.seq
+			,cg.code_group_name
+			,cg.code_en_name
+			,cg.use_ny
+			,cg.reg_date
+			,cg.mod_date
+			,(select count(c.seq) from  tb_cc c where c.ccg_seq = cg.seq) as cnt
+		FROM tb_ccg cg
+		where 1=1
+	</select>
 	<select id="selectListMap" resultMap="resultMapObj">
 		SELECT
 			cg.seq
@@ -15,12 +27,22 @@
 			,cg.use_ny
 			,cg.reg_date
 			,cg.mod_date
-			,COUNT(*) cnt
-		FROM tb_ccg cg 
-		LEFT JOIN tb_cc c on cg.seq = c.ccg_seq
-		GROUP BY cg.seq
-		having 1=1
-			and cg.code_group_name LIKE CONCAT('%',#{sh_ccg_name_ko},'%')
-<!-- 			and cg.seq LIKE CONCAT('%',#{sh_seq},'%') -->
+			,(select count(c.seq) from  tb_cc c where c.ccg_seq = cg.seq) as cnt
+		FROM tb_ccg cg
+		where 1=1
+			and cg.code_group_name LIKE CONCAT('%',#{sh_ccg_name},'%')
+	</select>
+	<select id="selectListMapEn" resultMap="resultMapObj">
+		SELECT
+			cg.seq
+			,cg.code_group_name
+			,cg.code_en_name
+			,cg.use_ny
+			,cg.reg_date
+			,cg.mod_date
+			,(select count(c.seq) from  tb_cc c where c.ccg_seq = cg.seq) as cnt
+		FROM tb_ccg cg
+		where 1=1
+			and cg.code_en_name LIKE CONCAT('%',#{sh_ccg_name},'%')
 	</select>
 </mapper>

@@ -42,7 +42,6 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
-
 </head>
 <body>
 
@@ -63,7 +62,7 @@
 						<li><a href="#.">사이트 관리</a></li>	
 						<li><a href="#.">회원 관리</a></li>
 						<li><a href="#.">코드 그룹 관리</a></li>
-						<li><a href="#.">코드 관리</a></li>	
+						<li><a href="/code/codeList">코드 관리</a></li>	
 						<li><a href="#.">상품 관리</a></li>	
 						<li><a href="#.">주문 관리</a></li>	
 					</ul>
@@ -84,7 +83,7 @@
 		<div style="display: block; float: top; float: left; font-size: 30px; margin-top: 30px;">코드 그룹 관리</div>
 			<div class="tab-pane" style="margin-bottom: 50px; margin-top: 40px;">
 				<div class="ccg-top">
-					<form method="post" action="/codeGroup/codeGroupList">
+					<form id="sh" method="post" action="/codeGroup/codeGroupListRe">
 						<div style="display: inline-block; margin-right: 25px; margin-bottom: 30px; float: left;">
 							<label>사용유무
 								<select>
@@ -110,17 +109,18 @@
 						</div>
 						<div style="display: inline-block; margin-right: 25px; float: left;">
 							<label>검색구분&nbsp;&nbsp;
-								<select>
-									<option>코드그룹 이름(한글)</option>
-									<option>코드그룹 이름(영문)</option>
+								<select name="sh_div">
+									<option value="" <c:if test="${empty vo.sh_div}">selected</c:if>>--</option>
+									<option value="1" <c:if test="${vo.sh_div eq 1}">selected</c:if>>코드그룹 이름(한글)</option>
+									<option value="2" <c:if test="${vo.sh_div eq 2}">selected</c:if>>코드그룹 이름(영문)</option>
 								</select>
 							</label>
 						</div>
 						<div style="display: block; margin-right: 25px; float: right;">
 							<label>검색어&nbsp;&nbsp;
-								<input type="text" name="sh_ccg_name_ko" value="<c:out value="${vo.sh_ccg_name_ko}"/>">
+								<input type="text" name="sh_ccg_name" value="<c:out value="${vo.sh_ccg_name}"/>">
 							</label>
-							<a href="#" onclick="return chk_form()"><i class="icon-magnifier"></i></a>
+							<a href="#" onclick="document.getElementById('sh').submit();"><i class="icon-magnifier"></i></a>
 						</div>
 					</form>
 				</div>
