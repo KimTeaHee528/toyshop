@@ -88,8 +88,8 @@
 							<label>사용유무
 								<select name="sh_use_ny">
 									<option value="" <c:if test="${empty vo.sh_use_ny}">selected</c:if>>--</option>
-									<option value="0" <c:if test="${vo.sh_use_ny == 0}">selected</c:if>>N</option>
-									<option value="1" <c:if test="${vo.sh_use_ny == 1}">selected</c:if>>Y</option>
+									<option value=0 <c:if test="${vo.sh_use_ny == 0}">selected</c:if>>N</option>
+									<option value=1 <c:if test="${vo.sh_use_ny == 1}">selected</c:if>>Y</option>
 								</select>
 							</label>
 						</div>
@@ -97,8 +97,8 @@
 							<label>날짜
 								<select name="sh_date_rm">
 									<option value="" <c:if test="${empty vo.sh_date_rm}">selected</c:if>>--</option>
-									<option value="0" <c:if test="${vo.sh_date_rm == 0}">selected</c:if>>등록일</option>
-									<option value="1" <c:if test="${vo.sh_date_rm == 1}">selected</c:if>>수정일</option>
+									<option value=0 <c:if test="${vo.sh_date_rm == 0}">selected</c:if>>등록일</option>
+									<option value=1 <c:if test="${vo.sh_date_rm == 1}">selected</c:if>>수정일</option>
 								</select>
 							</label>
 						</div>
@@ -116,8 +116,8 @@
 							<label>검색구분&nbsp;&nbsp;
 								<select name="sh_div">
 									<option value="" <c:if test="${empty vo.sh_div}">selected</c:if>>--</option>
-									<option value="0" <c:if test="${vo.sh_div == 0}">selected</c:if>>코드그룹 이름(한글)</option>
-									<option value="1" <c:if test="${vo.sh_div == 1}">selected</c:if>>코드그룹 이름(영문)</option>
+									<option value=0 <c:if test="${vo.sh_div == 0}">selected</c:if>>코드그룹 이름(한글)</option>
+									<option value=1 <c:if test="${vo.sh_div == 1}">selected</c:if>>코드그룹 이름(영문)</option>
 								</select>
 							</label>
 						</div>
