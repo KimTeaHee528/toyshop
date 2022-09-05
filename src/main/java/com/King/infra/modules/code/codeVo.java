@@ -1,7 +1,6 @@
-package com.King.infra.modules.codegroup;
+package com.King.infra.modules.code;
 
-
-public class codeGroupVo {
+public class codeVo {
 
 	private String sh_seq;
 	private String sh_div;
@@ -11,6 +10,7 @@ public class codeGroupVo {
 	private String sh_start_date;
 	private String sh_end_date;
 	private String sh_date_rm;
+	
 	public String getSh_seq() {
 		return sh_seq;
 	}

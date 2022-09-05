@@ -62,7 +62,7 @@
 						<li><a href="#.">사이트 관리</a></li>	
 						<li><a href="#.">회원 관리</a></li>
 						<li><a href="/codeGroup/codeGroupList">코드 그룹 관리</a></li>
-						<li><a href="#.">코드 관리</a></li>	
+						<li><a href="/code/codeList">코드 관리</a></li>	
 						<li><a href="#.">상품 관리</a></li>	
 						<li><a href="#.">주문 관리</a></li>	
 					</ul>
@@ -92,8 +92,12 @@
 						</label>
 					</div>
 					<div style="display: inline-block; margin-right: 25px; float: left;">
-						<label>수정일&nbsp;&nbsp;
-							<input type="date">
+						<label>날짜
+							<select name="sh_date_rm">
+								<option value="" <c:if test="${empty vo.sh_date_rm}">selected</c:if>>--</option>
+								<option value="0" <c:if test="${vo.sh_date_rm == 0}">selected</c:if>>등록일</option>
+								<option value="1" <c:if test="${vo.sh_date_rm == 1}">selected</c:if>>수정일</option>
+							</select>
 						</label>
 					</div>
 					<div style="display: inline-block; margin-right: 25px; float: left;">
@@ -159,6 +163,10 @@
 						수정일
 					</div>
 				</div>
+				
+				
+				
+				
 				<c:forEach items="${list}" var="list" varStatus="status">
 					<a href="">
 						<div class="cc-list-body" style="height: 45px;">
@@ -175,32 +183,38 @@
 								<c:out value="${list.code_group_name }"/>
 							</div>
 							<div class="list-5">
-								<c:out value="${list.code_name }"/>
+								<c:out value="${list.seq }"/>
 							</div>
 							<div class="list-6">
-								<c:out value="${list.sort }"/>
+								<c:out value="${list.seq }"/>
 							</div>
 							<div class="list-7">
-								<c:out value=""/>
+								<c:out value="${list.code_name }"/>
 							</div>
 							<div class="list-8">
-								<c:out value=""/>
+								<c:out value="${list.code_name_en }"/>
 							</div>
 							<div class="list-9">
-								<c:out value=""/>
+								<c:out value="${list.use_ny }"/>
 							</div>
 							<div class="list-10">
-								<c:out value=""/>
+								<c:out value="${list.sort }"/>
 							</div>
 							<div class="list-11">
-								<c:out value="${list.mod_date }"/>
+								<fmt:formatDate value="${list.reg_date }" pattern="yy-MM-dd HH:mm:ss"/>
 							</div>
 							<div class="list-12">
-								<c:out value="${list.mod_date }"/>
+								<fmt:formatDate value="${list.mod_date }" pattern="yy-MM-dd HH:mm:ss"/>
 							</div>
 						</div>
 					</a>
 				</c:forEach>
+					
+					
+					
+					
+					
+					
 					
 <!--   리스트 넣는곳   -->
 					

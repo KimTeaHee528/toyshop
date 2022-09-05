@@ -19,28 +19,19 @@ public class CodeGroupController {
 	public String codeGroupList(Model model, codeGroupVo vo) throws Exception {
 		
 		
-		System.out.println("vo.getsh_ccg_name_ko()" + vo.getSh_ccg_name());
+		System.out.println("vo.getSh_val()" + vo.getSh_val());
 		System.out.println("vo.getsh_Seq()" + vo.getSh_seq());
 		System.out.println("vo.getsh_div()" + vo.getSh_div());
+		System.out.println("vo.getSh_use_ny()" + vo.getSh_use_ny());
+		System.out.println("vo.getSh_date_rm()" + vo.getSh_date_rm());
+		System.out.println("vo.getSh_start_date()" + vo.getSh_start_date());
+		System.out.println("vo.getSh_end_date()" + vo.getSh_end_date());
 		
-		List<CodeGroup> list = service.selectListService0(vo);
-		model.addAttribute("list", list);
-		
-		return "infra/codegroup/xdmin/codeGroupList";
-	}
-
-	@RequestMapping(value = "codeGroupListRe")
-	public String codeGroupListRe(Model model, codeGroupVo vo) throws Exception {
-
-		
-		System.out.println("vo.getsh_ccg_name_ko()" + vo.getSh_ccg_name());
-		System.out.println("vo.getsh_Seq()" + vo.getSh_seq());
-		System.out.println("vo.getsh_div()" + vo.getSh_div());
 		
 		List<CodeGroup> list = service.selectListService(vo);
 		model.addAttribute("list", list);
 		
 		return "infra/codegroup/xdmin/codeGroupList";
-	}	
+	}
 
 }
