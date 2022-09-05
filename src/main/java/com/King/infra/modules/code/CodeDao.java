@@ -18,8 +18,8 @@ public class CodeDao {
 	private static String namespace = "com.King.infra.modules.code.CodeMapper";
 
 
-	public List<Code> selectList() {
-		return sqlSession.selectList(namespace + ".selectList", "");
+	public List<Code> selectList(codeVo vo) {
+		return sqlSession.selectList(namespace + ".selectList", vo);
 	}
 
 }

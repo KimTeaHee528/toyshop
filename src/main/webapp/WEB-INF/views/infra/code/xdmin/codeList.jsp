@@ -83,11 +83,15 @@
 		<div style="display: block; float: top; float: left; font-size: 30px; margin-top: 30px;">코드 관리</div>
 			<div class="tab-pane" style="margin-bottom: 50px; margin-top: 40px;">
 				<div class="cc-top">
+				
+				
+				<form id="sh" method="post" action="/code/codeList">
 					<div style="display: inline-block; margin-right: 25px; margin-bottom: 30px; float: left;">
 						<label>사용유무
-							<select>
-								<option>N</option>
-								<option>Y</option>
+							<select name="sh_use_ny">
+								<option value="">--</option>
+								<option value=0>N</option>
+								<option value=1>Y</option>
 							</select>
 						</label>
 					</div>
@@ -95,35 +99,46 @@
 						<label>날짜
 							<select name="sh_date_rm">
 								<option value="" <c:if test="${empty vo.sh_date_rm}">selected</c:if>>--</option>
-								<option value="0" <c:if test="${vo.sh_date_rm == 0}">selected</c:if>>등록일</option>
-								<option value="1" <c:if test="${vo.sh_date_rm == 1}">selected</c:if>>수정일</option>
+								<option value=0 <c:if test="${vo.sh_date_rm == 0}">selected</c:if>>등록일</option>
+								<option value=1 <c:if test="${vo.sh_date_rm == 1}">selected</c:if>>수정일</option>
 							</select>
 						</label>
 					</div>
 					<div style="display: inline-block; margin-right: 25px; float: left;">
-						<label>시작일&nbsp;&nbsp;
-							<input type="date">
-						</label>
+							<label>시작일&nbsp;&nbsp;
+								<input type="date" name="sh_start_date" value=<c:out value="${vo.sh_start_date}"/>>
+							</label>
 					</div>
 					<div style="display: inline-block; margin-right: 25px; float: left;">
-						<label>종료일&nbsp;&nbsp;
-							<input type="date">
-						</label>
+							<label>종료일&nbsp;&nbsp;
+								<input type="date" name="sh_end_date" value=<c:out value="${vo.sh_end_date}"/>>
+							</label>
 					</div>
 					<div style="display: inline-block; margin-right: 25px; float: left;">
 						<label>검색구분&nbsp;&nbsp;
-							<select>
-								<option>N</option>
-								<option>Y</option>
+							<select name="sh_div">
+								<option value="" <c:if test="${empty vo.sh_div}">selected</c:if>>--</option>
+								<option value=0 <c:if test="${vo.sh_div == 0}">selected</c:if>>#</option>
+								<option value=1 <c:if test="${vo.sh_div == 1}">selected</c:if>>코드그룹 코드</option>
+								<option value=2 <c:if test="${vo.sh_div == 2}">selected</c:if>>코드그룹 이름(한글)</option>
+								<option value=3 <c:if test="${vo.sh_div == 3}">selected</c:if>>코드</option>
+								<option value=4 <c:if test="${vo.sh_div == 4}">selected</c:if>>대체코드</option>
+								<option value=5 <c:if test="${vo.sh_div == 5}">selected</c:if>>코드이름(한글)</option>
+								<option value=6 <c:if test="${vo.sh_div == 6}">selected</c:if>>코드이름(영문)</option>
+								<option value=7 <c:if test="${vo.sh_div == 7}">selected</c:if>>순서</option>
 							</select>
 						</label>
 					</div>
 					<div style="display: block; float: right;">
 						<label>검색어&nbsp;&nbsp;
-							<input type="text">
-						</label>
-						<a><i class="icon-magnifier"></i></a>
+								<input type="text" name="sh_val" <c:out value="${vo.sh_val}"/>>
+							</label>
+						<a href="#" onclick="document.getElementById('sh').submit();"><i class="icon-magnifier"></i></a>
 					</div>
+					</form>
+					
+					
+					
 				</div>
 				<div class="cc-list-head">
 					<div class="list-1">
@@ -167,6 +182,13 @@
 				
 				
 				
+				<c:choose>
+					<c:when test="${fn:length(list) eq 0}">
+						<div class="ccg-list-body" style="height: 45px; text-align:center;">
+							데이터가 없습니다.
+						</div>
+					</c:when>
+						<c:otherwise>
 				<c:forEach items="${list}" var="list" varStatus="status">
 					<a href="">
 						<div class="cc-list-body" style="height: 45px;">
@@ -209,8 +231,9 @@
 						</div>
 					</a>
 				</c:forEach>
-					
-					
+						</c:otherwise>
+				</c:choose>
+					</div></div></div>
 					
 					
 					
