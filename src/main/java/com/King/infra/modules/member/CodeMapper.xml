@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.King.infra.modules.code.CodeMapper">
+
+    <resultMap id="resultMapObj" type="com.King.infra.modules.code.Code"></resultMap>
+	<select id="selectList" resultMap="resultMapObj">
+		select
+			c.seq
+			,c.ccg_seq
+			,(select cg.code_group_name from tb_ccg cg where 1=1 and c.ccg_seq = cg.seq) code_group_name
+			,c.seq
+			,c.seq
+			,c.code_name
+			,c.code_name_en
+			,c.use_ny
+			,c.sort
+			,c.reg_date
+			,c.mod_date
+		from tb_cc c
+        left join tb_ccg on c.ccg_seq = tb_ccg.seq
+		where 1=1
+			<if test="sh_date_rm == 0">and c.reg_date between #{sh_start_date} and #{sh_end_date}</if>
+			<if test="sh_date_rm == 1">and c.mod_date between #{sh_start_date} and #{sh_end_date}</if>
+			<choose>
+				<when test="sh_div == 0">and c.seq = #{sh_val}</when>
+				<when test="sh_div == 1">and c.ccg_seq = #{sh_val}</when>
+				<when test="sh_div == 2">and tb_ccg.code_group_name LIKE CONCAT('%',#{sh_val},'%')</when>
+				<when test="sh_div == 3">and c.seq = #{sh_val}</when>
+				<when test="sh_div == 4">and c.seq = #{sh_val}</when>
+				<when test="sh_div == 5">and c.code_name LIKE CONCAT('%',#{sh_val},'%')</when>
+				<when test="sh_div == 6">and c.code_name_en LIKE CONCAT('%',#{sh_val},'%')</when>
+				<when test="sh_div == 7">and c.sort = #{sh_val}</when>
+				<otherwise></otherwise>
+			</choose>
+			<choose>
+				<when test="sh_use_ny == 0">and c.use_ny = 0</when>
+				<when test="sh_use_ny == 1">and c.use_ny = 1</when>
+				<otherwise></otherwise>
+			</choose>
+	</select>
+	
+		
+<!-- 	</select> -->
+
+</mapper>
