@@ -80,10 +80,18 @@
 		<!--=========내용=========-->
 	<div style="display:block; width: 100%; text-align: center;">
 		<div style="display: inline-block; text-align: center; width: 1500px;">
-		<div style="display: block; float: top; float: left; font-size: 30px; margin-top: 30px;">코드 그룹 관리</div>
+		<div style="display: block; float: top; float: left; font-size: 30px; margin-top: 30px;">코드 그룹 관리
+		
+<!-- 			<button type="submit" class="btn" style="font-size: 10px; width: 60px; height: 30px; text-align: center;">삭제</button> -->
+<!-- 			<a href="/codeGroup/codeGroupReg"><button type="submit" class="btn">등록</button></a> -->
+			
+			
+			
+		</div>
+
 			<div class="tab-pane" style="margin-bottom: 50px; margin-top: 40px;">
 				<div class="ccg-top">
-					<form id="sh" method="post" action="/codeGroup/codeGroupList">
+					<form id="sh" method="post" action="/codeGroup/codeGroupListR">
 						<div style="display: inline-block; margin-right: 25px; margin-bottom: 30px; float: left;">
 							<label>사용유무
 								<select name="sh_use_ny">
@@ -175,10 +183,16 @@
 											<c:out value="${list.seq }"/>
 										</div>
 										<div class="list-4">
-											<c:out value="${list.code_group_name }"/>
+											<c:choose>
+												<c:when test="${not empty list.code_group_name}"><c:out value="${list.code_group_name }"/></c:when>
+												<c:otherwise>--</c:otherwise>
+											</c:choose>
 										</div>
 										<div class="list-5">
-											<c:out value="${list.code_en_name }"/>
+											<c:choose>
+												<c:when test="${not empty list.code_en_name}"><c:out value="${list.code_en_name }"/></c:when>
+												<c:otherwise>--</c:otherwise>
+											</c:choose>
 										</div>
 										<div class="list-6">
 											<c:out value="${list.cnt }"/>
@@ -187,22 +201,27 @@
 											<fmt:formatDate value="${list.reg_date }" pattern="yy-MM-dd HH:mm:ss"/>
 										</div>
 										<div class="list-8">
-											<fmt:formatDate value="${list.mod_date }" pattern="yy-MM-dd HH:mm:ss"/>
+											<c:choose>
+												<c:when test="${not empty list.code_en_name}"><fmt:formatDate value="${list.mod_date }" pattern="yy-MM-dd HH:mm:ss"/></c:when>
+												<c:otherwise>--</c:otherwise>
+											</c:choose>
 										</div>
 									</div>
 								</a>
 							</c:forEach>
 						</c:otherwise>
 				</c:choose>
+		<div class="col-md-12 text-center" style="margin-bottom: 50px; margin-top: 20px;">
+			<a href="/codeGroup/codeGroupReg"><button type="submit" class="btn">등록</button></a>
+			<button type="submit" class="btn">삭제</button>
+		</div>
 			</div>
 		</div>
 	</div>
-
 					
 <!--   리스트 넣는곳   -->
 
-	<a href="/codeGroup/codeGroupReg"><button type="submit" class="btn">등록</button></a>
-	<button type="submit" class="btn">뒤로가기</button>
+
 
 
 

@@ -24,6 +24,15 @@ public class CodeGroupController {
 		return "infra/codegroup/xdmin/codeGroupList";
 	}	
 	
+	@RequestMapping(value = "codeGroupListR")
+	public String codeGroupListR(Model model, codeGroupVo vo) throws Exception {
+
+		List<CodeGroup> list = service.selectListService(vo);
+		model.addAttribute("list", list);
+		
+		return "redirect:/codeGroup/codeGroupList";
+	}	
+	
 	@RequestMapping(value = "codeGroupReg")
 	public String codeGroupReg() throws Exception {
 		return "infra/codegroup/xdmin/codeGroupRegForm";
@@ -33,8 +42,8 @@ public class CodeGroupController {
 	public String codeGroupInst(CodeGroup dto) throws Exception {
 		
 		int result = service.insert(dto);
-		
-		return "infra/codegroup/xdmin/codeGroupList";
+		System.out.println(result);
+		return "redirect:/codeGroup/codeGroupList";
 	}	
 	
 	
