@@ -16,7 +16,7 @@
 <title>관리 페이지</title>
 
 <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
-<link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css"
+<link rel="stylesheet" type="text/css" href="/resources/rs-plugin/css/settings.css"
 	media="screen" />
 
 <!-- Bootstrap Core CSS -->
@@ -53,9 +53,9 @@
 				<div class="login-info" style="float: left;">
 					<ul>
 						<li><a href="#.">사이트 관리</a></li>	
-						<li><a href="#.">회원 관리</a></li>
-						<li><a href="#.">코드 그룹 관리</a></li>
-						<li><a href="#.">코드 관리</a></li>	
+						<li><a href="/member/memberList">회원 관리</a></li>
+						<li><a href="/codeGroup/codeGroupList">코드 그룹 관리</a></li>
+						<li><a href="/code/codeList">코드 관리</a></li>	
 						<li><a href="#.">상품 관리</a></li>	
 						<li><a href="#.">주문 관리</a></li>	
 					</ul>
@@ -77,7 +77,7 @@
 			<div class="tab-pane" style="margin-bottom: 50px; margin-top: 40px;">
 				<div class="member-top">
 					<div style="display: inline-block; margin-right: 25px; margin-bottom: 30px; float: left;">
-						<label>사용유무
+						<label>관리자 유무
 							<select>
 								<option>N</option>
 								<option>Y</option>
@@ -85,8 +85,11 @@
 						</label>
 					</div>
 					<div style="display: inline-block; margin-right: 25px; float: left;">
-						<label>수정일&nbsp;&nbsp;
-							<input type="date">
+						<label>날짜선택
+							<select>
+								<option>가입일</option>
+								<option>탈퇴일</option>
+							</select>
 						</label>
 					</div>
 					<div style="display: inline-block; margin-right: 25px; float: left;">
@@ -102,8 +105,15 @@
 					<div style="display: inline-block; margin-right: 25px; float: left;">
 						<label>검색구분&nbsp;&nbsp;
 							<select>
-								<option>N</option>
-								<option>Y</option>
+								<option>--</option>
+								<option>번호</option>
+								<option>이름</option>
+								<option>ID</option>
+								<option>성별</option>
+								<option>나이</option>
+								<option>주소</option>
+								<option>전화번호</option>
+								<option>E-mail</option>
 							</select>
 						</label>
 					</div>
@@ -296,7 +306,7 @@
 			<!-- ABOUT Location -->
 			<div class="col-md-3">
 				<div class="about-footer">
-					<img class="margin-bottom-30" src="images/logo-foot.png" alt="">
+					<img class="margin-bottom-30" src="/resources/images/logo-foot.png" alt="">
 					<p>
 						<i class="icon-pointer"></i> Street No. 12, Newyork 12, <br>
 						MD - 123, USA.

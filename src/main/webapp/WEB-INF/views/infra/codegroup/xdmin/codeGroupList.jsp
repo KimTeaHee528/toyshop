@@ -60,7 +60,7 @@
 				<div class="login-info" style="float: left;">
 					<ul>
 						<li><a href="#.">사이트 관리</a></li>	
-						<li><a href="#.">회원 관리</a></li>
+						<li><a href="/member/memberList">회원 관리</a></li>
 						<li><a href="/codeGroup/codeGroupList">코드 그룹 관리</a></li>
 						<li><a href="/code/codeList">코드 관리</a></li>	
 						<li><a href="#.">상품 관리</a></li>	
@@ -164,7 +164,7 @@
 						<c:otherwise>
 							<c:forEach items="${list}" var="list" varStatus="status">
 								<a href="">
-									<div class="ccg-list-body" style="height: 45px;">
+									<div class="ccg-list-body">
 										<div class="list-1">
 											<input type="checkbox">
 										</div>
@@ -200,7 +200,9 @@
 
 					
 <!--   리스트 넣는곳   -->
-					
+
+	<a href="/codeGroup/codeGroupReg"><button type="submit" class="btn">등록</button></a>
+	<button type="submit" class="btn">뒤로가기</button>
 
 
 

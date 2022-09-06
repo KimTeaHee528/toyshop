@@ -17,21 +17,34 @@ public class CodeGroupController {
 	
 	@RequestMapping(value = "codeGroupList")
 	public String codeGroupList(Model model, codeGroupVo vo) throws Exception {
-		
-		
-		System.out.println("vo.getSh_val()" + vo.getSh_val());
-		System.out.println("vo.getsh_Seq()" + vo.getSh_seq());
-		System.out.println("vo.getsh_div()" + vo.getSh_div());
-		System.out.println("vo.getSh_use_ny()" + vo.getSh_use_ny());
-		System.out.println("vo.getSh_date_rm()" + vo.getSh_date_rm());
-		System.out.println("vo.getSh_start_date()" + vo.getSh_start_date());
-		System.out.println("vo.getSh_end_date()" + vo.getSh_end_date());
-		
-		
+
 		List<CodeGroup> list = service.selectListService(vo);
 		model.addAttribute("list", list);
 		
 		return "infra/codegroup/xdmin/codeGroupList";
+	}	
+	
+	@RequestMapping(value = "codeGroupReg")
+	public String codeGroupReg() throws Exception {
+		return "infra/codegroup/xdmin/codeGroupRegForm";
 	}
-
+	
+	@RequestMapping(value = "codeGroupInst")
+	public String codeGroupInst(CodeGroup dto) throws Exception {
+		
+		int result = service.insert(dto);
+		
+		return "infra/codegroup/xdmin/codeGroupList";
+	}	
+	
+	
+	
+//	@RequestMapping(value = "codeGroupForm")
+//	public String codeGroupForm() throws Exception {
+//		return "infra/codegroup/xdmin/codeGroupForm";
+//	}	
+//	@RequestMapping(value = "codeGroupMod")
+//	public String codeGroupMod() throws Exception {
+//		return "infra/codegroup/xdmin/codeGroupMod";
+//	}
 }

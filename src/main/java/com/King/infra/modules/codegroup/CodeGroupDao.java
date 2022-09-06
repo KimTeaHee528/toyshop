@@ -19,8 +19,11 @@ public class CodeGroupDao {
 
 
 	public List<CodeGroup> selectListDao(codeGroupVo vo) {
-
 		return sqlSession.selectList(namespace + ".selectListMap", vo);
 
+	}
+	public int insert(CodeGroup dto) {
+		
+		return sqlSession.insert(namespace + ".insert", dto);
 	}
 }
