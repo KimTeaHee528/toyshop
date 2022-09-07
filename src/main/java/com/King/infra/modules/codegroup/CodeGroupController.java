@@ -38,6 +38,9 @@ public class CodeGroupController {
 		return "infra/codegroup/xdmin/codeGroupRegForm";
 	}
 	
+	
+	
+	
 	@RequestMapping(value = "codeGroupInst")
 	public String codeGroupInst(CodeGroup dto) throws Exception {
 		

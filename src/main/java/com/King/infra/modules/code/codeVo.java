@@ -1,5 +1,6 @@
 package com.King.infra.modules.code;
 
+
 public class codeVo {
 
 	private String sh_seq;
@@ -10,6 +11,18 @@ public class codeVo {
 	private String sh_start_date;
 	private String sh_end_date;
 	private Integer sh_date_rm;
+	private Integer cr_ccg_seq;
+	private String cr_code_name_ko;
+	private String cr_code_name_en;
+	private String seq;
+	public String getSeq() {
+		return seq;
+	}
+	public void setSeq(String seq) {
+		this.seq = seq;
+	}
+	private Integer cr_use_ny;
+	private Integer cr_del_ny;
 	public String getSh_seq() {
 		return sh_seq;
 	}
@@ -58,9 +71,36 @@ public class codeVo {
 	public void setSh_date_rm(Integer sh_date_rm) {
 		this.sh_date_rm = sh_date_rm;
 	}
-	
-	
-	
+	public Integer getCr_ccg_seq() {
+		return cr_ccg_seq;
+	}
+	public void setCr_ccg_seq(Integer cr_ccg_seq) {
+		this.cr_ccg_seq = cr_ccg_seq;
+	}
+	public String getCr_code_name_ko() {
+		return cr_code_name_ko;
+	}
+	public void setCr_code_name_ko(String cr_code_name_ko) {
+		this.cr_code_name_ko = cr_code_name_ko;
+	}
+	public String getCr_code_name_en() {
+		return cr_code_name_en;
+	}
+	public void setCr_code_name_en(String cr_code_name_en) {
+		this.cr_code_name_en = cr_code_name_en;
+	}
+	public Integer getCr_use_ny() {
+		return cr_use_ny;
+	}
+	public void setCr_use_ny(Integer cr_use_ny) {
+		this.cr_use_ny = cr_use_ny;
+	}
+	public Integer getCr_del_ny() {
+		return cr_del_ny;
+	}
+	public void setCr_del_ny(Integer cr_del_ny) {
+		this.cr_del_ny = cr_del_ny;
+	}
 	
 	
 	

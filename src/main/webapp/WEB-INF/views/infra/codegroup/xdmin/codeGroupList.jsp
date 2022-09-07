@@ -211,10 +211,10 @@
 							</c:forEach>
 						</c:otherwise>
 				</c:choose>
-		<div class="col-md-12 text-center" style="margin-bottom: 50px; margin-top: 20px;">
-			<a href="/codeGroup/codeGroupReg"><button type="submit" class="btn">등록</button></a>
-			<button type="submit" class="btn">삭제</button>
-		</div>
+				<div class="col-md-12 text-center" style="margin-bottom: 50px; margin-top: 20px;">
+					<a href="/codeGroup/codeGroupReg"><button type="submit" class="btn">등록</button></a>
+					<button type="submit" class="btn">삭제</button>
+				</div>
 			</div>
 		</div>
 	</div>

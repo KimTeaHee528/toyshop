@@ -196,45 +196,84 @@
 								<input type="checkbox">
 							</div>
 							<div class="list-2">
-								<c:out value="${list.seq }"/>
+								<c:choose>
+									<c:when test="${not empty list.seq}"><c:out value="${list.seq }"/></c:when>
+									<c:otherwise>--</c:otherwise>
+								</c:choose>
 							</div>
 							<div class="list-3">
-								<c:out value="${list.ccg_seq }"/>
+								<c:choose>
+									<c:when test="${not empty list.ccg_seq}"><c:out value="${list.ccg_seq }"/></c:when>
+									<c:otherwise>--</c:otherwise>
+								</c:choose>
 							</div>
 							<div class="list-4">
-								<c:out value="${list.code_group_name }"/>
+								<c:choose>
+									<c:when test="${not empty list.code_group_name}"><c:out value="${list.code_group_name }"/></c:when>
+									<c:otherwise>--</c:otherwise>
+								</c:choose>
 							</div>
 							<div class="list-5">
-								<c:out value="${list.seq }"/>
+								<c:choose>
+									<c:when test="${not empty list.seq}"><c:out value="${list.seq }"/></c:when>
+									<c:otherwise>--</c:otherwise>
+								</c:choose>
 							</div>
 							<div class="list-6">
-								<c:out value="${list.seq }"/>
+								<c:choose>
+									<c:when test="${not empty list.seq}"><c:out value="${list.seq }"/></c:when>
+									<c:otherwise>--</c:otherwise>
+								</c:choose>
 							</div>
 							<div class="list-7">
-								<c:out value="${list.code_name }"/>
+								<c:choose>
+									<c:when test="${not empty list.code_name}"><c:out value="${list.code_name }"/></c:when>
+									<c:otherwise>--</c:otherwise>
+								</c:choose>
 							</div>
 							<div class="list-8">
-								<c:out value="${list.code_name_en }"/>
+								<c:choose>
+									<c:when test="${not empty list.code_name_en}"><c:out value="${list.code_name_en }"/></c:when>
+									<c:otherwise>--</c:otherwise>
+								</c:choose>
 							</div>
 							<div class="list-9">
-								<c:out value="${list.use_ny }"/>
+								<c:choose>
+									<c:when test="${not empty list.use_ny}"><c:out value="${list.use_ny }"/></c:when>
+									<c:otherwise>--</c:otherwise>
+								</c:choose>
 							</div>
 							<div class="list-10">
-								<c:out value="${list.sort }"/>
+								<c:choose>
+									<c:when test="${not empty list.sort}"><c:out value="${list.sort }"/></c:when>
+									<c:otherwise>--</c:otherwise>
+								</c:choose>
 							</div>
 							<div class="list-11">
-								<fmt:formatDate value="${list.reg_date }" pattern="yy-MM-dd HH:mm:ss"/>
+								<c:choose>
+									<c:when test="${not empty list.reg_date}"><fmt:formatDate value="${list.reg_date }" pattern="yy-MM-dd HH:mm:ss"/></c:when>
+									<c:otherwise>--</c:otherwise>
+								</c:choose>
 							</div>
 							<div class="list-12">
-								<fmt:formatDate value="${list.mod_date }" pattern="yy-MM-dd HH:mm:ss"/>
+								<c:choose>
+									<c:when test="${not empty list.mod_date}"><fmt:formatDate value="${list.mod_date }" pattern="yy-MM-dd HH:mm:ss"/></c:when>
+									<c:otherwise>--</c:otherwise>
+								</c:choose>
 							</div>
 						</div>
 					</a>
 				</c:forEach>
 						</c:otherwise>
 				</c:choose>
-					</div></div></div>
-					
+				<div class="col-md-12 text-center" style="margin-bottom: 50px; margin-top: 20px;">
+					<a href="/code/codeRegForm"><button type="submit" class="btn" style="height: 30px; font-size: 20px; padding-bottom: 48px;">등록</button></a>
+					<a><button type="submit" class="btn" style="height: 30px; font-size: 20px; padding-bottom: 48px;">삭제</button></a>
+				</div>
+			</div>
+		</div>
+	</div>
+				
 					
 					
 					

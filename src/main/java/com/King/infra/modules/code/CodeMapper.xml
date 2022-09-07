@@ -43,7 +43,35 @@
 			</choose>
 	</select>
 	
-		
+	<select id="selectCcgName" resultMap="resultMapObj">
+		select
+			seq
+			,code_group_name
+		from tb_ccg
+		where use_ny=1
+	</select>
 <!-- 	</select> -->
+
+	<insert id="insert">
+			<selectKey resultType="String" keyProperty="seq" order="AFTER">
+				SELECT last_insert_id()
+			</selectKey>
+			insert into tb_cc(
+				code_name
+				,code_name_en
+			    ,use_ny
+			    ,ccg_seq
+			    ,reg_date
+			)
+			values(
+				#{cr_code_name_ko}
+				,#{cr_code_name_en}
+				,#{cr_use_ny}
+				,#{cr_ccg_seq}
+				,now()
+			)
+	</insert>
+
+
 
 </mapper>
