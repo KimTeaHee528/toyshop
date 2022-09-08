@@ -57,18 +57,8 @@
 	<div id="wrap">
 		<!-- TOP Bar -->
 		<div class="top-bar">
-			<div class="container-adm">
-				<!-- menu -->
-				<div class="login-info" style="float: left;">
-					<ul>
-						<li><a href="#.">사이트 관리</a></li>	
-						<li><a href="/member/memberList">회원 관리</a></li>
-						<li><a href="/codeGroup/codeGroupList">코드 그룹 관리</a></li>
-						<li><a href="/code/codeList">코드 관리</a></li>	
-						<li><a href="#.">상품 관리</a></li>	
-						<li><a href="#.">주문 관리</a></li>	
-					</ul>
-				</div>
+			<div class="container">
+
 				<!-- Login Info -->
 				<div class="login-info">
 					<ul>
@@ -81,7 +71,7 @@
 		</div>
 	</div>
 	<!--======= PAGES INNER =========-->
-	<section class="chart-page padding-top-100 padding-bottom-100" style="padding-top: 50px;">
+	<section class="chart-page padding-top-100 padding-bottom-100">
 		<div class="container">
 			<!-- Payments Steps -->
 			<div class="shopping-cart">
@@ -92,99 +82,97 @@
 
 						<!-- ESTIMATE SHIPPING & TAX -->
 						<div class="col-sm-12">
-							<h6>코드그룹 등록</h6> 
-<!-- 							<form id="ins" method="post" onsubmit="/codeGroup/codeGroupInst"> -->
-							<form id="ins" method="post" action="/codeGroup/codeGroupInst">
-
+							<h6>코드그룹 관리</h6>
+							<form>
 								<ul class="row">
 
 									<li class="col-md-6">
 										<label>
 											코드그룹 코드 
-											<input type="text" name="first-name" id="first-name" value="" placeholder="영문(대소문자), 숫자">
+											<input type="text" value="55" placeholder="영문(대소문자), 숫자" readonly>
 										</label>
 									</li>
 									<li class="col-md-6">
 										<label>
 											코드그룹 코드 (Another)
-											<input type="text" name="first-name" id="first-name2" value="" placeholder="영문(대소문자), 숫자">
+											<input type="text" value="55" placeholder="영문(대소문자), 숫자" readonly>
 										</label>
 									</li>
 									<li class="col-md-6">
 										<label>
 											코드그룹 이름(한글)
-											<input type="text" name="code_group_name" id="codeGroup" value="" placeholder="한글, 숫자">
-										</label>
+											<input type="text" value="통신사" placeholder="한글, 숫자" readonly>
+										</label> 
 									</li>
 									<li class="col-md-6">
 										<label> 
 											코드그룹 이름(영문) 	
-											<input type="text" name="first-name" id="first-name3" value="" placeholder="영문(대소문자), 숫자">
+											<input type="text" value="carrier" placeholder="영문(대소문자), 숫자" readonly>
 										</label>
 									</li>
 									<li class="col-md-6" style="margin-top: 0px;">
 										<label>순서
-											<input type="text" name="" id="sort" value="" placeholder="숫자">
+											<input type="text" value="1" placeholder="숫자" readonly>
 										</label>
 									</li>
 									<li class="col-md-6" style="margin-right: 0px;">
 										<label>
 											사용여부
-											<select class="selectpicker" name="use_ny" id="use_ny">
-												<option value="0">N</option>
-												<option value="1">Y</option>
+											<select class="selectpicker" disabled>
+												<option value="N">N</option>
+												<option value="Y">Y</option>
 											</select>
 										</label>
 									</li>
 									<li class="col-md-6" style="margin-right: 0px;">
 										<label>
 											삭제여부
-											<select class="selectpicker" id="del_ny">
-												<option value="0">N</option>
-												<option value="1">Y</option>
+											<select class="selectpicker" disabled>
+												<option value="N">N</option>
+												<option value="Y">Y</option>
 											</select>
 										</label>
 									</li>
 									<li class="col-md-6" style="margin-top: 0px;">
 										<label>
-											예비1 (varchar type) <input type="text" value="" placeholder="영문(대소문자), 숫자">
+											예비1 (varchar type) <input type="text" value="" placeholder="영문(대소문자), 숫자" readonly>
 										</label>
 									</li>
 									<li class="col-md-6" style="margin-top: 0px;">
 										<label>
-											예비2 (varchar type) <input type="text" value="" placeholder="영문(대소문자), 숫자">
+											예비2 (varchar type) <input type="text" value="" placeholder="영문(대소문자), 숫자" readonly>
 										</label>
 									</li>
 									<li class="col-md-6" style="margin-top: 0px;">
 										<label>
-											예비3 (varchar type) <input type="text" value="" placeholder="영문(대소문자), 숫자">
+											예비3 (varchar type) <input type="text" value="" placeholder="영문(대소문자), 숫자" readonly>
 										</label>
 									</li>
 									<li class="col-md-6" style="margin-top: 0px;">
 										<label>
-											예비1 (int type) <input type="text" value="" placeholder="숫자">
+											예비1 (int type) <input type="text" value="" placeholder="숫자" readonly>
 										</label>
 									</li>
 									<li class="col-md-6" style="margin-top: 0px;">
 										<label>
-											예비2 (int type) <input type="text" value="" placeholder="숫자">
+											예비2 (int type) <input type="text" value="" placeholder="숫자" readonly>
 										</label>
 									</li>
 									<li class="col-md-6" style="margin-top: 0px;">
 										<label>
-											예비3 (int type) <input type="text" value="" placeholder="숫자">
+											예비3 (int type) <input type="text" value="" placeholder="숫자" readonly>
 										</label>
 									</li>
 									<li class="col-md-6">
 										<label>
 											등록일
-											<input type="date" >
+											<input type="date" value="2022-08-30" disabled>
 										</label>
 									</li>
 									<li class="col-md-6">
 										<label>
 											수정일
-											<input type="date">
+											<input type="date" value="2022-08-30" disabled>
 										</label>
 									</li>
 
@@ -192,14 +180,13 @@
 									<li class="col-md-6" style="margin-top: 0px;">
 										<label>
 											설명
-											<textarea style="width: 555px; height: 42px; margin-top: 10px; resize: vertical;"></textarea>
+											<textarea style="width: 555px; height: 42px; margin-top: 10px; resize: vertical;" disabled>asdf</textarea>
 										</label>
 									</li>
 									<li class="col-md-12 text-center">
-										<button type="submit" class="btn">등록 완료</button>
+										<button type="submit" class="btn">수정</button>
+										<button type="submit" class="btn">삭제</button>
 										<button type="submit" class="btn">뒤로가기</button>
-	
-									
 									</li>
 								</ul>
 							</form>
@@ -209,10 +196,6 @@
 			</div>
 		</div>
 	</section>
-	
-<input id="test" name="test_N" type="text">
-<button type="button" onclick="test();" value="id로 실행">uikvsfduirvsfus</button>
-
 	<!--======= FOOTER =========-->
 	<footer>
 		<div class="container">
@@ -293,8 +276,27 @@
 	<script src="/resources/js/main.js"></script>
 	<script src="/resources/js/main.js"></script>
 	
-
+<!-- 	<script type="text/javascript"> -->
+// 	function test(){
+// 		console.log(" 코드그룹코드 : " + document.getElementById("first-name").value
+// 			+ "\n 코드그룹 코드 (Another) : " + document.getElementById("first-name2").value
+// 			+ "\n 코드그룹 코드 (Another) : " + document.getElementById("code_group_name").value
+// 			+ "\n 코드그룹 코드 (Another) : " + document.getElementById("first-name3").value
+// 			+ "\n 코드그룹 코드 (Another) : " + document.getElementById("sort").value
+// 			+ "\n 코드그룹 코드 (Another) : " + document.getElementById("use_ny").value
+// 			+ "\n 코드그룹 코드 (Another) : " + document.getElementById("del_ny").value
+// 		);
+// 	return false;
+// 	};
 	
+// 	function aaaa(){
+// 		if(document.getElementById("codeGroup").value == null){
+// 			alert("입력해라");
+// 			document.getElementById("codeGroup").value="";
+// 			document.getElementById("codeGroup").focus();
 	
+// 	return false;
+// 	}
+	</script>
 </body>
 </html>

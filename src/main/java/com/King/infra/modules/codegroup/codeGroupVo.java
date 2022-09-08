@@ -13,5 +13,6 @@ public class codeGroupVo {
 	private String sh_start_date;
 	private String sh_end_date;
 	private Integer sh_date_rm;
+	private Integer lso;
 	
 }

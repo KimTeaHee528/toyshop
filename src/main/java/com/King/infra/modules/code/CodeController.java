@@ -25,6 +25,7 @@ public class CodeController {
 		
 		List<Code> list = service.selectList(vo);
 		model.addAttribute("list", list);
+		model.addAttribute("vo", vo);
 		return "infra/code/xdmin/codeList";
 	}
 	
@@ -37,6 +38,7 @@ public class CodeController {
 		
 		List<Code> list = service.selectList(vo);
 		model.addAttribute("list", list);
+		model.addAttribute("vo", vo);
 		return "redirect:/code/xdmin/codeList";
 	}
 

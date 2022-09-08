@@ -131,7 +131,7 @@
 						</div>
 						<div style="display: block; margin-right: 25px; float: right;">
 							<label>검색어&nbsp;&nbsp;
-								<input type="text" name="sh_val" <c:out value="${vo.sh_val}"/>>
+								<input type="text" name="sh_val" value=<c:out value="${vo.sh_val}"/>>
 							</label>
 							<a href="#" onclick="document.getElementById('sh').submit();"><i class="icon-magnifier"></i></a>
 						</div>
@@ -171,7 +171,7 @@
 					</c:when>
 						<c:otherwise>
 							<c:forEach items="${list}" var="list" varStatus="status">
-								<a href="">
+								<a href="" onclick = "list_one()";>
 									<div class="ccg-list-body">
 										<div class="list-1">
 											<input type="checkbox">
@@ -318,5 +318,22 @@
 	<script type="text/javascript" src="/resources/rs-plugin/js/jquery.tp.min.js"></script>
 	<script src="/resources/js/main.js"></script>
 	<script src="/resources/js/main.js"></script>
+	
+	
+	<script type="text/javascript">
+		function list_one(){
+			document.getElementById("first-name2").value
+			
+			
+			
+		
+		return false;
+		};
+	</script>
+	
+	
+	
+	
+	
 </body>
 </html>

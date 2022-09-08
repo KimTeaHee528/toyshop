@@ -89,9 +89,9 @@
 					<div style="display: inline-block; margin-right: 25px; margin-bottom: 30px; float: left;">
 						<label>사용유무
 							<select name="sh_use_ny">
-								<option value="">--</option>
-								<option value=0>N</option>
-								<option value=1>Y</option>
+								<option value="" <c:if test="${empty vo.sh_use_ny}">selected</c:if>>--</option>
+								<option value=0 <c:if test="${vo.sh_use_ny == 0}">selected</c:if>>N</option>
+								<option value=1 <c:if test="${vo.sh_use_ny == 1}">selected</c:if>>Y</option>
 							</select>
 						</label>
 					</div>
