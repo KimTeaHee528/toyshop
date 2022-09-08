@@ -16,7 +16,7 @@
 <title>관리 페이지</title>
 
 <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
-<link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css"
+<link rel="stylesheet" type="text/css" href="/resources/rs-plugin/css/settings.css"
 	media="screen" />
 
 <!-- Bootstrap Core CSS -->
@@ -220,7 +220,7 @@
 			<!-- ABOUT Location -->
 			<div class="col-md-3">
 				<div class="about-footer">
-					<img class="margin-bottom-30" src="images/logo-foot.png" alt="">
+					<img class="margin-bottom-30" src="/resources/images/logo-foot.png" alt="">
 					<p>
 						<i class="icon-pointer"></i> Street No. 12, Newyork 12, <br>
 						MD - 123, USA.

@@ -16,8 +16,11 @@
 <title>관리 페이지</title>
 
 <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
-<link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css"
+<link rel="stylesheet" type="text/css" href="/resources/rs-plugin/css/settings.css"
 	media="screen" />
+
+<link rel="icon" type="image/x-icon" href="/resources/img/faviconT.ico" />
+
 
 <!-- Bootstrap Core CSS -->
 <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
@@ -36,12 +39,7 @@
 <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900' rel='stylesheet' type='text/css'>
 
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+
 
 </head>
 <body>
@@ -57,8 +55,18 @@
 	<div id="wrap">
 		<!-- TOP Bar -->
 		<div class="top-bar">
-			<div class="container">
-
+			<div class="container-adm">
+				<!-- menu -->
+				<div class="login-info" style="float: left;">
+					<ul>
+						<li><a href="#.">사이트 관리</a></li>	
+						<li><a href="/member/memberList">회원 관리</a></li>
+						<li><a href="/codeGroup/codeGroupList">코드 그룹 관리</a></li>
+						<li><a href="/code/codeList">코드 관리</a></li>	
+						<li><a href="#.">상품 관리</a></li>	
+						<li><a href="#.">주문 관리</a></li>	
+					</ul>
+				</div>
 				<!-- Login Info -->
 				<div class="login-info">
 					<ul>
@@ -89,38 +97,38 @@
 									<li class="col-md-6">
 										<label>
 											코드그룹 코드 
-											<input type="text" value="55" placeholder="영문(대소문자), 숫자" readonly>
+											<input type="text" value="<c:out value="${item.seq }"/>" placeholder="======" readonly>
 										</label>
 									</li>
 									<li class="col-md-6">
 										<label>
 											코드그룹 코드 (Another)
-											<input type="text" value="55" placeholder="영문(대소문자), 숫자" readonly>
+											<input type="text" value="<c:out value="${item.seq }"/>" placeholder="======" readonly>
 										</label>
 									</li>
 									<li class="col-md-6">
 										<label>
 											코드그룹 이름(한글)
-											<input type="text" value="통신사" placeholder="한글, 숫자" readonly>
+											<input type="text" value="<c:out value="${item.code_group_name }"/>" placeholder="======" readonly>
 										</label> 
 									</li>
 									<li class="col-md-6">
 										<label> 
 											코드그룹 이름(영문) 	
-											<input type="text" value="carrier" placeholder="영문(대소문자), 숫자" readonly>
+											<input type="text" value="<c:out value="${item.code_en_name }"/>" placeholder="======" readonly>
 										</label>
 									</li>
 									<li class="col-md-6" style="margin-top: 0px;">
 										<label>순서
-											<input type="text" value="1" placeholder="숫자" readonly>
+											<input type="text" value="1" placeholder="======" readonly>
 										</label>
 									</li>
 									<li class="col-md-6" style="margin-right: 0px;">
 										<label>
 											사용여부
 											<select class="selectpicker" disabled>
-												<option value="N">N</option>
-												<option value="Y">Y</option>
+												<option value="0">N</option>
+												<option value="1">Y</option>
 											</select>
 										</label>
 									</li>
@@ -128,39 +136,9 @@
 										<label>
 											삭제여부
 											<select class="selectpicker" disabled>
-												<option value="N">N</option>
-												<option value="Y">Y</option>
+												<option value="0">N</option>
+												<option value="1">Y</option>
 											</select>
-										</label>
-									</li>
-									<li class="col-md-6" style="margin-top: 0px;">
-										<label>
-											예비1 (varchar type) <input type="text" value="" placeholder="영문(대소문자), 숫자" readonly>
-										</label>
-									</li>
-									<li class="col-md-6" style="margin-top: 0px;">
-										<label>
-											예비2 (varchar type) <input type="text" value="" placeholder="영문(대소문자), 숫자" readonly>
-										</label>
-									</li>
-									<li class="col-md-6" style="margin-top: 0px;">
-										<label>
-											예비3 (varchar type) <input type="text" value="" placeholder="영문(대소문자), 숫자" readonly>
-										</label>
-									</li>
-									<li class="col-md-6" style="margin-top: 0px;">
-										<label>
-											예비1 (int type) <input type="text" value="" placeholder="숫자" readonly>
-										</label>
-									</li>
-									<li class="col-md-6" style="margin-top: 0px;">
-										<label>
-											예비2 (int type) <input type="text" value="" placeholder="숫자" readonly>
-										</label>
-									</li>
-									<li class="col-md-6" style="margin-top: 0px;">
-										<label>
-											예비3 (int type) <input type="text" value="" placeholder="숫자" readonly>
 										</label>
 									</li>
 									<li class="col-md-6">
@@ -203,7 +181,7 @@
 			<!-- ABOUT Location -->
 			<div class="col-md-3">
 				<div class="about-footer">
-					<img class="margin-bottom-30" src="images/logo-foot.png" alt="">
+					<img class="margin-bottom-30" src="/resources/images/logo-foot.png" alt="">
 					<p>
 						<i class="icon-pointer"></i> Street No. 12, Newyork 12, <br>
 						MD - 123, USA.
@@ -212,7 +190,7 @@
 						<i class="icon-call-end"></i> 1.800.123.456789
 					</p>
 					<p>
-						<i class="icon-envelope"></i> info@ecoshop.com
+						<i class="icon-envelope"></i> info@toyshop.com
 					</p>
 				</div>
 			</div>
@@ -277,26 +255,26 @@
 	<script src="/resources/js/main.js"></script>
 	
 <!-- 	<script type="text/javascript"> -->
-// 	function test(){
-// 		console.log(" 코드그룹코드 : " + document.getElementById("first-name").value
-// 			+ "\n 코드그룹 코드 (Another) : " + document.getElementById("first-name2").value
-// 			+ "\n 코드그룹 코드 (Another) : " + document.getElementById("code_group_name").value
-// 			+ "\n 코드그룹 코드 (Another) : " + document.getElementById("first-name3").value
-// 			+ "\n 코드그룹 코드 (Another) : " + document.getElementById("sort").value
-// 			+ "\n 코드그룹 코드 (Another) : " + document.getElementById("use_ny").value
-// 			+ "\n 코드그룹 코드 (Another) : " + document.getElementById("del_ny").value
-// 		);
-// 	return false;
-// 	};
+<!--  	function test(){ -->
+<!--  		console.log(" 코드그룹코드 : " + document.getElementById("first-name").value -->
+<!--  			+ "\n 코드그룹 코드 (Another) : " + document.getElementById("first-name2").value -->
+<!--  			+ "\n 코드그룹 코드 (Another) : " + document.getElementById("code_group_name").value -->
+<!--  			+ "\n 코드그룹 코드 (Another) : " + document.getElementById("first-name3").value -->
+<!--  			+ "\n 코드그룹 코드 (Another) : " + document.getElementById("sort").value -->
+<!--  			+ "\n 코드그룹 코드 (Another) : " + document.getElementById("use_ny").value -->
+<!--  			+ "\n 코드그룹 코드 (Another) : " + document.getElementById("del_ny").value -->
+<!--  		); -->
+<!--  	return false; -->
+<!--  	}; -->
 	
-// 	function aaaa(){
-// 		if(document.getElementById("codeGroup").value == null){
-// 			alert("입력해라");
-// 			document.getElementById("codeGroup").value="";
-// 			document.getElementById("codeGroup").focus();
+<!--  	function aaaa(){ -->
+<!--  		if(document.getElementById("codeGroup").value == null){ -->
+<!--  			alert("입력해라"); -->
+<!--  			document.getElementById("codeGroup").value=""; -->
+<!--  			document.getElementById("codeGroup").focus(); -->
 	
-// 	return false;
-// 	}
+<!--  	return false; -->
+<!--  	} -->
 	</script>
 </body>
 </html>

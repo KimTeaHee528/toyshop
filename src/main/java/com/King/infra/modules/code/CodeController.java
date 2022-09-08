@@ -62,6 +62,21 @@ public class CodeController {
 		return "redirect:/code/codeList";
 	}
 	
+	
+	
+
+	@RequestMapping(value = "codeView")
+	public String codeView(Model model, codeVo vo) throws Exception {
+
+
+		
+		List<Code> list = service.selectList(vo);
+		model.addAttribute("list", list);
+		model.addAttribute("vo", vo);
+		return "infra/code/xdmin/codeList";
+	}
+	
+	
 
 }
 

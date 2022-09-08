@@ -8,4 +8,5 @@ public interface CodeService {
 	public List<Code> selectList(codeVo vo) throws Exception; 
 	public List<Code> selectCcgName(codeVo vo) throws Exception; 
 	public int insert(codeVo vo) throws Exception;
+	public Code selectOne(codeVo vo) throws Exception; 
 }

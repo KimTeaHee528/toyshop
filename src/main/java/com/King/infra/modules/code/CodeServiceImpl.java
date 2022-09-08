@@ -29,4 +29,10 @@ public class CodeServiceImpl implements CodeService {
 		
 		return dao.insert(vo);
 	}	
+	
+	@Override
+	public Code selectOne(codeVo vo) throws Exception {
+		
+		return dao.selectOne(vo);
+	}	
 }

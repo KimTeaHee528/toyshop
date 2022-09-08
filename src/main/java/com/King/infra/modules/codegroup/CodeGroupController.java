@@ -65,6 +65,16 @@ public class CodeGroupController {
 		return "infra/codegroup/xdmin/codeGroupModForm";
 	}	
 	
+	//코드그룹 뷰 페이지
+	@RequestMapping(value = "codeGroupView")
+	public String codeGroupView(Model model, codeGroupVo vo) throws Exception {
+		
+		CodeGroup item = service.selectOne(vo);
+		model.addAttribute("item", item);
+		
+		return "infra/codegroup/xdmin/codeGroupForm";
+	}	
+	
 	
 	
 //	@RequestMapping(value = "codeGroupForm")
@@ -76,3 +86,4 @@ public class CodeGroupController {
 //		return "infra/codegroup/xdmin/codeGroupMod";
 //	}
 }
+

@@ -30,4 +30,8 @@ public class CodeDao {
 		
 		return sqlSession.insert(namespace + ".insert", vo);
 	}
+	
+	public Code selectOne(codeVo vo) {
+		return sqlSession.selectOne(namespace, vo);
+	}
 }

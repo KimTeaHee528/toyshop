@@ -26,4 +26,10 @@ public class CodeGroupDao {
 		
 		return sqlSession.insert(namespace + ".insert", dto);
 	}
+	
+	
+	public CodeGroup selectOne(codeGroupVo vo) {
+		return sqlSession.selectOne(namespace + ".selectListOne", vo);
+		
+	}
 }

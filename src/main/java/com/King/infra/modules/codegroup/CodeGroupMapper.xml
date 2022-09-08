@@ -31,6 +31,24 @@
 				<otherwise></otherwise>
 			</choose>
 	</select>
+	<select id="selectListOne" resultMap="resultMapObj">
+		SELECT
+			cg.seq
+			,cg.code_group_name
+			,cg.code_en_name
+			,cg.use_ny
+			,cg.reg_date
+			,cg.mod_date
+			,(select count(c.seq) from  tb_cc c where c.ccg_seq = cg.seq) as cnt
+		FROM tb_ccg cg
+		where 1=1
+			and cg.seq = #{li_seq}
+	</select>
+	
+	
+	
+	
+	
 	<insert id="insert">
 		<selectKey resultType="String" keyProperty="seq" order="AFTER">
 			SELECT last_insert_id()

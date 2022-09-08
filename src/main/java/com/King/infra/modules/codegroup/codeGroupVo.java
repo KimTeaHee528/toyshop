@@ -5,6 +5,7 @@ import lombok.Data;
 @Data
 public class codeGroupVo {
 
+	private String li_seq;
 	private String sh_seq;
 	private Integer sh_div;
 	private String sh_val;
