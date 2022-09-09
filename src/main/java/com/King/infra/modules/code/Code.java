@@ -4,6 +4,7 @@ import java.util.Date;
 
 import lombok.Data;
 
+
 @Data
 public class Code {
 	
@@ -17,5 +18,7 @@ public class Code {
 	private Date reg_date;
 	private Date mod_date;
 	private Integer cnt;
+	
+	
 	
 }
