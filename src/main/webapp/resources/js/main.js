@@ -248,6 +248,7 @@ jQuery(document).ready(function($){
 	
 	//open/close lateral navigation
 	$('.cd-nav-trigger').on('click', function(event){
+//		alert("SFDFSFGFDSF");
 		event.preventDefault();
 		//stop if nav animation is running 
 		if( !isLateralNavAnimating ) {
