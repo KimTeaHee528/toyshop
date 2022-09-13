@@ -49,7 +49,11 @@ public class HomeController {
 //			
 //			return "cart";
 //		}
+	@RequestMapping(value = "/login")
+	public String login() {
 		
+		return "login";
+	}
 		
 		
 }

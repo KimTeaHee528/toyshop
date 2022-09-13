@@ -58,10 +58,9 @@
 						<!-- Nav -->
 						<nav>
 							<ul class="cd-primary-nav">
-								<li class="active"><a href="index.html">Home </a></li>
+								<li class="active"><a href="/">Home </a></li>
 								<li><a href="event.html">Event </a></li>
-								<li class="drop-menu"><a href="#." class="title collapsed"
-									data-toggle="collapse" data-target="#down-1"> store </a>
+								<li class="drop-menu"><a href="#." class="title collapsed" data-toggle="collapse" data-target="#down-1"> store </a>
 									<div class="collapse" id="down-1">
 										<div class="well">
 											<ul>
@@ -124,15 +123,15 @@
 
 								<!-- USER INFO -->
 								<li class="dropdown user-acc">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+									<a href="/login" class="dropdown-toggle" data-toggle="dropdown" role="button">
 										<i class="icon-user">&nbsp;&nbsp;</i> 
 									</a>
 									<ul class="dropdown-menu">
 										<li>
 											<h6>김태희 회원님 환영합니다.</h6>
 										</li>
-										<li><a href="member_info.html">회원정보</a></li>
-										<li><a href="#">로그아웃</a></li>
+										<li><a href="/login">로그인</a></li>
+										<li><a href="#">회원가입</a></li>
 									</ul></li>
 
 								<!-- USER BASKET -->
