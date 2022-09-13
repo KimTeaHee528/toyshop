@@ -91,31 +91,31 @@
 						<!-- ESTIMATE SHIPPING & TAX -->
 						<div class="col-sm-12">
 							<h6>코드그룹 관리</h6>
-							<form>
+							<form id="ins" method="post" action="/codeGroup/codeGroupMod?li_seq=<c:out value="${item.seq }"/>">
 								<ul class="row">
 
 									<li class="col-md-6">
 										<label>
 											코드그룹 코드 
-											<input type="text" value="<c:out value="${item.seq }"/>" placeholder="======" readonly>
+											<input type="text" value="<c:out value="${item.seq }"/>" placeholder="숫자" readonly>
 										</label>
 									</li>
 									<li class="col-md-6">
 										<label>
 											코드그룹 코드 (Another)
-											<input type="text" value="<c:out value="${item.seq }"/>" placeholder="======" readonly>
+											<input type="text" value="<c:out value="${item.seq }"/>" placeholder="영문(대소문자), 숫자" readonly>
 										</label>
 									</li>
 									<li class="col-md-6">
 										<label>
 											코드그룹 이름(한글)
-											<input type="text" value="<c:out value="${item.code_group_name }"/>" placeholder="======" readonly>
+											<input type="text" value="<c:out value="${item.code_group_name }"/>" placeholder="한글, 숫자" readonly>
 										</label> 
 									</li>
 									<li class="col-md-6">
 										<label> 
 											코드그룹 이름(영문) 	
-											<input type="text" value="<c:out value="${item.code_en_name }"/>" placeholder="======" readonly>
+											<input type="text" value="<c:out value="${item.code_en_name }"/>" placeholder="영문(대소문자), 숫자" readonly>
 										</label>
 									</li>
 									<li class="col-md-6" style="margin-top: 0px;">
@@ -254,7 +254,39 @@
 	<script src="/resources/js/main.js"></script>
 	<script src="/resources/js/main.js"></script>
 	
-<!-- 	<script type="text/javascript"> -->
+
+	<script type="text/javascript">
+	
+// 	view
+	var urlList = "/codeGroup/codeGroupInst";
+// 	reg
+	var urlReg = "/codeGroup/codeGroupReg";
+// 	mod
+	var urlUp = "/codeGroup/codeGroupUp";
+// 0:뷰 / 1:등록 / 2:수정
+	var mode = 0;
+	
+	$(function(){
+   		alert("세번째 / " + ${item.seq});
+		if (${item.seq} == "0" || ${item.seq} == "" || ${item.seq} == undefined){
+	   		// insert
+	   		mode = 1;
+	   		alert("첫번째 / " + ${item.seq});
+	   	} else {
+	   		// update
+	   		mode = 2;
+	   		alert("두번째 / " + ${item.seq});
+	   	}
+
+	}); 
+	
+	
+	
+	
+	
+	
+	
+	
 <!--  	function test(){ -->
 <!--  		console.log(" 코드그룹코드 : " + document.getElementById("first-name").value -->
 <!--  			+ "\n 코드그룹 코드 (Another) : " + document.getElementById("first-name2").value -->

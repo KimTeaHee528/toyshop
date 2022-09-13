@@ -32,4 +32,12 @@ public class CodeGroupDao {
 		return sqlSession.selectOne(namespace + ".selectListOne", vo);
 		
 	}
+	
+
+	public int update(CodeGroup dto) {
+		
+		return sqlSession.update(namespace + ".updateCodeGroup", dto);
+	}
+	
+	
 }

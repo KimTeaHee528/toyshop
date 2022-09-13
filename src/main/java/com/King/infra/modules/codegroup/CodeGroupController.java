@@ -20,7 +20,7 @@ public class CodeGroupController {
 
 		List<CodeGroup> list = service.selectListService(vo);
 		model.addAttribute("list", list);
-		
+		System.out.println("리스트 기본");
 		return "infra/codegroup/xdmin/codeGroupList";
 	}	
 	
@@ -59,12 +59,6 @@ public class CodeGroupController {
 		return "infra/codegroup/xdmin/codeGroupForm";
 	}	
 	
-	@RequestMapping(value = "codeGroupMod")
-	public String codeGroupMod() throws Exception {
-		
-		return "infra/codegroup/xdmin/codeGroupModForm";
-	}	
-	
 	//코드그룹 뷰 페이지
 	@RequestMapping(value = "codeGroupView")
 	public String codeGroupView(Model model, codeGroupVo vo) throws Exception {
@@ -73,6 +67,27 @@ public class CodeGroupController {
 		model.addAttribute("item", item);
 		
 		return "infra/codegroup/xdmin/codeGroupForm";
+	}
+	
+	//코드그룹 수정페이지 페이지
+	@RequestMapping(value = "codeGroupMod")
+	public String codeGroupMod(Model model, codeGroupVo vo) throws Exception {
+		
+		CodeGroup item = service.selectOne(vo);
+		System.out.println("codeGroupMod-===========");
+		model.addAttribute("item", item);
+		
+		return "infra/codegroup/xdmin/codeGroupModForm";
+	}	 
+	
+	
+	@RequestMapping(value = "codeGroupUp")
+	public String codeGroupUp(CodeGroup dto) throws Exception {
+		
+		System.out.println("디티오~~~~~"+dto.getCode_group_name());
+		int result = service.update(dto);
+		System.out.println(result);
+		return "redirect:/codeGroup/codeGroupList";
 	}	
 	
 	

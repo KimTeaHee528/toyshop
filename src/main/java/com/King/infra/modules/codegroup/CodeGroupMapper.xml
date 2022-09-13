@@ -45,9 +45,7 @@
 			and cg.seq = #{li_seq}
 	</select>
 	
-	
-	
-	
+
 	
 	<insert id="insert">
 		<selectKey resultType="String" keyProperty="seq" order="AFTER">
@@ -64,5 +62,18 @@
 			,now()
 		)
 	</insert>
+	
+	<update id="updateCodeGroup">
+		UPDATE tb_ccg SET 
+			code_group_name = #{code_group_name}
+		    ,code_en_name = #{code_en_name}
+		    ,use_ny = #{use_ny}
+		    ,mod_date = now()
+		WHERE 1=1
+			and seq = ${seq}
+
+	</update>
+	
+	
 
 </mapper>

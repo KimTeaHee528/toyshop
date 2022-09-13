@@ -57,8 +57,18 @@
 	<div id="wrap">
 		<!-- TOP Bar -->
 		<div class="top-bar">
-			<div class="container">
-
+			<div class="container-adm">
+				<!-- menu -->
+				<div class="login-info" style="float: left;">
+					<ul>
+						<li><a href="#.">사이트 관리</a></li>	
+						<li><a href="/member/memberList">회원 관리</a></li>
+						<li><a href="/codeGroup/codeGroupList">코드 그룹 관리</a></li>
+						<li><a href="/code/codeList">코드 관리</a></li>	
+						<li><a href="#.">상품 관리</a></li>	
+						<li><a href="#.">주문 관리</a></li>	
+					</ul>
+				</div>
 				<!-- Login Info -->
 				<div class="login-info">
 					<ul>
@@ -82,97 +92,67 @@
 
 						<!-- ESTIMATE SHIPPING & TAX -->
 						<div class="col-sm-12">
-							<h6>코드그룹 관리</h6>
-							<form>
+							<h6>코드그룹 수정</h6>
+							<form method="post" action="/codeGroup/codeGroupUp">
 								<ul class="row">
 
 									<li class="col-md-6">
 										<label>
 											코드그룹 코드 
-											<input type="text" value="55" placeholder="영문(대소문자), 숫자" readonly>
+											<input type="text" name="seq" value="<c:out value="${item.seq }"/>" placeholder="숫자">
 										</label>
 									</li>
 									<li class="col-md-6">
 										<label>
 											코드그룹 코드 (Another)
-											<input type="text" value="55" placeholder="영문(대소문자), 숫자" readonly>
+											<input type="text" name="seqA" value="<c:out value="${item.seq }"/>" placeholder="영문(대소문자), 숫자">
 										</label>
 									</li>
 									<li class="col-md-6">
 										<label>
 											코드그룹 이름(한글)
-											<input type="text" value="통신사" placeholder="한글, 숫자" readonly>
+											<input type="text" name="code_group_name" value="<c:out value="${item.code_group_name }"/>" placeholder="한글, 숫자">
 										</label> 
 									</li>
 									<li class="col-md-6">
 										<label> 
 											코드그룹 이름(영문) 	
-											<input type="text" value="carrier" placeholder="영문(대소문자), 숫자" readonly>
+											<input type="text" name="code_en_name" value="<c:out value="${item.code_en_name }"/>" placeholder="영문(대소문자), 숫자">
 										</label>
 									</li>
 									<li class="col-md-6" style="margin-top: 0px;">
 										<label>순서
-											<input type="text" value="1" placeholder="숫자" readonly>
+											<input type="text" value="1" placeholder="======">
 										</label>
 									</li>
 									<li class="col-md-6" style="margin-right: 0px;">
 										<label>
 											사용여부
-											<select class="selectpicker" disabled>
-												<option value="N">N</option>
-												<option value="Y">Y</option>
+											<select class="selectpicker" name="use_ny">
+												<option value="0">N</option>
+												<option value="1">Y</option>
 											</select>
 										</label>
 									</li>
 									<li class="col-md-6" style="margin-right: 0px;">
 										<label>
 											삭제여부
-											<select class="selectpicker" disabled>
-												<option value="N">N</option>
-												<option value="Y">Y</option>
+											<select class="selectpicker">
+												<option value="0">N</option>
+												<option value="1">Y</option>
 											</select>
-										</label>
-									</li>
-									<li class="col-md-6" style="margin-top: 0px;">
-										<label>
-											예비1 (varchar type) <input type="text" value="" placeholder="영문(대소문자), 숫자" readonly>
-										</label>
-									</li>
-									<li class="col-md-6" style="margin-top: 0px;">
-										<label>
-											예비2 (varchar type) <input type="text" value="" placeholder="영문(대소문자), 숫자" readonly>
-										</label>
-									</li>
-									<li class="col-md-6" style="margin-top: 0px;">
-										<label>
-											예비3 (varchar type) <input type="text" value="" placeholder="영문(대소문자), 숫자" readonly>
-										</label>
-									</li>
-									<li class="col-md-6" style="margin-top: 0px;">
-										<label>
-											예비1 (int type) <input type="text" value="" placeholder="숫자" readonly>
-										</label>
-									</li>
-									<li class="col-md-6" style="margin-top: 0px;">
-										<label>
-											예비2 (int type) <input type="text" value="" placeholder="숫자" readonly>
-										</label>
-									</li>
-									<li class="col-md-6" style="margin-top: 0px;">
-										<label>
-											예비3 (int type) <input type="text" value="" placeholder="숫자" readonly>
 										</label>
 									</li>
 									<li class="col-md-6">
 										<label>
 											등록일
-											<input type="date" value="2022-08-30" disabled>
+											<input type="date" value="2022-08-30">
 										</label>
 									</li>
 									<li class="col-md-6">
 										<label>
 											수정일
-											<input type="date" value="2022-08-30" disabled>
+											<input type="date" value="2022-08-30">
 										</label>
 									</li>
 
@@ -180,12 +160,11 @@
 									<li class="col-md-6" style="margin-top: 0px;">
 										<label>
 											설명
-											<textarea style="width: 555px; height: 42px; margin-top: 10px; resize: vertical;" disabled>asdf</textarea>
+											<textarea style="width: 555px; height: 42px; margin-top: 10px; resize: vertical;">asdf</textarea>
 										</label>
 									</li>
 									<li class="col-md-12 text-center">
-										<button type="submit" class="btn">수정</button>
-										<button type="submit" class="btn">삭제</button>
+										<button type="submit" class="btn">저장</button>
 										<button type="submit" class="btn">뒤로가기</button>
 									</li>
 								</ul>
