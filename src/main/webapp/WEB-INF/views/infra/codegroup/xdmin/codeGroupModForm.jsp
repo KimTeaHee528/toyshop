@@ -105,7 +105,7 @@
 									<li class="col-md-6">
 										<label>
 											코드그룹 코드 (Another)
-											<input type="text" name="seqA" value="<c:out value="${item.seq }"/>" placeholder="영문(대소문자), 숫자">
+											<input type="text" value="<c:out value="${item.seq }"/>" placeholder="영문(대소문자), 숫자">
 										</label>
 									</li>
 									<li class="col-md-6">

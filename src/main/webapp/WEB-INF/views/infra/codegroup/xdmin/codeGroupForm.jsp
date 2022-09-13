@@ -91,13 +91,14 @@
 						<!-- ESTIMATE SHIPPING & TAX -->
 						<div class="col-sm-12">
 							<h6>코드그룹 관리</h6>
-							<form id="ins" method="post" action="/codeGroup/codeGroupMod?li_seq=<c:out value="${item.seq }"/>">
+<%-- 							<form id="ins" method="post" action="/codeGroup/codeGroupMod?li_seq=<c:out value="${item.seq }"/>"> --%>
+							<form type="GET" name="ccgForm">
 								<ul class="row">
-
+									<input type="hidden" name="li_seq" value="<c:out value="${item.seq }"/>">
 									<li class="col-md-6">
 										<label>
 											코드그룹 코드 
-											<input type="text" value="<c:out value="${item.seq }"/>" placeholder="숫자" readonly>
+											<input type="text" name="seq" value="<c:out value="${item.seq }"/>" placeholder="숫자" readonly>
 										</label>
 									</li>
 									<li class="col-md-6">
@@ -109,24 +110,24 @@
 									<li class="col-md-6">
 										<label>
 											코드그룹 이름(한글)
-											<input type="text" value="<c:out value="${item.code_group_name }"/>" placeholder="한글, 숫자" readonly>
+											<input type="text" name="code_group_name" value="<c:out value="${item.code_group_name }"/>" placeholder="한글, 숫자" readonly>
 										</label> 
 									</li>
 									<li class="col-md-6">
 										<label> 
 											코드그룹 이름(영문) 	
-											<input type="text" value="<c:out value="${item.code_en_name }"/>" placeholder="영문(대소문자), 숫자" readonly>
+											<input type="text" name="code_en_name" value="<c:out value="${item.code_en_name }"/>" placeholder="영문(대소문자), 숫자" readonly>
 										</label>
 									</li>
 									<li class="col-md-6" style="margin-top: 0px;">
 										<label>순서
-											<input type="text" value="1" placeholder="======" readonly>
+											<input type="text" name="" value="1" placeholder="======" readonly>
 										</label>
 									</li>
 									<li class="col-md-6" style="margin-right: 0px;">
 										<label>
 											사용여부
-											<select class="selectpicker" disabled>
+											<select class="selectpicker" name="use_ny">
 												<option value="0">N</option>
 												<option value="1">Y</option>
 											</select>
@@ -162,9 +163,13 @@
 										</label>
 									</li>
 									<li class="col-md-12 text-center">
-										<button type="submit" class="btn">수정</button>
 										<button type="submit" class="btn">삭제</button>
-										<button type="submit" class="btn">뒤로가기</button>
+										<a href=""><button type="submit" class="btn">뒤로가기</button></a>
+<!-- 										<button class="btn"><a style="color: white;" href="/codeGroup/codeGroupMod>수정</a></button> -->
+										<button class="btn" type="button" id="btn_mod" name="btn_mod">수정</button>
+										<button class="btn" type="button" id="btn_up">수정완료</button>
+										<a href="/codeGroup/codeGroupReg"><button type="submit" class="btn">등록</button></a>
+										<a href="/codeGroup/codeGroupInst"><button type="submit" class="btn">저장</button></a>
 									</li>
 								</ul>
 							</form>
@@ -256,35 +261,25 @@
 	
 
 	<script type="text/javascript">
-	
-// 	view
-	var urlList = "/codeGroup/codeGroupInst";
-// 	reg
-	var urlReg = "/codeGroup/codeGroupReg";
-// 	mod
-	var urlUp = "/codeGroup/codeGroupUp";
-// 0:뷰 / 1:등록 / 2:수정
-	var mode = 0;
-	
-	$(function(){
-   		alert("세번째 / " + ${item.seq});
-		if (${item.seq} == "0" || ${item.seq} == "" || ${item.seq} == undefined){
-	   		// insert
-	   		mode = 1;
-	   		alert("첫번째 / " + ${item.seq});
-	   	} else {
-	   		// update
-	   		mode = 2;
-	   		alert("두번째 / " + ${item.seq});
-	   	}
 
-	}); 
+	var goUrlmod = "/codeGroup/codeGroupMod";
+	var goUrlUpdt = "/codeGroup/codeGroupUp";	
+	
+	var form = $("form[name=ccgForm]");
+
+
+	$("#btn_mod").on("click", function(){
+		alert(${item.seq});
+		
+		form.attr("action", goUrlmod).submit();
+	});
+	$("#btn_up").on("click", function(){
+		form.attr("action", goUrlUpdt).submit();
+	});
 	
 	
 	
-	
-	
-	
+	</script>
 	
 	
 <!--  	function test(){ -->
@@ -307,6 +302,5 @@
 	
 <!--  	return false; -->
 <!--  	} -->
-	</script>
 </body>
 </html>

@@ -24,10 +24,11 @@ public class CodeGroupController {
 		return "infra/codegroup/xdmin/codeGroupList";
 	}	
 	
+	
+	
+	
 	@RequestMapping(value = "codeGroupListR")
 	public String codeGroupListR(Model model, codeGroupVo vo) throws Exception {
-
-		
 		
 		List<CodeGroup> list = service.selectListService(vo);
 		model.addAttribute("list", list);
@@ -37,9 +38,17 @@ public class CodeGroupController {
 //		return "redirect:/codeGroup/codeGroupList";
 	}	
 	
+	
+	
+	
 	@RequestMapping(value = "codeGroupReg")
-	public String codeGroupReg() throws Exception {
-		return "infra/codegroup/xdmin/codeGroupRegForm";
+	public String codeGroupReg(Model model, codeGroupVo vo) throws Exception {
+		System.out.println("등록폼====================");
+
+		CodeGroup item = service.selectOne(vo);
+		vo.setCcgFormMode(1);
+		model.addAttribute("item", item);
+		return "infra/codegroup/xdmin/codeGroupForm";
 	}
 	
 	
@@ -53,43 +62,77 @@ public class CodeGroupController {
 		return "redirect:/codeGroup/codeGroupList";
 	}	
 	
-	@RequestMapping(value = "codeGroupForm")
-	public String codeGroupForm() throws Exception {
-		
-		return "infra/codegroup/xdmin/codeGroupForm";
-	}	
+
+	
+	
 	
 	//코드그룹 뷰 페이지
 	@RequestMapping(value = "codeGroupView")
 	public String codeGroupView(Model model, codeGroupVo vo) throws Exception {
 		
+		System.out.println("뷰폼====================");
 		CodeGroup item = service.selectOne(vo);
 		model.addAttribute("item", item);
 		
 		return "infra/codegroup/xdmin/codeGroupForm";
 	}
 	
+	
+	
+	
 	//코드그룹 수정페이지 페이지
 	@RequestMapping(value = "codeGroupMod")
 	public String codeGroupMod(Model model, codeGroupVo vo) throws Exception {
 		
+		System.out.println("수정폼====================");
 		CodeGroup item = service.selectOne(vo);
-		System.out.println("codeGroupMod-===========");
 		model.addAttribute("item", item);
+		System.out.println(item.getSeq());
+		System.out.println(item.getCode_group_name());
+		System.out.println(item.getCode_en_name());
+		System.out.println(item.getUse_ny());
+		System.out.println(item.getReg_date());
 		
-		return "infra/codegroup/xdmin/codeGroupModForm";
+		return "infra/codegroup/xdmin/codeGroupForm";
 	}	 
 	
-	
+//업데이트
 	@RequestMapping(value = "codeGroupUp")
 	public String codeGroupUp(CodeGroup dto) throws Exception {
 		
-		System.out.println("디티오~~~~~"+dto.getCode_group_name());
 		int result = service.update(dto);
-		System.out.println(result);
+		System.out.println("dto.getSeq(): "+dto.getSeq());
+		System.out.println("result: " + result);
 		return "redirect:/codeGroup/codeGroupList";
 	}	
 	
+//	
+//	
+//	
+//	@RequestMapping(value="codeGroupUp")
+//	public String codeGroupUp(codeGroupVo vo, CodeGroup dto, RedirectAttributes RedirectAttributes) throws Exception {
+//		service.update(dto);
+//		RedirectAttributes.addFlashAttribute("vo", vo);
+//		
+//		return "redirect:/codeGroup/codeGroupList";
+//		
+//		
+//	}
+	
+	
+	
+	
+//	
+//// 업데이트
+//	@RequestMapping(value = "codeGroupUp")
+//	public String codeGroupUp(CodeGroup dto) throws Exception {
+//		
+//		System.out.println("디티오~~~~~"+dto.getCode_group_name());
+//		int result = service.update(dto);
+//		System.out.println("result" + result);
+//		return "redirect:/codeGroup/codeGroupList";
+//	}	
+//	
 	
 	
 //	@RequestMapping(value = "codeGroupForm")

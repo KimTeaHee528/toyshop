@@ -70,7 +70,7 @@
 		    ,use_ny = #{use_ny}
 		    ,mod_date = now()
 		WHERE 1=1
-			and seq = ${seq}
+			and seq = #{seq}
 
 	</update>
 	

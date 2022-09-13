@@ -140,7 +140,7 @@
 							<label>검색어&nbsp;&nbsp;
 								<input type="text" name="sh_val" value=<c:out value="${vo.sh_val}"/>>
 							</label>
-							<a href="#" onclick="document.getElementById('sh').submit();"><i class="icon-magnifier"></i></a>
+							<a href="#"><i class="icon-magnifier"></i></a>
 						</div>
 					</form>
 				</div>
