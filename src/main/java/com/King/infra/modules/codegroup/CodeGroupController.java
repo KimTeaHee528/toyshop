@@ -40,7 +40,7 @@ public class CodeGroupController {
 	
 	
 	
-	
+	// 코드그룹 등록 페이지
 	@RequestMapping(value = "codeGroupReg")
 	public String codeGroupReg(Model model, codeGroupVo vo) throws Exception {
 		System.out.println("등록폼====================");
@@ -50,10 +50,7 @@ public class CodeGroupController {
 		model.addAttribute("item", item);
 		return "infra/codegroup/xdmin/codeGroupForm";
 	}
-	
-	
-	
-	
+	// 코드그룹 인서트
 	@RequestMapping(value = "codeGroupInst")
 	public String codeGroupInst(CodeGroup dto) throws Exception {
 		
@@ -96,7 +93,7 @@ public class CodeGroupController {
 		return "infra/codegroup/xdmin/codeGroupForm";
 	}	 
 	
-//업데이트
+	//코드그룹 업데이트
 	@RequestMapping(value = "codeGroupUp")
 	public String codeGroupUp(CodeGroup dto) throws Exception {
 		
