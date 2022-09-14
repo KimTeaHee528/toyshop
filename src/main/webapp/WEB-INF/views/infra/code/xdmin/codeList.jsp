@@ -131,7 +131,7 @@
 					</div>
 					<div style="display: block; float: right;">
 						<label>검색어&nbsp;&nbsp;
-								<input type="text" name="sh_val" <c:out value="${vo.sh_val}"/>>
+								<input type="text" name="sh_val" value=<c:out value="${vo.sh_val}"/>>
 							</label>
 						<a href="#" onclick="document.getElementById('sh').submit();"><i class="icon-magnifier"></i></a>
 					</div>

@@ -94,7 +94,7 @@
 <%-- 							<form id="ins" method="post" action="/codeGroup/codeGroupMod?li_seq=<c:out value="${item.seq }"/>"> --%>
 							<form type="GET" name="ccgForm">
 								<ul class="row">
-									<input type="hidden" name="li_seq" value="<c:out value="${item.seq }"/>">
+									<input type="hidden" name="ccgFormMode" value="<c:out value="${vo.ccgFormMode }"/>">
 									<li class="col-md-6">
 										<label>
 											코드그룹 코드 
@@ -166,10 +166,9 @@
 										<button type="submit" class="btn">삭제</button>
 										<a href=""><button type="submit" class="btn">뒤로가기</button></a>
 <!-- 										<button class="btn"><a style="color: white;" href="/codeGroup/codeGroupMod>수정</a></button> -->
-										<button class="btn" type="button" id="btn_mod" name="btn_mod">수정</button>
+										<button class="btn" type="button" id="btn_mod">수정</button>
 										<button class="btn" type="button" id="btn_up">수정완료</button>
-										<a href="/codeGroup/codeGroupReg"><button type="submit" class="btn">등록</button></a>
-										<a href="/codeGroup/codeGroupInst"><button type="submit" class="btn">저장</button></a>
+										<button class="btn" type="button" id="btn_save">저장</button>
 									</li>
 								</ul>
 							</form>
@@ -264,6 +263,7 @@
 
 	var goUrlmod = "/codeGroup/codeGroupMod";
 	var goUrlUpdt = "/codeGroup/codeGroupUp";	
+	var goUrlInst = "/codeGroup/codeGroupInst";	
 	
 	var form = $("form[name=ccgForm]");
 
@@ -274,12 +274,19 @@
 	$("#btn_up").on("click", function(){
 		form.attr("action", goUrlUpdt).submit();
 	});
-	
-	
+	$("#btn_save").on("click", function(){
+		form.attr("action", goUrlInst).submit();
+	});
 	
 	</script>
 	
+		<script type="text/javascript">
+	$(function(){
+		alert("0=뷰 1=등록 2=수정 // " + ${vo.ccgFormMode});
+		
+	});
 	
+	</script>
 <!--  	function test(){ -->
 <!--  		console.log(" 코드그룹코드 : " + document.getElementById("first-name").value -->
 <!--  			+ "\n 코드그룹 코드 (Another) : " + document.getElementById("first-name2").value -->

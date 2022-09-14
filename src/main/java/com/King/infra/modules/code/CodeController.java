@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
@@ -17,7 +18,7 @@ public class CodeController {
 
 
 	@RequestMapping(value = "codeList")
-	public String codeList(Model model, codeVo vo) throws Exception {
+	public String codeList(Model model,@ModelAttribute("vo") codeVo vo) throws Exception {
 
 		System.out.println("vo.getSh_val()" + vo.getSh_val());
 		System.out.println("vo.getSh_div()" + vo.getSh_div());
@@ -25,21 +26,7 @@ public class CodeController {
 		
 		List<Code> list = service.selectList(vo);
 		model.addAttribute("list", list);
-		model.addAttribute("vo", vo);
 		return "infra/code/xdmin/codeList";
-	}
-	
-	@RequestMapping(value = "codeListR")
-	public String codeListR(Model model, codeVo vo) throws Exception {
-		
-		System.out.println("vo.getSh_val()" + vo.getSh_val());
-		System.out.println("vo.getSh_div()" + vo.getSh_div());
-		System.out.println("vo.getSh_use_ny()" + vo.getSh_use_ny());
-		
-		List<Code> list = service.selectList(vo);
-		model.addAttribute("list", list);
-		model.addAttribute("vo", vo);
-		return "redirect:/code/xdmin/codeList";
 	}
 
 	

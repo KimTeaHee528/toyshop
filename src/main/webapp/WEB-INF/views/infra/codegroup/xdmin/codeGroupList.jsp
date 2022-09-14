@@ -16,8 +16,7 @@
 <title>관리 페이지</title>
 
 <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
-<link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css"
-	media="screen" />
+<link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css" media="screen" />
 
 <!-- Bootstrap Core CSS -->
 <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
@@ -96,7 +95,7 @@
 			<div class="tab-pane" style="margin-bottom: 50px; margin-top: 40px;">
 				<div class="ccg-top">
 <!-- 					<form id="sh" method="post" action="/codeGroup/codeGroupListR"> -->
-					<form id="sh" method="get" action="/codeGroup/codeGroupListR">
+					<form id="sh" method="get" action="/codeGroup/codeGroupList">
 						<div style="display: inline-block; margin-right: 25px; margin-bottom: 30px; float: left;">
 							<label>사용유무
 								<select name="sh_use_ny">
@@ -140,7 +139,7 @@
 							<label>검색어&nbsp;&nbsp;
 								<input type="text" name="sh_val" value=<c:out value="${vo.sh_val}"/>>
 							</label>
-							<a href="#"><i class="icon-magnifier"></i></a>
+							<a href="#" onclick="document.getElementById('sh').submit();"><i class="icon-magnifier"></i></a>
 						</div>
 					</form>
 				</div>
@@ -219,7 +218,7 @@
 						</c:otherwise>
 				</c:choose>
 				<div class="col-md-12 text-center" style="margin-bottom: 50px; margin-top: 20px;">
-					<a href="/codeGroup/codeGroupReg"><button type="submit" class="btn">등록</button></a>
+					<a href="/codeGroup/codeGroupReg"><button type="button" class="btn">등록</button></a>
 					<button type="submit" class="btn">삭제</button>
 				</div>
 			</div>
@@ -330,54 +329,11 @@
 	<script type="text/javascript">
 		function list_one(){
 			document.getElementById("first-name2").value
-			
-			
-			
-		
 		return false;
 		};
 	</script>
 	
-<script type="text/javascript">    
-	$(document).ready(function () {            
-		$.datepicker.setDefaults($.datepicker.regional['ko']);             
-		$( "#startDate" ).datepicker({                 
-			changeMonth: true,                  
-			changeYear: true,                 
-			nextText: '다음 달',                 
-			prevText: '이전 달',                  
-			dayNames: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'],                 
-			dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],                  
-			monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],                 
-			monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],                 
-			dateFormat: "yymmdd",                 
-			maxDate: 0,                       // 선택할수있는 최소날짜, ( 0 : 오늘 이후 날짜 선택 불가)                 
-			onClose: function( selectedDate ) {                          
-				//시작일(startDate) datepicker가 닫힐때                     
-				//종료일(endDate)의 선택할수있는 최소 날짜(minDate)를 선택한 시작일로 지정                     
-				$("#endDate").datepicker( "option", "minDate", selectedDate );                 
-			}                 
-		});            
-		$( "#endDate" ).datepicker({                 
-			changeMonth: true,                  
-			changeYear: true,                 
-			nextText: '다음 달',                 
-			prevText: '이전 달',                  
-			dayNames: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'],                 
-			dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],                  
-			monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],                 
-			monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],                 
-			dateFormat: "yymmdd",                
-			maxDate: 0,                       
-			// 선택할수있는 최대날짜, ( 0 : 오늘 이후 날짜 선택 불가)                 
-			onClose: function( selectedDate ) {                         
-				// 종료일(endDate) datepicker가 닫힐때                     
-				// 시작일(startDate)의 선택할수있는 최대 날짜(maxDate)를 선택한 시작일로 지정                     
-				$("#startDate").datepicker( "option", "maxDate", selectedDate );                 
-			}                 
-		});        
-	});
-</script>
+
 
 	
 	
