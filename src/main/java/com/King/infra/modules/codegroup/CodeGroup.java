@@ -13,5 +13,4 @@ public class CodeGroup {
 	private Date reg_date;
 	private Date mod_date;
 	private Integer cnt;
-
 }

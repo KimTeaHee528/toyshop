@@ -43,14 +43,12 @@
 
 </head>
 <body>
-
 	<!-- LOADER -->
 	<div id="loader">
 		<div class="position-center-center">
 			<div class="ldr"></div>
 		</div>
 	</div>
-
 	<!-- Wrap -->
 	<div id="wrap">
 		<!-- TOP Bar -->
@@ -87,26 +85,20 @@
 				<!-- SHOPPING INFORMATION -->
 				<div class="cart-ship-info register">
 					<div class="row">
-
 						<!-- ESTIMATE SHIPPING & TAX -->
 						<div class="col-sm-12">
-						
-						<c:choose>
-							<c:when test="${vo.ccgFormMode eq 1}">
-								<h6>코드그룹 등록</h6>
-							</c:when>
-							<c:when test="${vo.ccgFormMode eq 2}">
-								<h6>코드그룹 수정</h6>
-							</c:when>
-							<c:otherwise>
-								<h6>코드그룹 정보</h6>
-							</c:otherwise>
-						</c:choose>
-						
-						
-							
-							
-<%-- 							<form id="ins" method="post" action="/codeGroup/codeGroupMod?li_seq=<c:out value="${item.seq }"/>"> --%>
+							<c:choose>
+								<c:when test="${vo.ccgFormMode eq 1}">
+									<h6>코드그룹 등록</h6>
+								</c:when>
+								<c:when test="${vo.ccgFormMode eq 2}">
+									<h6>코드그룹 수정</h6>
+								</c:when>
+								<c:otherwise>
+									<h6>코드그룹 정보</h6>
+								</c:otherwise>
+							</c:choose>
+	<%-- 							<form id="ins" method="post" action="/codeGroup/codeGroupMod?li_seq=<c:out value="${item.seq }"/>"> --%>
 							<form type="GET" name="ccgForm">
 								<ul class="row">
 									<input type="hidden" name="ccgFormMode" value="<c:out value="${vo.ccgFormMode }"/>">
@@ -425,13 +417,7 @@
 	
 	</script>
 	
-<!-- 		<script type="text/javascript"> -->
-// //			$(function(){
-// //				alert("0=뷰 1=등록 2=수정 // " + ${vo.ccgFormMode});
-// //				
-// //			});
-// //	
-<!-- 		</script> -->
+
 <!--  	function test(){ -->
 <!--  		console.log(" 코드그룹코드 : " + document.getElementById("first-name").value -->
 <!--  			+ "\n 코드그룹 코드 (Another) : " + document.getElementById("first-name2").value -->
