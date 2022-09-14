@@ -53,11 +53,13 @@
 		</selectKey>
 		insert into tb_ccg(
 			code_group_name
+			,code_en_name
 		    ,use_ny
 		    ,reg_date
 		)
 		values(
 			#{code_group_name}
+			,#{code_en_name}
 			,#{use_ny}
 			,now()
 		)

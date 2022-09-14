@@ -135,7 +135,6 @@
 							</label>
 						<a href="#" onclick="document.getElementById('sh').submit();"><i class="icon-magnifier"></i></a>
 					</div>
-					</form>
 					
 					
 					
@@ -266,6 +265,7 @@
 				</c:forEach>
 						</c:otherwise>
 				</c:choose>
+									</form>
 				<div class="col-md-12 text-center" style="margin-bottom: 50px; margin-top: 20px;">
 					<a href="/code/codeRegForm"><button type="submit" class="btn" style="height: 30px; font-size: 20px; padding-bottom: 48px;">등록</button></a>
 					<a><button type="submit" class="btn" style="height: 30px; font-size: 20px; padding-bottom: 48px;">삭제</button></a>
