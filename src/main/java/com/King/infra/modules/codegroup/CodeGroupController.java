@@ -98,8 +98,6 @@ public class CodeGroupController {
 	public String codeGroupUp(CodeGroup dto) throws Exception {
 		
 		int result = service.update(dto);
-		System.out.println("dto.getSeq(): "+dto.getSeq());
-		System.out.println("result: " + result);
 		return "redirect:/codeGroup/codeGroupList";
 	}	
 	

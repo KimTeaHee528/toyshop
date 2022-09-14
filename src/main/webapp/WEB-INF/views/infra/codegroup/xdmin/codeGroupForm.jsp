@@ -269,8 +269,6 @@
 
 
 	$("#btn_mod").on("click", function(){
-		alert(${item.seq});
-		
 		form.attr("action", goUrlmod).submit();
 	});
 	$("#btn_up").on("click", function(){
