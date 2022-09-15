@@ -33,6 +33,12 @@ public class CodeGroupDao {
 		
 	}
 	
+	
+	public int selectOneCount(codeGroupVo vo) {
+		return sqlSession.selectOne(namespace + ".selectOneCount", vo);
+		
+	}
+	
 
 	public int update(CodeGroup dto) {
 		

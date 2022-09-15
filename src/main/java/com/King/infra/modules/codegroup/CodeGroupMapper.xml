@@ -1,51 +1,61 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<!DOCTYPE mapper
-    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.King.infra.modules.codegroup.CodeGroupMapperIN">
 
     <resultMap id="resultMapObj" type="com.King.infra.modules.codegroup.CodeGroup"></resultMap>
-	<select id="selectListMap" resultMap="resultMapObj">
-		SELECT
-			cg.seq
-			,cg.code_group_name
-			,cg.code_en_name
-			,cg.use_ny
-			,cg.reg_date
-			,cg.mod_date
-			,(select count(c.seq) from  tb_cc c where c.ccg_seq = cg.seq) as cnt
-		FROM tb_ccg cg
-		where 1=1
-			<choose>
-				<when test="sh_date_rm == 0">and cg.reg_date between #{sh_start_date} and #{sh_end_date}</when>
-				<when test="sh_date_rm == 1">and cg.mod_date between #{sh_start_date} and #{sh_end_date}</when>
-				<otherwise></otherwise>
-			</choose>
-			<choose>
-				<when test="sh_div == 0">and cg.code_group_name LIKE CONCAT('%',#{sh_val},'%')</when>
-				<when test="sh_div == 1">and cg.code_en_name LIKE CONCAT('%', #{sh_val} ,'%')</when>
-				<when test="sh_use_ny == 0">and cg.use_ny = #{sh_use_ny}</when>
-				<when test="sh_use_ny == 1">and cg.use_ny = #{sh_use_ny}</when>
-				<otherwise></otherwise>
-			</choose>
-	</select>
-	<select id="selectListOne" resultMap="resultMapObj">
-		SELECT
-			cg.seq
-			,cg.code_group_name
-			,cg.code_en_name
-			,cg.use_ny
-			,cg.reg_date
-			,cg.mod_date
-			,(select count(c.seq) from  tb_cc c where c.ccg_seq = cg.seq) as cnt
-		FROM tb_ccg cg
-		where 1=1
-			and cg.seq = #{li_seq}
-	</select>
 	
+	<sql id="selectCommon">
+		FROM tb_ccg cg
+		where 1=1
+		<choose>
+			<when test="sh_date_rm == 0">and cg.reg_date between #{sh_start_date} and #{sh_end_date}</when>
+			<when test="sh_date_rm == 1">and cg.mod_date between #{sh_start_date} and #{sh_end_date}</when>
+			<otherwise></otherwise>
+		</choose>
+		<choose>
+			<when test="sh_div == 0">and cg.code_group_name LIKE CONCAT('%',#{sh_val},'%')</when>
+			<when test="sh_div == 1">and cg.code_en_name LIKE CONCAT('%', #{sh_val} ,'%')</when>
+			<when test="sh_use_ny == 0">and cg.use_ny = #{sh_use_ny}</when>
+			<when test="sh_use_ny == 1">and cg.use_ny = #{sh_use_ny}</when>
+			<otherwise></otherwise>
+		</choose>
+	</sql>
+	
+	<select id="selectListOne" resultMap="resultMapObj">
+			SELECT
+			cg.seq
+			,cg.code_group_name
+			,cg.code_en_name
+			,cg.use_ny
+			,cg.reg_date
+			,cg.mod_date
+			,(select count(c.seq) from  tb_cc c where c.ccg_seq = cg.seq) as cnt
+			From tb_ccg cg
+			where
+	
+			cg.seq = #{li_seq}
+	</select>
 
+	<select id="selectListMap" resultMap="resultMapObj">
+		<include refid="Base.selectListUpperForMysql" />
+			SELECT
+			cg.seq
+			,cg.code_group_name
+			,cg.code_en_name
+			,cg.use_ny
+			,cg.reg_date
+			,cg.mod_date
+			,(select count(c.seq) from  tb_cc c where c.ccg_seq = cg.seq) as cnt
+		<include refid="selectCommon" />
+		<include refid="Base.selectListLowerForMysql" />
+	</select>
+
+	<select id="selectOneCount" resultType="Integer">
+		SELECT COUNT(*) as totalRows
+		<include refid="selectCommon" />
+	</select>
 	
 	<insert id="insert">
 		<selectKey resultType="String" keyProperty="seq" order="AFTER">
@@ -73,9 +83,6 @@
 		    ,mod_date = now()
 		WHERE 1=1
 			and seq = #{seq}
-
 	</update>
-	
-	
 
 </mapper>

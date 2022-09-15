@@ -19,5 +19,19 @@ public class Code {
 	private Integer cnt;
 	
 	
+//	
+//	private String seq;
+//	private String name_ko;
+//	private String name_en;
+//	private String use_ny;
+//	private Date reg_date;
+//	private Date mod_date;
+//	private String del_ny;
+//	private String comment;
+//	private String tb_ccg_seq;
+//	private String sort;
+//	private Integer cnt;
+//	
+	
 	
 }

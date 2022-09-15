@@ -33,7 +33,9 @@ public class CodeController {
 	@RequestMapping(value = "codeRegForm")
 	public String codeRegForm(Model model, codeVo vo) throws Exception {
 
+		
 		List<Code> list = service.selectCcgName(vo);
+		vo.setCcFormMode("1");
 		model.addAttribute("list", list);
 		return "infra/code/xdmin/codeRegForm";
 	}
@@ -53,14 +55,11 @@ public class CodeController {
 	
 
 	@RequestMapping(value = "codeView")
-	public String codeView(Model model, codeVo vo) throws Exception {
-
-
+	public String codeView(Model model, @ModelAttribute("vo") codeVo vo) throws Exception {
 		
-		List<Code> list = service.selectList(vo);
-		model.addAttribute("list", list);
-		model.addAttribute("vo", vo);
-		return "infra/code/xdmin/codeList";
+		Code item = service.selectOne(vo);
+		model.addAttribute("item", item);
+		return "infra/code/xdmin/codeRegForm";
 	}
 	
 	

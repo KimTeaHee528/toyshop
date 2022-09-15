@@ -32,6 +32,6 @@ public class CodeDao {
 	}
 	
 	public Code selectOne(codeVo vo) {
-		return sqlSession.selectOne(namespace, vo);
+		return sqlSession.selectOne(namespace + ".selectOne", vo);
 	}
 }

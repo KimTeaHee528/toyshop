@@ -83,8 +83,6 @@
 		<div style="display: block; float: top; float: left; font-size: 30px; margin-top: 30px;">코드 관리</div>
 			<div class="tab-pane" style="margin-bottom: 50px; margin-top: 40px;">
 				<div class="cc-top">
-				
-				
 				<form id="sh" method="post" action="/code/codeList">
 					<div style="display: inline-block; margin-right: 25px; margin-bottom: 30px; float: left;">
 						<label>사용유무
@@ -105,14 +103,14 @@
 						</label>
 					</div>
 					<div style="display: inline-block; margin-right: 25px; float: left;">
-							<label>시작일&nbsp;&nbsp;
-								<input type="date" name="sh_start_date" value=<c:out value="${vo.sh_start_date}"/>>
-							</label>
+						<label>시작일&nbsp;&nbsp;
+							<input type="date" name="sh_start_date" value=<c:out value="${vo.sh_start_date}"/>>
+						</label>
 					</div>
 					<div style="display: inline-block; margin-right: 25px; float: left;">
-							<label>종료일&nbsp;&nbsp;
-								<input type="date" name="sh_end_date" value=<c:out value="${vo.sh_end_date}"/>>
-							</label>
+						<label>종료일&nbsp;&nbsp;
+							<input type="date" name="sh_end_date" value=<c:out value="${vo.sh_end_date}"/>>
+						</label>
 					</div>
 					<div style="display: inline-block; margin-right: 25px; float: left;">
 						<label>검색구분&nbsp;&nbsp;
@@ -135,9 +133,6 @@
 							</label>
 						<a href="#" onclick="document.getElementById('sh').submit();"><i class="icon-magnifier"></i></a>
 					</div>
-					
-					
-					
 				</div>
 				<div class="cc-list-head">
 					<div class="list-1">
@@ -177,10 +172,6 @@
 						수정일
 					</div>
 				</div>
-				
-				
-				
-				
 				<c:choose>
 					<c:when test="${fn:length(list) eq 0}">
 						<div class="ccg-list-body" style="height: 45px; text-align:center;">
@@ -189,7 +180,7 @@
 					</c:when>
 						<c:otherwise>
 				<c:forEach items="${list}" var="list" varStatus="status">
-					<a href="">
+					<a href="/code/codeView?li_seq=<c:out value="${list.seq }"/>">
 						<div class="cc-list-body">
 							<div class="list-1">
 								<input type="checkbox">

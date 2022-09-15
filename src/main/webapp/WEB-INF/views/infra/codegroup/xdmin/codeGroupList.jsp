@@ -15,6 +15,14 @@
 <meta name="author" content="M_Adnan">
 <title>관리 페이지</title>
 
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+
+
+
 <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
 <link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css" media="screen" />
 
@@ -49,11 +57,11 @@
 <body>
 
 	<!-- LOADER -->
-	<div id="loader">
-		<div class="position-center-center">
-			<div class="ldr"></div>
-		</div>
-	</div>
+<!-- 	<div id="loader"> -->
+<!-- 		<div class="position-center-center"> -->
+<!-- 			<div class="ldr"></div> -->
+<!-- 		</div> -->
+<!-- 	</div> -->
 	<!-- Wrap -->
 	<div id="wrap">
 		<!-- TOP Bar -->
@@ -95,8 +103,12 @@
 			<div class="tab-pane" style="margin-bottom: 50px; margin-top: 40px;">
 				<div class="ccg-top">
 <!-- 					<form id="sh" method="post" action="/codeGroup/codeGroupListR"> -->
-					<form id="sh" method="get" action="/codeGroup/codeGroupList">
+					<form id="sh" name="ccgList" method="get" action="/codeGroup/codeGroupList">
+						<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
+						<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}" default="1"/>">
+<!-- 						<input type="hidden" name="checkboxSeqArray"> -->
 						<div style="display: inline-block; margin-right: 25px; margin-bottom: 30px; float: left;">
+						
 							<label>사용유무
 								<select name="sh_use_ny">
 									<option value="" <c:if test="${empty vo.sh_use_ny}">selected</c:if>>--</option>
@@ -203,11 +215,15 @@
 											<c:out value="${list.cnt }"/>
 										</div>
 										<div class="list-7">
-											<fmt:formatDate value="${list.reg_date }" pattern="yy-MM-dd HH:mm:ss"/>
+											
+											<c:choose>
+												<c:when test="${not empty list.reg_date}"><fmt:formatDate value="${list.reg_date }" pattern="yy-MM-dd HH:mm:ss"/></c:when>
+												<c:otherwise>--</c:otherwise>
+											</c:choose>
 										</div>
 										<div class="list-8">
 											<c:choose>
-												<c:when test="${not empty list.code_en_name}"><fmt:formatDate value="${list.mod_date }" pattern="yy-MM-dd HH:mm:ss"/></c:when>
+												<c:when test="${not empty list.mod_date}"><fmt:formatDate value="${list.mod_date }" pattern="yy-MM-dd HH:mm:ss"/></c:when>
 												<c:otherwise>--</c:otherwise>
 											</c:choose>
 										</div>
@@ -215,15 +231,20 @@
 								</a>
 							</c:forEach>
 						</c:otherwise>
-				</c:choose>
+					</c:choose>
+					
+					<!-- pagination s -->
+					<%@include file="../../common/xdmin/includeV1/pagination.jsp"%>
+					<!-- pagination e -->
+					
 					</form>
-				<div class="col-md-12 text-center" style="margin-bottom: 50px; margin-top: 20px;">
-					<a href="/codeGroup/codeGroupReg"><button type="button" class="btn">등록</button></a>
-					<button type="submit" class="btn">삭제</button>
+					<div class="col-md-12 text-center" style="margin-bottom: 50px; margin-top: 20px;">
+						<a href="/codeGroup/codeGroupReg"><button type="button" class="btn">등록</button></a>
+						<button type="submit" class="btn">삭제</button>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 					
 <!--   리스트 넣는곳   -->
 
@@ -324,19 +345,24 @@
 	<script type="text/javascript" src="/resources/rs-plugin/js/jquery.tp.min.js"></script>
 	<script src="/resources/js/main.js"></script>
 	<script src="/resources/js/main.js"></script>
-	
+	<script src="https://kit.fontawesome.com/0089819b08.js" crossorigin="anonymous"></script>
 	
 	<script type="text/javascript">
+	
+		var goUrlList = "/codeGroup/codeGroupList";
+		var form = $("form[name=ccgList]");
+		
 		function list_one(){
 			document.getElementById("first-name2").value
 		return false;
 		};
+		
+		goList = function(thisPage){
+			$("input:hidden[name=thisPage]").val(thisPage);
+			form.attr("action",goUrlList).submit();
+		}
+
 	</script>
-	
-
-
-	
-	
 	
 	
 </body>

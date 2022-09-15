@@ -14,11 +14,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class CodeGroupController {
 	@Autowired
 	CodeGroupServiceImpl service;
+
 	
 	// 리스트 페이지
 	@RequestMapping(value = "codeGroupList")
 	public String codeGroupList(Model model,@ModelAttribute("vo") codeGroupVo vo) throws Exception {
-
+		
+		vo.setParamsPaging(service.selectOneCount(vo));
+		
 		List<CodeGroup> list = service.selectListService(vo);
 		model.addAttribute("list", list);
 		return "infra/codegroup/xdmin/codeGroupList";
@@ -31,9 +34,9 @@ public class CodeGroupController {
 	public String codeGroupView(Model model,@ModelAttribute("vo") codeGroupVo vo) throws Exception {
 		
 		vo.setCcgFormMode(0);
+		
 		CodeGroup item = service.selectOne(vo);
 		model.addAttribute("item", item);
-		
 		return "infra/codegroup/xdmin/codeGroupForm";
 	}
 	
@@ -64,9 +67,9 @@ public class CodeGroupController {
 	public String codeGroupMod(Model model,@ModelAttribute("vo") codeGroupVo vo) throws Exception {
 		
 		vo.setCcgFormMode(2);
+		
 		CodeGroup item = service.selectOne(vo);
 		model.addAttribute("item", item);
-		
 		return "infra/codegroup/xdmin/codeGroupForm";
 	}	 
 	
@@ -77,8 +80,6 @@ public class CodeGroupController {
 		service.update(dto);
 		return "redirect:/codeGroup/codeGroupList";
 	}	
-
-	
 	
 	
 //	
@@ -91,7 +92,6 @@ public class CodeGroupController {
 //		
 //		
 //	}
-	
 	
 
 }

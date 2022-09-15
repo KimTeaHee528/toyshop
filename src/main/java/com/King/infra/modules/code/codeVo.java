@@ -16,7 +16,10 @@ public class codeVo {
 	private Integer cr_ccg_seq;
 	private String cr_code_name_ko;
 	private String cr_code_name_en;
+	private String cr_use_ny;
 	private String seq;
+	private String li_seq;
+	private String ccFormMode;
 	
 	
 	

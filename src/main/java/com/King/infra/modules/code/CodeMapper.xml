@@ -50,6 +50,30 @@
 		from tb_ccg
 		where use_ny=1
 	</select>
+	
+	<select id="selectOne" resultMap="resultMapObj">
+		select
+			seq
+			,ccg_seq
+			,code_group_name
+			,code_name
+			,code_name_en
+			,use_ny
+			,sort
+			,reg_date
+			,mod_date
+		from tb_ccg
+		where seq=li_seq
+		
+	</select>
+	
+	
+	
+	
+	
+	
+	
+	
 <!-- 	</select> -->
 
 	<insert id="insert">
