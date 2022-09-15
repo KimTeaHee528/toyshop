@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.King.infra.common.constants.Constants;
+
 
 @Controller
 @RequestMapping(value = "/codeGroup/")
@@ -24,6 +26,7 @@ public class CodeGroupController {
 		
 		List<CodeGroup> list = service.selectListService(vo);
 		model.addAttribute("list", list);
+				
 		return "infra/codegroup/xdmin/codeGroupList";
 	}	
 	

@@ -19,10 +19,12 @@ public class BaseVo {
 //	private int endRnumForOracle;								// 쿼리 끝 row
 	private Integer RNUM;
 	private int startRnumForMysql = 0;							// 쿼리 시작 row
+
 	
 public void setParamsPaging(int totalRows) {
 //		setThisPage(3);
 		setTotalRows(totalRows);
+		
 
 		if (getTotalRows() == 0) {
 			setTotalPages(1);
@@ -38,7 +40,7 @@ public void setParamsPaging(int totalRows) {
 			setThisPage(getTotalPages());
 		}
 		
-		setStartPage(((getThisPage() - 1) / getPageNumToShow()) * getPageNumToShow() + 1);
+		setStartPage(         (   (getThisPage() - 1)    / getPageNumToShow())           * getPageNumToShow()       + 1);
 
 		setEndPage(getStartPage() + getPageNumToShow() - 1);
 

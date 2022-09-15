@@ -107,8 +107,24 @@
 						<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
 						<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}" default="1"/>">
 <!-- 						<input type="hidden" name="checkboxSeqArray"> -->
+
+
+
+
 						<div style="display: inline-block; margin-right: 25px; margin-bottom: 30px; float: left;">
+							<label>페이지 수
+								<select name="rowNumToShow">
+									<option value=10 <c:if test="${vo.rowNumToShow == 10}">selected</c:if>>10</option>
+									<option value=30 <c:if test="${vo.rowNumToShow == 30}">selected</c:if>>30</option>
+									<option value=50 <c:if test="${vo.rowNumToShow == 50}">selected</c:if>>50</option>
+								</select>
+							</label>
+						</div>
 						
+						
+						
+						
+						<div style="display: inline-block; margin-right: 25px; margin-bottom: 30px; float: left;">
 							<label>사용유무
 								<select name="sh_use_ny">
 									<option value="" <c:if test="${empty vo.sh_use_ny}">selected</c:if>>--</option>
@@ -232,11 +248,9 @@
 							</c:forEach>
 						</c:otherwise>
 					</c:choose>
-					
 					<!-- pagination s -->
 					<%@include file="../../common/xdmin/includeV1/pagination.jsp"%>
 					<!-- pagination e -->
-					
 					</form>
 					<div class="col-md-12 text-center" style="margin-bottom: 50px; margin-top: 20px;">
 						<a href="/codeGroup/codeGroupReg"><button type="button" class="btn">등록</button></a>
@@ -352,10 +366,10 @@
 		var goUrlList = "/codeGroup/codeGroupList";
 		var form = $("form[name=ccgList]");
 		
-		function list_one(){
-			document.getElementById("first-name2").value
-		return false;
-		};
+// 		function list_one(){
+// 			document.getElementById("first-name2").value
+// 		return false;
+// 		};
 		
 		goList = function(thisPage){
 			$("input:hidden[name=thisPage]").val(thisPage);
