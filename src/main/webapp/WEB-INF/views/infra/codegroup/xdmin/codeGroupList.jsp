@@ -24,7 +24,7 @@
 
 
 <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
-<link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/resources/rs-plugin/css/settings.css" media="screen" />
 
 <!-- Bootstrap Core CSS -->
 <link href="/resources/css/bootstrap.min.css" rel="stylesheet">
@@ -105,11 +105,8 @@
 <!-- 					<form id="sh" method="post" action="/codeGroup/codeGroupListR"> -->
 					<form id="sh" name="ccgList" method="get" action="/codeGroup/codeGroupList">
 						<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
-						<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}" default="1"/>">
+<%-- 						<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>"> --%>
 <!-- 						<input type="hidden" name="checkboxSeqArray"> -->
-
-
-
 
 						<div style="display: inline-block; margin-right: 25px; margin-bottom: 30px; float: left;">
 							<label>페이지 수
@@ -287,7 +284,7 @@
 			<!-- ABOUT Location -->
 			<div class="col-md-3">
 				<div class="about-footer">
-					<img class="margin-bottom-30" src="images/logo-foot.png" alt="">
+					<img class="margin-bottom-30" src="/resources/images/logo-foot.png" alt="">
 					<p>
 						<i class="icon-pointer"></i> Street No. 12, Newyork 12, <br>
 						MD - 123, USA.

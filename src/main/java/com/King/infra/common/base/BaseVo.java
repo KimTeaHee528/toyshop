@@ -24,7 +24,6 @@ public class BaseVo {
 public void setParamsPaging(int totalRows) {
 //		setThisPage(3);
 		setTotalRows(totalRows);
-		
 
 		if (getTotalRows() == 0) {
 			setTotalPages(1);
