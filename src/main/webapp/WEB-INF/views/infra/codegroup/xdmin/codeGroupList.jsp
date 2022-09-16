@@ -124,18 +124,20 @@
 						<div style="display: inline-block; margin-right: 25px; margin-bottom: 30px; float: left;">
 							<label>사용유무
 								<select name="sh_use_ny">
-									<option value="" <c:if test="${empty vo.sh_use_ny}">selected</c:if>>--</option>
-									<option value=0 <c:if test="${vo.sh_use_ny == 0}">selected</c:if>>N</option>
-									<option value=1 <c:if test="${vo.sh_use_ny == 1}">selected</c:if>>Y</option>
+<%-- 									<option value="" <c:if test="${empty vo.sh_use_ny}">selected</c:if>>전체</option> --%>
+									<option value=0 <c:if test="${vo.sh_use_ny == 0}">selected</c:if>>전체</option>
+									<option value=1 <c:if test="${vo.sh_use_ny == 1}">selected</c:if>>N</option>
+									<option value=2 <c:if test="${vo.sh_use_ny == 2}">selected</c:if>>Y</option>
 								</select>
 							</label>
 						</div>
 						<div style="display: inline-block; margin-right: 25px; margin-bottom: 30px; float: left;">
 							<label>날짜
 								<select name="sh_date_rm">
-									<option value="" <c:if test="${empty vo.sh_date_rm}">selected</c:if>>--</option>
-									<option value=0 <c:if test="${vo.sh_date_rm == 0}">selected</c:if>>등록일</option>
-									<option value=1 <c:if test="${vo.sh_date_rm == 1}">selected</c:if>>수정일</option>
+<%-- 									<option value="" <c:if test="${empty vo.sh_date_rm}">selected</c:if>>전체</option> --%>
+									<option value=0 <c:if test="${vo.sh_date_rm == 0}">selected</c:if>>전체</option>
+									<option value=1 <c:if test="${vo.sh_date_rm == 1}">selected</c:if>>등록일</option>
+									<option value=2 <c:if test="${vo.sh_date_rm == 2}">selected</c:if>>수정일</option>
 								</select>
 							</label>
 						</div>

@@ -12,8 +12,8 @@ public class CodeGroupServiceImpl implements CodeGroupService {
 	@Override
 	public List<CodeGroup> selectListService(codeGroupVo vo) throws Exception {
 		
-//		vo.setSh_start_date(vo.getSh_start_date() + " 00:00:00");
-//		vo.setSh_end_date(vo.getSh_end_date() + " 23:59:59");
+		vo.setSh_start_date(vo.getSh_start_date() + " 00:00:00");
+		vo.setSh_end_date(vo.getSh_end_date() + " 23:59:59");
 		return dao.selectListDao(vo);
 	}
 

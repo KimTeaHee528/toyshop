@@ -7,8 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.King.infra.common.constants.Constants;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
 @Controller
@@ -18,11 +17,28 @@ public class CodeGroupController {
 	CodeGroupServiceImpl service;
 
 	
+	
+	
+	// 페이지 유지 
+	public void setSearchAndPaging(codeGroupVo vo) throws Exception {
+		
+		vo.setSh_date_rm(vo.getSh_date_rm() == null ? 0 : vo.getSh_date_rm());
+		vo.setSh_use_ny(vo.getSh_use_ny() == null ? 0 : vo.getSh_use_ny());
+//		vo.setSh_start_date(vo.getSh_start_date() == null || vo.getSh_start_date() == "" ? null : UtilDateTime.add00TimeString(vo.getSh_start_date()));
+//		vo.setSh_end_date(vo.getSh_end_date() == null || vo.getSh_end_date() == "" ? null : UtilDateTime.add59TimeString(vo.getSh_end_date()));\
+		vo.setParamsPaging(service.selectOneCount(vo));
+	}	
+	
+	
+	
+	
 	// 리스트 페이지
 	@RequestMapping(value = "codeGroupList")
 	public String codeGroupList(Model model,@ModelAttribute("vo") codeGroupVo vo) throws Exception {
 		
-		vo.setParamsPaging(service.selectOneCount(vo));
+		setSearchAndPaging(vo);
+		
+//		vo.setParamsPaging(service.selectOneCount(vo));
 		
 		List<CodeGroup> list = service.selectListService(vo);
 		model.addAttribute("list", list);
@@ -57,11 +73,15 @@ public class CodeGroupController {
 	
 	// 코드그룹 인서트
 	@RequestMapping(value = "codeGroupInst")
-	public String codeGroupInst(CodeGroup dto) throws Exception {
+	public String codeGroupInst(CodeGroup dto, codeGroupVo vo, RedirectAttributes RedirectAttributes) throws Exception {
 		
 		int result = service.insert(dto);
 		System.out.println(result);
-		return "redirect:/codeGroup/codeGroupList";
+		vo.setLi_seq(dto.getSeq());
+		RedirectAttributes.addFlashAttribute("vo", vo);
+		
+//		return "redirect:/codeGroup/codeGroupList";
+		return "redirect:/codeGroup/codeGroupView";
 	}	
 	
 	
@@ -78,10 +98,13 @@ public class CodeGroupController {
 	
 	//코드그룹 업데이트
 	@RequestMapping(value = "codeGroupUp")
-	public String codeGroupUp(CodeGroup dto) throws Exception {
+	public String codeGroupUp(CodeGroup dto, codeGroupVo vo, RedirectAttributes RedirectAttributes) throws Exception {
 		
 		service.update(dto);
-		return "redirect:/codeGroup/codeGroupList";
+		vo.setLi_seq(dto.getSeq());
+		RedirectAttributes.addFlashAttribute("vo", vo);
+		return "redirect:/codeGroup/codeGroupView";
+//		return "redirect:/codeGroup/codeGroupList";
 	}	
 	
 	
