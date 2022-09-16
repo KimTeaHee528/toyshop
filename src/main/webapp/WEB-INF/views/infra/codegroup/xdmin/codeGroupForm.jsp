@@ -100,6 +100,9 @@
 							</c:choose>
 	<%-- 							<form id="ins" method="post" action="/codeGroup/codeGroupMod?li_seq=<c:out value="${item.seq }"/>"> --%>
 							<form type="GET" name="ccgForm">
+								<!-- Vo s -->
+								<%@include file="../../codegroup/xdmin/codeGroupVo.jsp"%>
+								<!-- Vo e -->
 								<ul class="row">
 									<input type="hidden" name="ccgFormMode" value="<c:out value="${vo.ccgFormMode }"/>">
 									<input type="hidden" name="li_seq" value="<c:out value="${item.seq }"/>">
@@ -293,21 +296,30 @@
 									<li class="col-md-12 text-center">
 										<c:choose>
 											<c:when test="${vo.ccgFormMode eq 1}">
-												<button type="button" class="btn">뒤로가기</button></a>
+												<button type="button" class="btn" id="a_list">목록</button></a>
 												<button type="button" class="btn" id="btn_save">저장</button>
 											</c:when>
 											<c:when test="${vo.ccgFormMode eq 2}">
-												<button type="button" class="btn">뒤로가기</button></a>
+												<button type="button" class="btn" id="a_list">목록</button></a>
+												<button type="button" class="btn" id="btn_back">뒤로가기</button>
 												<button type="button" class="btn" id="btn_up">수정완료</button>
 											</c:when>
 											<c:otherwise>
-												<button type="button" class="btn">뒤로가기</button></a>
+												<button type="button" class="btn" id="a_list">목록</button></a>
 												<button type="button" class="btn">삭제</button>
 												<button type="button" class="btn" id="btn_mod">수정</button>
 											</c:otherwise>
 										</c:choose>
 									</li>
 								</ul>
+								<!-- Vo s -->
+								<%@include file="../../codegroup/xdmin/codeGroupVo.jsp"%>
+								<!-- Vo e -->
+							</form>
+							<form name="form_back">
+								<!-- Vo s -->
+								<%@include file="../../codegroup/xdmin/codeGroupVo.jsp"%>
+								<!-- Vo e -->
 							</form>
 						</div>
 					</div>
@@ -398,11 +410,14 @@
 
 	<script type="text/javascript">
 
-	var goUrlmod = "/codeGroup/codeGroupMod";
+	var goUrlView = "/codeGroup/codeGroupView";
 	var goUrlUpdt = "/codeGroup/codeGroupUp";	
 	var goUrlInst = "/codeGroup/codeGroupInst";	
+	var goUrlList = "/codeGroup/codeGroupList";	
+	
 	
 	var form = $("form[name=ccgForm]");
+	var form_back = $("form[name=form_back]");
 
 
 	$("#btn_mod").on("click", function(){
@@ -414,6 +429,14 @@
 	$("#btn_save").on("click", function(){
 		form.attr("action", goUrlInst).submit();
 	});
+	$("#a_list").on("click", function(){
+		form.attr("action", goUrlList).submit();
+	});
+	$("#btn_back").on("click", function(){
+		form.attr("action", goUrlView).submit();
+	});
+	
+	
 	
 	</script>
 	

@@ -92,22 +92,15 @@
 	<div style="display:block; width: 100%; text-align: center;">
 		<div style="display: inline-block; text-align: center; width: 1500px;">
 		<div style="display: block; float: top; float: left; font-size: 30px; margin-top: 30px;">코드 그룹 관리
-		
 <!-- 			<button type="submit" class="btn" style="font-size: 10px; width: 60px; height: 30px; text-align: center;">삭제</button> -->
 <!-- 			<a href="/codeGroup/codeGroupReg"><button type="submit" class="btn">등록</button></a> -->
-			
-			
-			
 		</div>
-
 			<div class="tab-pane" style="margin-bottom: 50px; margin-top: 40px;">
 				<div class="ccg-top">
-<!-- 					<form id="sh" method="post" action="/codeGroup/codeGroupListR"> -->
 					<form id="sh" name="ccgList" method="get" action="/codeGroup/codeGroupList">
 						<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
 <%-- 						<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>"> --%>
 <!-- 						<input type="hidden" name="checkboxSeqArray"> -->
-
 						<div style="display: inline-block; margin-right: 25px; margin-bottom: 30px; float: left;">
 							<label>페이지 수
 								<select name="rowNumToShow">
@@ -117,10 +110,6 @@
 								</select>
 							</label>
 						</div>
-						
-						
-						
-						
 						<div style="display: inline-block; margin-right: 25px; margin-bottom: 30px; float: left;">
 							<label>사용유무
 								<select name="sh_use_ny">
@@ -144,13 +133,13 @@
 						<div style="display: inline-block; margin-right: 25px; float: left;">
 							<label>시작일&nbsp;&nbsp;
 <!-- 								<input type="text" id="startDate" name="sh_start_date"> -->
-								<input type="date" name="sh_start_date" value=<c:out value="${vo.sh_start_date}"/>>
+								<input type="date" name="sh_start_date" value="<c:out value="${vo.sh_start_date}"/>">
 							</label>
 						</div>
 						<div style="display: inline-block; margin-right: 25px; float: left;">
 							<label>종료일&nbsp;&nbsp;
 <!-- 								<input type="text" id="endDate" name="sh_start_date"> -->
-								<input type="date" name="sh_end_date" value=<c:out value="${vo.sh_end_date}"/>>
+								<input type="date" name="sh_end_date" value="<c:out value="${vo.sh_end_date}"/>">
 							</label>
 						</div>
 						<div style="display: inline-block; margin-right: 25px; float: left;">
@@ -164,7 +153,7 @@
 						</div>
 						<div style="display: block; margin-right: 25px; float: right;">
 							<label>검색어&nbsp;&nbsp;
-								<input type="text" name="sh_val" value=<c:out value="${vo.sh_val}"/>>
+								<input type="text" name="sh_val" value="<c:out value="${vo.sh_val}"/>"/>
 							</label>
 							<a href="#" onclick="document.getElementById('sh').submit();"><i class="icon-magnifier"></i></a>
 						</div>
@@ -203,7 +192,9 @@
 					</c:when>
 						<c:otherwise>
 							<c:forEach items="${list}" var="list" varStatus="status">
-								<a href="/codeGroup/codeGroupView?li_seq=<c:out value="${list.seq }"/>">
+<%-- 								<a href="/codeGroup/codeGroupView?li_seq=<c:out value="${list.seq }"/>"> --%>
+								<input type="hidden" name="li_seq" value="<c:out value="${list.seq}"/>"/>
+								<a href="javascript:goForm(<c:out value="${list.seq}"/>)">
 									<div class="ccg-list-body">
 										<div class="list-1">
 											<input type="checkbox">
@@ -252,7 +243,7 @@
 					<!-- pagination e -->
 					</form>
 					<div class="col-md-12 text-center" style="margin-bottom: 50px; margin-top: 20px;">
-						<a href="/codeGroup/codeGroupReg"><button type="button" class="btn">등록</button></a>
+						<button type="button" class="btn" id="btn_reg">등록</button>
 						<button type="submit" class="btn">삭제</button>
 					</div>
 				</div>
@@ -363,7 +354,10 @@
 	<script type="text/javascript">
 	
 		var goUrlList = "/codeGroup/codeGroupList";
+		var goUrlView = "/codeGroup/codeGroupView";
+		var goUrlReg = "/codeGroup/codeGroupReg";
 		var form = $("form[name=ccgList]");
+		var li_seq = $("input[name=li_seq]");
 		
 // 		function list_one(){
 // 			document.getElementById("first-name2").value
@@ -374,6 +368,20 @@
 			$("input:hidden[name=thisPage]").val(thisPage);
 			form.attr("action",goUrlList).submit();
 		}
+		goForm = function(seq){
+			li_seq.val(seq);
+			form.attr("action",goUrlView).submit();
+		}
+		
+		$("#list_view").on("click", function(){
+			form.attr("action", goUrlView).submit();
+		});
+		
+		$("#btn_reg").on("click", function(){
+			form.attr("action", goUrlReg).submit();
+		});
+		
+		
 
 	</script>
 	

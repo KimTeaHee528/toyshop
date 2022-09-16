@@ -37,7 +37,6 @@ public class CodeGroupController {
 	public String codeGroupList(Model model,@ModelAttribute("vo") codeGroupVo vo) throws Exception {
 		
 		setSearchAndPaging(vo);
-		
 //		vo.setParamsPaging(service.selectOneCount(vo));
 		
 		List<CodeGroup> list = service.selectListService(vo);
@@ -53,12 +52,10 @@ public class CodeGroupController {
 	public String codeGroupView(Model model,@ModelAttribute("vo") codeGroupVo vo) throws Exception {
 		
 		vo.setCcgFormMode(0);
-		
 		CodeGroup item = service.selectOne(vo);
 		model.addAttribute("item", item);
 		return "infra/codegroup/xdmin/codeGroupForm";
 	}
-	
 	
 	
 	// 코드그룹 등록 페이지
@@ -70,6 +67,18 @@ public class CodeGroupController {
 		model.addAttribute("item", item);
 		return "infra/codegroup/xdmin/codeGroupForm";
 	}
+	
+	
+	//코드그룹 수정페이지 페이지
+	@RequestMapping(value = "codeGroupMod")
+	public String codeGroupMod(Model model,@ModelAttribute("vo") codeGroupVo vo) throws Exception {
+		
+		vo.setCcgFormMode(2);
+		
+		CodeGroup item = service.selectOne(vo);
+		model.addAttribute("item", item);
+		return "infra/codegroup/xdmin/codeGroupForm";
+	}	 
 	
 	// 코드그룹 인서트
 	@RequestMapping(value = "codeGroupInst")
@@ -83,18 +92,6 @@ public class CodeGroupController {
 //		return "redirect:/codeGroup/codeGroupList";
 		return "redirect:/codeGroup/codeGroupView";
 	}	
-	
-	
-	//코드그룹 수정페이지 페이지
-	@RequestMapping(value = "codeGroupMod")
-	public String codeGroupMod(Model model,@ModelAttribute("vo") codeGroupVo vo) throws Exception {
-		
-		vo.setCcgFormMode(2);
-		
-		CodeGroup item = service.selectOne(vo);
-		model.addAttribute("item", item);
-		return "infra/codegroup/xdmin/codeGroupForm";
-	}	 
 	
 	//코드그룹 업데이트
 	@RequestMapping(value = "codeGroupUp")
