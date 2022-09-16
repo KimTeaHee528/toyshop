@@ -99,7 +99,7 @@
 								</c:otherwise>
 							</c:choose>
 	<%-- 							<form id="ins" method="post" action="/codeGroup/codeGroupMod?li_seq=<c:out value="${item.seq }"/>"> --%>
-							<form type="GET" name="ccgForm">
+							<form method="GET" name="ccgForm">
 								<!-- Vo s -->
 								<%@include file="../../codegroup/xdmin/codeGroupVo.jsp"%>
 								<!-- Vo e -->
@@ -312,9 +312,6 @@
 										</c:choose>
 									</li>
 								</ul>
-								<!-- Vo s -->
-								<%@include file="../../codegroup/xdmin/codeGroupVo.jsp"%>
-								<!-- Vo e -->
 							</form>
 							<form name="form_back">
 								<!-- Vo s -->
