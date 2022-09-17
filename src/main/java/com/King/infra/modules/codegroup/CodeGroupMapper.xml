@@ -10,15 +10,15 @@
 		FROM tb_ccg cg
 		where 1=1
 		<choose>
-			<when test="sh_date_rm == 1">and cg.reg_date between #{sh_start_date} and #{sh_end_date}</when>
-			<when test="sh_date_rm == 2">and cg.mod_date between #{sh_start_date} and #{sh_end_date}</when>
+			<when test="sh_date_rm == 0">and cg.reg_date between #{sh_start_date} and #{sh_end_date}</when>
+			<when test="sh_date_rm == 1">and cg.mod_date between #{sh_start_date} and #{sh_end_date}</when>
 			<otherwise></otherwise>
 		</choose>
 		<choose>
 			<when test="sh_div == 0">and cg.code_group_name LIKE CONCAT('%',#{sh_val},'%')</when>
 			<when test="sh_div == 1">and cg.code_en_name LIKE CONCAT('%', #{sh_val} ,'%')</when>
+			<when test="sh_use_ny == 0">and cg.use_ny = #{sh_use_ny}</when>
 			<when test="sh_use_ny == 1">and cg.use_ny = #{sh_use_ny}</when>
-			<when test="sh_use_ny == 2">and cg.use_ny = #{sh_use_ny}</when>
 			<otherwise></otherwise>
 		</choose>
 	</sql>

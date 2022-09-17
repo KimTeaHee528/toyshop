@@ -22,8 +22,8 @@ public class CodeGroupController {
 	// 페이지 유지 
 	public void setSearchAndPaging(codeGroupVo vo) throws Exception {
 		
-		vo.setSh_date_rm(vo.getSh_date_rm() == null ? 0 : vo.getSh_date_rm());
-		vo.setSh_use_ny(vo.getSh_use_ny() == null ? 0 : vo.getSh_use_ny());
+		vo.setSh_date_rm(vo.getSh_date_rm() == null ? null : vo.getSh_date_rm());
+		vo.setSh_use_ny(vo.getSh_use_ny() == null ? null : vo.getSh_use_ny());
 //		vo.setSh_start_date(vo.getSh_start_date() == null || vo.getSh_start_date() == "" ? null : UtilDateTime.add00TimeString(vo.getSh_start_date()));
 //		vo.setSh_end_date(vo.getSh_end_date() == null || vo.getSh_end_date() == "" ? null : UtilDateTime.add59TimeString(vo.getSh_end_date()));\
 		vo.setParamsPaging(service.selectOneCount(vo));

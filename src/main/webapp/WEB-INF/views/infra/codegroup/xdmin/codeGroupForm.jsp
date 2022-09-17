@@ -1,81 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
-<%@ page session="false" %>
+<!-- jstl s -->
+<%@include file="../../common/xdmin/includeV1/jstl.jsp"%>
+<!-- jstl e -->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="M_Adnan">
-<title>관리 페이지</title>
-
-<!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
-<link rel="stylesheet" type="text/css" href="/resources/rs-plugin/css/settings.css"
-	media="screen" />
-
-<link rel="icon" type="image/x-icon" href="/resources/img/faviconT.ico" />
-
-
-<!-- Bootstrap Core CSS -->
-<link href="/resources/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Custom CSS -->
-<link href="/resources/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-<link href="/resources/css/ionicons.min.css" rel="stylesheet">
-<link href="/resources/css/main.css" rel="stylesheet">
-<link href="/resources/css/style.css" rel="stylesheet">
-<link href="/resources/css/responsive.css" rel="stylesheet">
-
-<!-- JavaScripts -->
-<script src="/resources/js/modernizr.js"></script>
-
-<!-- Online Fonts -->
-<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900' rel='stylesheet' type='text/css'>
-
-
-
-</head>
+	<!-- head s -->
+	<%@include file="../../common/xdmin/includeV1/head.jsp"%>
+	<!-- head e -->
 <body>
-	<!-- LOADER -->
-	<div id="loader">
-		<div class="position-center-center">
-			<div class="ldr"></div>
-		</div>
-	</div>
-	<!-- Wrap -->
-	<div id="wrap">
-		<!-- TOP Bar -->
-		<div class="top-bar">
-			<div class="container-adm">
-				<!-- menu -->
-				<div class="login-info" style="float: left;">
-					<ul>
-						<li><a href="#.">사이트 관리</a></li>	
-						<li><a href="/member/memberList">회원 관리</a></li>
-						<li><a href="/codeGroup/codeGroupList">코드 그룹 관리</a></li>
-						<li><a href="/code/codeList">코드 관리</a></li>	
-						<li><a href="#.">상품 관리</a></li>	
-						<li><a href="#.">주문 관리</a></li>	
-					</ul>
-				</div>
-				<!-- Login Info -->
-				<div class="login-info">
-					<ul>
-						<li><a href="#.">HOME</a></li>
-						<li><a href="#.">LOG OUT</a></li>
-						<li><a href="#."> MY ACCOUNT</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
+	<!-- top s -->
+	<%@include file="../../common/xdmin/includeV1/top.jsp"%>
+	<!-- top e -->
+	
 	<!--======= PAGES INNER =========-->
 	<section class="chart-page padding-top-100 padding-bottom-100">
 		<div class="container">
@@ -99,6 +36,7 @@
 								</c:otherwise>
 							</c:choose>
 	<%-- 							<form id="ins" method="post" action="/codeGroup/codeGroupMod?li_seq=<c:out value="${item.seq }"/>"> --%>
+	
 							<form method="GET" name="ccgForm">
 								<!-- Vo s -->
 								<%@include file="../../codegroup/xdmin/codeGroupVo.jsp"%>
@@ -324,139 +262,13 @@
 			</div>
 		</div>
 	</section>
-	<!--======= FOOTER =========-->
-	<footer>
-		<div class="container">
-
-			<!-- ABOUT Location -->
-			<div class="col-md-3">
-				<div class="about-footer">
-					<img class="margin-bottom-30" src="/resources/images/logo-foot.png" alt="">
-					<p>
-						<i class="icon-pointer"></i> Street No. 12, Newyork 12, <br>
-						MD - 123, USA.
-					</p>
-					<p>
-						<i class="icon-call-end"></i> 1.800.123.456789
-					</p>
-					<p>
-						<i class="icon-envelope"></i> info@toyshop.com
-					</p>
-				</div>
-			</div>
-
-			<!-- HELPFUL LINKS -->
-			<div class="col-md-3">
-				<h6>HELPFUL LINKS</h6>
-				<ul class="link">
-					<li><a href="#."> Products</a></li>
-					<li><a href="#."> Find a Store</a></li>
-					<li><a href="#."> Features</a></li>
-					<li><a href="#."> Privacy Policy</a></li>
-					<li><a href="#."> Blog</a></li>
-					<li><a href="#."> Press Kit </a></li>
-				</ul>
-			</div>
-
-			<!-- SHOP -->
-			<div class="col-md-3">
-				<h6>SHOP</h6>
-				<ul class="link">
-					<li><a href="#."> About Us</a></li>
-					<li><a href="#."> Career</a></li>
-					<li><a href="#."> Shipping Methods</a></li>
-					<li><a href="#."> Contact</a></li>
-					<li><a href="#."> Support</a></li>
-					<li><a href="#."> Retailer</a></li>
-				</ul>
-			</div>
-
-			<!-- MY ACCOUNT -->
-			<div class="col-md-3">
-				<h6>MY ACCOUNT</h6>
-				<ul class="link">
-					<li><a href="#."> Login</a></li>
-					<li><a href="#."> My Account</a></li>
-					<li><a href="#."> My Cart</a></li>
-					<li><a href="#."> Wishlist</a></li>
-					<li><a href="#."> Checkout</a></li>
-				</ul>
-			</div>
-			<!-- Rights -->
-			<div class="rights">
-				<p>© 2016 ecoshop All right reserved.</p>
-				<div class="scroll">
-					<a href="#wrap" class="go-up"><i class="lnr lnr-arrow-up"></i></a>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!--======= RIGHTS =========-->
-	<script src="/resources/js/jquery-1.11.3.min.js"></script>
-	<script src="/resources/js/bootstrap.min.js"></script>
-	<script src="/resources/js/own-menu.js"></script>
-	<script src="/resources/js/jquery.lighter.js"></script>
-	<script src="/resources/js/owl.carousel.min.js"></script>
-
-	<!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
-	<script type="text/javascript" src="/resources/rs-plugin/js/jquery.tp.t.min.js"></script>
-	<script type="text/javascript" src="/resources/rs-plugin/js/jquery.tp.min.js"></script>
-	<script src="/resources/js/main.js"></script>
-	<script src="/resources/js/main.js"></script>
 	
-
-	<script type="text/javascript">
-
-	var goUrlView = "/codeGroup/codeGroupView";
-	var goUrlUpdt = "/codeGroup/codeGroupUp";	
-	var goUrlInst = "/codeGroup/codeGroupInst";	
-	var goUrlList = "/codeGroup/codeGroupList";	
+	<!-- foot s -->
+	<%@include file="../../common/xdmin/includeV1/foot.jsp"%>
+	<!-- foot e -->
 	
-	
-	var form = $("form[name=ccgForm]");
-	var form_back = $("form[name=form_back]");
-
-
-	$("#btn_mod").on("click", function(){
-		form.attr("action", goUrlmod).submit();
-	});
-	$("#btn_up").on("click", function(){
-		form.attr("action", goUrlUpdt).submit();
-	});
-	$("#btn_save").on("click", function(){
-		form.attr("action", goUrlInst).submit();
-	});
-	$("#a_list").on("click", function(){
-		form.attr("action", goUrlList).submit();
-	});
-	$("#btn_back").on("click", function(){
-		form.attr("action", goUrlView).submit();
-	});
-	
-	
-	
-	</script>
-	
-
-<!--  	function test(){ -->
-<!--  		console.log(" 코드그룹코드 : " + document.getElementById("first-name").value -->
-<!--  			+ "\n 코드그룹 코드 (Another) : " + document.getElementById("first-name2").value -->
-<!--  			+ "\n 코드그룹 코드 (Another) : " + document.getElementById("code_group_name").value -->
-<!--  			+ "\n 코드그룹 코드 (Another) : " + document.getElementById("first-name3").value -->
-<!--  			+ "\n 코드그룹 코드 (Another) : " + document.getElementById("sort").value -->
-<!--  			+ "\n 코드그룹 코드 (Another) : " + document.getElementById("use_ny").value -->
-<!--  			+ "\n 코드그룹 코드 (Another) : " + document.getElementById("del_ny").value -->
-<!--  		); -->
-<!--  	return false; -->
-<!--  	}; -->
-	
-<!--  	function aaaa(){ -->
-<!--  		if(document.getElementById("codeGroup").value == null){ -->
-<!--  			alert("입력해라"); -->
-<!--  			document.getElementById("codeGroup").value=""; -->
-<!--  			document.getElementById("codeGroup").focus(); -->
-	
-<!--  	return false; -->
-<!--  	} -->
+	<!-- script s -->
+	<%@include file="../../common/xdmin/includeV1/script.jsp"%>
+	<!-- script e -->
 </body>
 </html>
