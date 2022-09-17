@@ -12,7 +12,6 @@
 	<script type="text/javascript" src="/resources/rs-plugin/js/jquery.tp.t.min.js"></script>
 	<script type="text/javascript" src="/resources/rs-plugin/js/jquery.tp.min.js"></script>
 	<script src="/resources/js/main.js"></script>
-	<script src="/resources/js/main.js"></script>
 	
 
 	<script type="text/javascript">
