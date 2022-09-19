@@ -22,6 +22,20 @@
 			<otherwise></otherwise>
 		</choose>
 	</sql>
+
+	<select id="selectListMap" resultMap="resultMapObj">
+		<include refid="Base.selectListUpperForMysql" />
+			SELECT
+			cg.seq
+			,cg.code_group_name
+			,cg.code_en_name
+			,cg.use_ny
+			,cg.reg_date
+			,cg.mod_date
+			,(select count(c.seq) from  tb_cc c where c.ccg_seq = cg.seq) as cnt
+		<include refid="selectCommon" />
+		<include refid="Base.selectListLowerForMysql" />
+	</select>
 	
 	<select id="selectListOne" resultMap="resultMapObj">
 			SELECT
@@ -36,20 +50,6 @@
 			where
 	
 			cg.seq = #{li_seq}
-	</select>
-
-	<select id="selectListMap" resultMap="resultMapObj">
-		<include refid="Base.selectListUpperForMysql" />
-			SELECT
-			cg.seq
-			,cg.code_group_name
-			,cg.code_en_name
-			,cg.use_ny
-			,cg.reg_date
-			,cg.mod_date
-			,(select count(c.seq) from  tb_cc c where c.ccg_seq = cg.seq) as cnt
-		<include refid="selectCommon" />
-		<include refid="Base.selectListLowerForMysql" />
 	</select>
 
 	<select id="selectOneCount" resultType="Integer">
