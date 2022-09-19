@@ -37,7 +37,8 @@
 							</c:choose>
 	<%-- 							<form id="ins" method="post" action="/codeGroup/codeGroupMod?li_seq=<c:out value="${item.seq }"/>"> --%>
 	
-							<form method="GET" name="ccgForm">
+<!-- 							<form method="GET" name="ccgForm"> -->
+							<form name="ccgForm">
 								<!-- Vo s -->
 								<%@include file="../../codegroup/xdmin/codeGroupVo.jsp"%>
 								<!-- Vo e -->

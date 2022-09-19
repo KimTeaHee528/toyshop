@@ -97,7 +97,8 @@
 		</div>
 			<div class="tab-pane" style="margin-bottom: 50px; margin-top: 40px;">
 				<div class="ccg-top">
-					<form id="sh" name="ccgList" method="get" action="/codeGroup/codeGroupList">
+<!-- 					<form id="sh" name="ccgList" method="get" action="/codeGroup/codeGroupList"> -->
+					<form id="sh" name="ccgList" action="/codeGroup/codeGroupList">
 						<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
 <%-- 						<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>"> --%>
 <!-- 						<input type="hidden" name="checkboxSeqArray"> -->
