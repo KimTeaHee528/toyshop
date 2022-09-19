@@ -234,16 +234,16 @@
 									<li class="col-md-12 text-center">
 										<c:choose>
 											<c:when test="${vo.ccgFormMode eq 1}">
-												<button type="button" class="btn" id="a_list">목록</button></a>
+												<button type="button" class="btn" id="btn_list">목록</button></a>
 												<button type="button" class="btn" id="btn_save">저장</button>
 											</c:when>
 											<c:when test="${vo.ccgFormMode eq 2}">
-												<button type="button" class="btn" id="a_list">목록</button></a>
-												<button type="button" class="btn" id="btn_back">뒤로가기</button>
+												<button type="button" class="btn" id="btn_list">목록</button></a>
+												<button type="button" class="btn" id="list_view">뒤로가기</button>
 												<button type="button" class="btn" id="btn_up">수정완료</button>
 											</c:when>
 											<c:otherwise>
-												<button type="button" class="btn" id="a_list">목록</button></a>
+												<button type="button" class="btn" id="btn_list">목록</button></a>
 												<button type="button" class="btn">삭제</button>
 												<button type="button" class="btn" id="btn_mod">수정</button>
 											</c:otherwise>
@@ -270,5 +270,30 @@
 	<!-- script s -->
 	<%@include file="../../common/xdmin/includeV1/script.jsp"%>
 	<!-- script e -->
+	
+	<script type="text/javascript">
+	var goUrlView = "/codeGroup/codeGroupView";
+	var goUrlUpdt = "/codeGroup/codeGroupUp";	
+	var goUrlInst = "/codeGroup/codeGroupInst";	
+	var goUrlList = "/codeGroup/codeGroupList";	
+	var goUrlmod = "/codeGroup/codeGroupMod";	
+	var form = $("form[name=ccgForm]");
+	var form_back = $("form[name=form_back]");
+	$("#btn_mod").on("click", function(){
+		form.attr("action", goUrlmod).submit();
+	});
+	$("#btn_up").on("click", function(){
+		form.attr("action", goUrlUpdt).submit();
+	});
+	$("#btn_save").on("click", function(){
+		form.attr("action", goUrlInst).submit();
+	});
+	$("#btn_list").on("click", function(){
+		form_back.attr("action", goUrlList).submit();
+	});
+	$("#list_view").on("click", function(){
+		form.attr("action", goUrlView).submit();
+	});
+	</script>
 </body>
 </html>

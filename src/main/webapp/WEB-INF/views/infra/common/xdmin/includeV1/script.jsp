@@ -14,38 +14,6 @@
 	<script src="/resources/js/main.js"></script>
 	
 
-	<script type="text/javascript">
-
-	var goUrlView = "/codeGroup/codeGroupView";
-	var goUrlUpdt = "/codeGroup/codeGroupUp";	
-	var goUrlInst = "/codeGroup/codeGroupInst";	
-	var goUrlList = "/codeGroup/codeGroupList";	
-	var goUrlmod = "/codeGroup/codeGroupMod";	
-	
-	
-	var form = $("form[name=ccgForm]");
-	var form_back = $("form[name=form_back]");
-
-
-	$("#btn_mod").on("click", function(){
-		form.attr("action", goUrlmod).submit();
-	});
-	$("#btn_up").on("click", function(){
-		form.attr("action", goUrlUpdt).submit();
-	});
-	$("#btn_save").on("click", function(){
-		form.attr("action", goUrlInst).submit();
-	});
-	$("#a_list").on("click", function(){
-		form_back.attr("action", goUrlList).submit();
-	});
-	$("#btn_back").on("click", function(){
-		form.attr("action", goUrlView).submit();
-	});
-	
-	
-	
-	</script>
 	
 
 <!--  	function test(){ -->

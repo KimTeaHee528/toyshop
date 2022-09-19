@@ -351,9 +351,11 @@
 	
 	<script type="text/javascript">
 	
-		var goUrlList = "/codeGroup/codeGroupList";
 		var goUrlView = "/codeGroup/codeGroupView";
+		var goUrlList = "/codeGroup/codeGroupList";
 		var goUrlReg = "/codeGroup/codeGroupReg";
+		
+		
 		var form = $("form[name=ccgList]");
 		var li_seq = $("input[name=li_seq]");
 		
