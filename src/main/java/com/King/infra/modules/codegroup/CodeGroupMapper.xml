@@ -57,13 +57,6 @@
 		<include refid="selectCommon" />
 	</select>
 	
-	
-	
-	
-	
-	
-	
-	
 	<insert id="insert">
 		<selectKey resultType="String" keyProperty="seq" order="AFTER">
 			SELECT last_insert_id()
