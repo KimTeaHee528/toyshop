@@ -56,66 +56,17 @@
 <![endif]-->
 </head>
 <body>
-
-	<!-- LOADER -->
-<!-- 	<div id="loader"> -->
-<!-- 		<div class="position-center-center"> -->
-<!-- 			<div class="ldr"></div> -->
-<!-- 		</div> -->
-<!-- 	</div> -->
-	<!-- Wrap -->
-	<div id="wrap">
-		<!-- TOP Bar -->
-		<div class="top-bar">
-			<div class="container-adm">
-				<!-- menu -->
-				<div class="login-info" style="float: left;">
-					<ul>
-						<li><a href="#.">사이트 관리</a></li>	
-						<li><a href="/member/memberList">회원 관리</a></li>
-						<li><a href="/codeGroup/codeGroupList">코드 그룹 관리</a></li>
-						<li><a href="/code/codeList">코드 관리</a></li>	
-						<li><a href="#.">상품 관리</a></li>	
-						<li><a href="#.">주문 관리</a></li>	
-					</ul>
-				</div>
-				<!-- Login Info -->
-				<div class="login-info">
-					<ul>
-						<li><a href="#.">HOME</a></li>
-						<li><a href="#.">LOG OUT</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	<!-- top s -->
+	<%@include file="../../common/xdmin/includeV1/top.jsp"%>
+	<!-- top e -->
 		<!--=========내용=========-->
 	<div style="display:block; width: 100%; text-align: center;">
 		<div style="display: inline-block; text-align: center; width: 1500px;">
 		<div style="display: block; float: top; float: left; font-size: 30px; margin-top: 30px;">코드 그룹 관리
-<!-- 			<button type="submit" class="btn" style="font-size: 10px; width: 60px; height: 30px; text-align: center;">삭제</button> -->
-<!-- 			<a href="/codeGroup/codeGroupReg"><button type="submit" class="btn">등록</button></a> -->
 		</div>
 			<div class="tab-pane" style="margin-bottom: 50px; margin-top: 40px;">
-				<div class="ccg-top">
-<!-- 					<form id="sh" name="ccgList" method="get" action="/codeGroup/codeGroupList"> -->
-					<form id="sh" name="ccgList" action="/codeGroup/codeGroupList">
+				<form id="sh" name="ccgList" action="/codeGroup/codeGroupList">
+					<div class="ccg-top">
 						<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
 <%-- 						<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>"> --%>
 <!-- 						<input type="hidden" name="checkboxSeqArray"> -->

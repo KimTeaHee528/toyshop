@@ -25,6 +25,7 @@ public class memberController {
 		List<Member> list = service.selectListService(vo);
 		model.addAttribute("list", list);
 				
+		System.out.println("vo.getSh_div()"+vo.getSh_div());
 		return "infra/member/xdmin/memberList";
 	}	
 	
