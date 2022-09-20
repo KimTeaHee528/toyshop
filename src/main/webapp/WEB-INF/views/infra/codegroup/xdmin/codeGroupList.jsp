@@ -226,8 +226,8 @@
 										
 										
 										
+<%-- 										<c:set var="listCodeGrouptest" value="${CodeGroupServiceImpl.selectListCachedCodeGroupArrayList('3')}"/> --%>
 <%-- 										<c:forEach items="${listCodeGrouptest}" var="listGender" varStatus="statusGender"> --%>
-<%-- 											<c:set var="listCodeGrouptest" value="${CodeGroupServiceImpl.selectListCachedCodeGroupArrayList('3')}"/> --%>
 <%-- 											<c:if test="${list.code_group_name eq listGender.code_group_name}"><c:out value="${listGender.code_group_name }"/></c:if> --%>
 <%-- 										</c:forEach> --%>
 										

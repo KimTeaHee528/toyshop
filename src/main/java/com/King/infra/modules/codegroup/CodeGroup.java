@@ -18,8 +18,11 @@ public class CodeGroup {
 	private Date mod_date;
 	private Integer cnt;
 //	private String del_ny;
+	
+	
+	
 //	for cache
-	public static List<CodeGroup> cachedCodeArrayList = new ArrayList<CodeGroup>();
+//	public static List<CodeGroup> cachedCodeArrayList = new ArrayList<CodeGroup>();
 	
 	
 }
