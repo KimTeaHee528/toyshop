@@ -88,6 +88,22 @@
 			</div>
 		</div>
 	</div>
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 		<!--=========내용=========-->
 	<div style="display:block; width: 100%; text-align: center;">
 		<div style="display: inline-block; text-align: center; width: 1500px;">
@@ -205,6 +221,19 @@
 											<c:out value="${list.seq }"/>
 										</div>
 										<div class="list-4">
+										
+										
+										
+										
+										
+<%-- 										<c:forEach items="${listCodeGrouptest}" var="listGender" varStatus="statusGender"> --%>
+<%-- 											<c:set var="listCodeGrouptest" value="${CodeGroupServiceImpl.selectListCachedCodeGroupArrayList('3')}"/> --%>
+<%-- 											<c:if test="${list.code_group_name eq listGender.code_group_name}"><c:out value="${listGender.code_group_name }"/></c:if> --%>
+<%-- 										</c:forEach> --%>
+										
+					
+					
+					
 											<c:choose>
 												<c:when test="${not empty list.code_group_name}"><c:out value="${list.code_group_name }"/></c:when>
 												<c:otherwise>--</c:otherwise>

@@ -44,6 +44,9 @@ public class CodeGroupDao {
 		
 		return sqlSession.update(namespace + ".updateCodeGroup", dto);
 	}
-	
+//	for cache
+	public List<CodeGroup> selectListCachedCodeGroupArrayList(){ 
+		return sqlSession.selectList(namespace + ".selectListCachedCodeGroupArrayList", null); 
+	}
 	
 }

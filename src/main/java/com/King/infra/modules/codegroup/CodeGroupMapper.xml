@@ -52,6 +52,21 @@
 			cg.seq = #{li_seq}
 	</select>
 
+
+
+    <select id="selectListCachedCodeGroupArrayList" resultMap="resultMapObj">
+		SELECT 
+			seq
+			, code_group_name
+		FROM
+			tb_ccg
+		WHERE 1=1
+			AND use_ny = 1
+    </select>
+
+
+
+
 	<select id="selectOneCount" resultType="Integer">
 		SELECT COUNT(*) as totalRows
 		<include refid="selectCommon" />
