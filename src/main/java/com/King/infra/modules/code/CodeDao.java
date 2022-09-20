@@ -34,4 +34,10 @@ public class CodeDao {
 	public Code selectOne(codeVo vo) {
 		return sqlSession.selectOne(namespace + ".selectOne", vo);
 	}
+	
+	
+//	for cache
+	public List<Code> selectListCachedCodeArrayList(){ return sqlSession.selectList(namespace + ".selectListCachedCodeArrayList", null); }
+	
+	
 }

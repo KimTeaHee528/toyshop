@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
@@ -221,19 +222,6 @@
 											<c:out value="${list.seq }"/>
 										</div>
 										<div class="list-4">
-										
-										
-										
-										
-										
-<%-- 										<c:set var="listCodeGrouptest" value="${CodeGroupServiceImpl.selectListCachedCodeGroupArrayList('3')}"/> --%>
-<%-- 										<c:forEach items="${listCodeGrouptest}" var="listGender" varStatus="statusGender"> --%>
-<%-- 											<c:if test="${list.code_group_name eq listGender.code_group_name}"><c:out value="${listGender.code_group_name }"/></c:if> --%>
-<%-- 										</c:forEach> --%>
-										
-					
-					
-					
 											<c:choose>
 												<c:when test="${not empty list.code_group_name}"><c:out value="${list.code_group_name }"/></c:when>
 												<c:otherwise>--</c:otherwise>

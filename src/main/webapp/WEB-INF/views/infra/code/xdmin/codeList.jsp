@@ -1,3 +1,4 @@
+<jsp:useBean id="CodeServiceImpl" class="com.King.infra.modules.code.CodeServiceImpl"/>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
@@ -186,6 +187,13 @@
 								<input type="checkbox">
 							</div>
 							<div class="list-2">
+							
+							<c:set var="listCodeCarrier" value="${CodeServiceImpl.selectListCachedCode('1')}"/>
+							<c:forEach items="${listCodeCarrier}" var="listCodeCarrier" varStatus="statusCarrier">
+								<c:if test="${list.ccg_seq eq listCodeCarrier.ccg_seq}"><c:out value="${listCodeCarrier.code_name }"/></c:if>
+							</c:forEach>
+							
+							
 								<c:choose>
 									<c:when test="${not empty list.seq}"><c:out value="${list.seq }"/></c:when>
 									<c:otherwise>--</c:otherwise>

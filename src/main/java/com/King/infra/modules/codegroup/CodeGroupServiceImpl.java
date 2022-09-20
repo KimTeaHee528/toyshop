@@ -1,6 +1,9 @@
 package com.King.infra.modules.codegroup;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,14 +40,5 @@ public class CodeGroupServiceImpl implements CodeGroupService {
 	public int update(CodeGroup dto) throws Exception {
 		return dao.update(dto);
 	}
-	
-//	@PostConstruct
-//	public void selectListCachedCodeGroupArrayList() throws Exception {
-//		List<CodeGroup> codeGroupListFromDb = (ArrayList<CodeGroup>) dao.selectListCachedCodeGroupArrayList();
-////		codeListFromDb = (ArrayList<Code>) dao.selectListCachedCodeArrayList();
-//		CodeGroup.cachedCodeArrayList.clear(); 
-//		CodeGroup.cachedCodeArrayList.addAll(codeGroupListFromDb);
-//		System.out.println("cachedCodeGroupArrayList: " + CodeGroup.cachedCodeArrayList.size() + " chached !");
-//	}
 	
 }

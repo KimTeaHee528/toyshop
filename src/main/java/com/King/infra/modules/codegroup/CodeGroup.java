@@ -1,8 +1,6 @@
 package com.King.infra.modules.codegroup;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import lombok.Data;
 
@@ -18,11 +16,6 @@ public class CodeGroup {
 	private Date mod_date;
 	private Integer cnt;
 //	private String del_ny;
-	
-	
-	
-//	for cache
-//	public static List<CodeGroup> cachedCodeArrayList = new ArrayList<CodeGroup>();
 	
 	
 }

@@ -1,6 +1,8 @@
 package com.King.infra.modules.code;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import lombok.Data;
 
@@ -18,6 +20,8 @@ public class Code {
 	private Date mod_date;
 	private Integer cnt;
 	
+//	for cache
+	public static List<Code> cachedCodeArrayList = new ArrayList<Code>();
 	
 //	
 //	private String seq;

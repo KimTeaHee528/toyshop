@@ -57,7 +57,7 @@
     <select id="selectListCachedCodeGroupArrayList" resultMap="resultMapObj">
 		SELECT 
 			seq
-			, code_group_name
+			,code_group_name 
 		FROM
 			tb_ccg
 		WHERE 1=1

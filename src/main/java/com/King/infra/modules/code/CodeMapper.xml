@@ -67,7 +67,16 @@
 		
 	</select>
 	
-	
+    <select id="selectListCachedCodeArrayList" resultMap="resultMapObj">
+		SELECT 
+			seq
+			, code_name
+			, ccg_seq
+		FROM
+			tb_cc
+		WHERE 1=1
+		    AND use_ny = 1
+    </select>
 	
 	
 	
