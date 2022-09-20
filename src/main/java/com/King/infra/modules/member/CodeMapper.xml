@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.King.infra.modules.member.MemberMapper">
+
+    <resultMap id="resultMapObj" type="com.King.infra.modules.member.Member"></resultMap>
+	<select id="selectList" resultMap="resultMapObj">
+		SELECT
+			seq
+		    ,name
+		    ,id
+		    ,gender
+		    ,dob
+		    ,zip_code
+		    ,address
+		    ,address_detail
+		    ,tell
+		    ,email
+		    ,admin_ny
+		    ,reg_date
+		    ,mod_date
+		    ,del_ny
+		FROM tb_member
+		where 1=1
+			<choose>
+				<when test="sh_date_option == 0"> and reg_date between #{sh_start_date} and #{sh_end_date}</when>
+				<when test="sh_date_option == 1"> and mod_date between #{sh_start_date} and #{sh_end_date}</when>
+				<when test="sh_date_option == 2"> and del_date between #{sh_start_date} and #{sh_end_date}</when>
+				<when test="sh_date_option == 3"> and dob between #{sh_start_date} and #{sh_end_date}</when>
+				<otherwise></otherwise>
+			</choose>
+			<choose>
+				<when test="sh_div == 0">and seq = #{sh_val}</when>
+				<when test="sh_div == 1">and name LIKE CONCAT('%',#{sh_val},'%')</when>
+				<when test="sh_div == 2">and id LIKE CONCAT('%',#{sh_val},'%')</when>
+				<when test="sh_div == 3">and gender LIKE CONCAT('%',#{sh_val},'%')</when>
+				<when test="sh_div == 4">and address LIKE CONCAT('%',#{sh_val},'%')</when>
+				<when test="sh_div == 5">and tell LIKE CONCAT('%',#{sh_val},'%')</when>
+				<when test="sh_div == 6">and email LIKE CONCAT('%',#{sh_val},'%')</when>
+				<otherwise></otherwise>
+			</choose>
+			<choose>
+				<when test="sh_admin_ny == 0">and admin_ny = 0</when>
+				<when test="sh_admin_ny == 1">and admin_ny = 1</when>
+				<otherwise></otherwise>
+			</choose>
+	</select>
+	<select id="selectOneCount" resultType="Integer">
+		SELECT COUNT(*) as totalRows
+		FROM tb_member
+		where 1=1
+			<choose>
+				<when test="sh_date_option == 0"> and reg_date between #{sh_start_date} and #{sh_end_date}</when>
+				<when test="sh_date_option == 1"> and mod_date between #{sh_start_date} and #{sh_end_date}</when>
+				<when test="sh_date_option == 2"> and del_date between #{sh_start_date} and #{sh_end_date}</when>
+				<when test="sh_date_option == 3"> and dob between #{sh_start_date} and #{sh_end_date}</when>
+				<otherwise></otherwise>
+			</choose>
+			<choose>
+				<when test="sh_div == 0">and seq = #{sh_val}</when>
+				<when test="sh_div == 1">and name LIKE CONCAT('%',#{sh_val},'%')</when>
+				<when test="sh_div == 2">and id LIKE CONCAT('%',#{sh_val},'%')</when>
+				<when test="sh_div == 3">and gender LIKE CONCAT('%',#{sh_val},'%')</when>
+				<when test="sh_div == 4">and address LIKE CONCAT('%',#{sh_val},'%')</when>
+				<when test="sh_div == 5">and tell LIKE CONCAT('%',#{sh_val},'%')</when>
+				<when test="sh_div == 6">and email LIKE CONCAT('%',#{sh_val},'%')</when>
+				<otherwise></otherwise>
+			</choose>
+			<choose>
+				<when test="sh_admin_ny == 0">and admin_ny = 0</when>
+				<when test="sh_admin_ny == 1">and admin_ny = 1</when>
+				<otherwise></otherwise>
+			</choose>
+	</select>
+
+</mapper>

@@ -51,8 +51,6 @@ public class CodeController {
 		return "redirect:/code/codeList";
 	}
 	
-	
-	
 
 	@RequestMapping(value = "codeView")
 	public String codeView(Model model, @ModelAttribute("vo") codeVo vo) throws Exception {

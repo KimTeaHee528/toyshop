@@ -110,7 +110,6 @@
 								<option>이름</option>
 								<option>ID</option>
 								<option>성별</option>
-								<option>나이</option>
 								<option>주소</option>
 								<option>전화번호</option>
 								<option>E-mail</option>
@@ -162,46 +161,72 @@
 						탈퇴일
 					</div>
 				</div>
-				<a href="">
-					<div class="member-list-body">
-						<div class="list-1">
-							<input type="checkbox">
+				
+				<c:choose>
+					<c:when test="${fn:length(list) eq 0}">
+						<div class="ccg-list-body" style="height: 45px; text-align:center;">
+							데이터가 없습니다.
 						</div>
-						<div class="list-2">
-							55
-						</div>
-						<div class="list-3">
-							김태희
-						</div>
-						<div class="list-4">
-							spm528
-						</div>
-						<div class="list-5">
-							M
-						</div>
-						<div class="list-6">
-							32
-						</div>
-						<div class="list-7">
-							서울 관악구 양녕로6나길 18
-						</div>
-						<div class="list-8">
-							010-3015-7203
-						</div>
-						<div class="list-9">
-							spmm528@gmail.com
-						</div>
-						<div class="list-10">
-							Y
-						</div>
-						<div class="list-11">
-							2022-08-30
-						</div>
-						<div class="list-12">
-							--
-						</div>
-					</div>
-				</a>
+					</c:when>
+						<c:otherwise>
+							<c:forEach items="${list}" var="list" varStatus="status">
+								<a href="">
+									<div class="member-list-body">
+										<div class="list-1">
+											<input type="checkbox">
+										</div>
+										<div class="list-2">
+											<c:out value="${list.seq }"/>
+										</div>
+										
+										<div class="list-3">
+											<c:out value="${list.name }"/>
+										</div>
+										<div class="list-4">
+											<c:out value="${list.id }"/>
+										</div>
+										<div class="list-5">
+											<c:out value="${list.gender }"/>
+										</div>
+										<div class="list-6">
+											<c:out value="${list.dob }"/>
+										</div>
+										<div class="list-7">
+											<c:out value="${list.address }"/>
+										</div>
+										<div class="list-8">
+											<c:out value="${list.tell }"/>
+										</div>
+										<div class="list-9">
+											<c:out value="${list.email }"/>
+										</div>
+										<div class="list-10">
+											<c:choose>
+												<c:when test="${list.admin_ny = "1"}">Y<fmt:formatDate value="${list.reg_date }" pattern="yy-MM-dd HH:mm:ss"/></c:when>
+												<c:otherwise>N</c:otherwise>
+											</c:choose>
+										</div>
+										<div class="list-11">
+											<c:out value="${list.reg_date }"/>
+										</div>
+										<div class="list-12">
+											<c:out value="${list.del_date }"/>
+										</div>
+									</div>
+								</a>
+							</c:forEach>
+						</c:otherwise>
+					</c:choose>
+					<!-- pagination s -->
+					<%@include file="../../common/xdmin/includeV1/pagination.jsp"%>
+					<!-- pagination e -->
+					</form>
+				
+			
+				
+				
+				
+				
 				<a href="">
 					<div class="member-list-body">
 						<div class="list-1">
