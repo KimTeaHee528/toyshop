@@ -19,7 +19,6 @@ public class CodeGroupController {
 
 	
 	
-	
 	// 페이지 유지 
 	public void setSearchAndPaging(codeGroupVo vo) throws Exception {
 		
