@@ -6,7 +6,7 @@
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 <%@ page session="false" %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -202,15 +202,15 @@
 										</div>
 										<div class="list-10">
 											<c:choose>
-												<c:when test="${list.admin_ny = "1"}">Y<fmt:formatDate value="${list.reg_date }" pattern="yy-MM-dd HH:mm:ss"/></c:when>
+												<c:when test="${list.admin_ny eq 1}">Y</c:when>
 												<c:otherwise>N</c:otherwise>
 											</c:choose>
 										</div>
 										<div class="list-11">
-											<c:out value="${list.reg_date }"/>
+											<fmt:formatDate value="${list.reg_date }" pattern="yy-MM-dd HH:mm:ss"/>
 										</div>
 										<div class="list-12">
-											<c:out value="${list.del_date }"/>
+											<fmt:formatDate value="${list.del_date }" pattern="yy-MM-dd HH:mm:ss"/>
 										</div>
 									</div>
 								</a>
@@ -221,92 +221,6 @@
 					<%@include file="../../common/xdmin/includeV1/pagination.jsp"%>
 					<!-- pagination e -->
 					</form>
-				
-			
-				
-				
-				
-				
-				<a href="">
-					<div class="member-list-body">
-						<div class="list-1">
-							<input type="checkbox">
-						</div>
-						<div class="list-2">
-							55
-						</div>
-						<div class="list-3">
-							김태희
-						</div>
-						<div class="list-4">
-							spm528
-						</div>
-						<div class="list-5">
-							M
-						</div>
-						<div class="list-6">
-							32
-						</div>
-						<div class="list-7">
-							서울 관악구 양녕로6나길 18
-						</div>
-						<div class="list-8">
-							010-3015-7203
-						</div>
-						<div class="list-9">
-							spmm528@gmail.com
-						</div>
-						<div class="list-10">
-							N
-						</div>
-						<div class="list-11">
-							2022-08-30
-						</div>
-						<div class="list-12">
-							--
-						</div>
-					</div>
-				</a>
-				<a href="">
-					<div class="member-list-body">
-						<div class="list-1">
-							<input type="checkbox">
-						</div>
-						<div class="list-2">
-							55
-						</div>
-						<div class="list-3">
-							김태희
-						</div>
-						<div class="list-4">
-							spm528
-						</div>
-						<div class="list-5">
-							M
-						</div>
-						<div class="list-6">
-							32
-						</div>
-						<div class="list-7">
-							서울 관악구 양녕로6나길 18
-						</div>
-						<div class="list-8">
-							010-3015-7203
-						</div>
-						<div class="list-9">
-							spmm528@gmail.com
-						</div>
-						<div class="list-10">
-							N
-						</div>
-						<div class="list-11">
-							2022-08-30
-						</div>
-						<div class="list-12">
-							--
-						</div>
-					</div>
-				</a>
 			</div>
 <!--   리스트 넣는곳   -->
 		</div>
