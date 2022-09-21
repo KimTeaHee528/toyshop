@@ -11,6 +11,14 @@ public class MemberVo extends BaseVo {
 	private String sh_end_date;
 	private String sh_val;
 	private Integer sh_div;
+	private Integer memberMode;
+	
+	public Integer getMemberMode() {
+		return memberMode;
+	}
+	public void setMemberMode(Integer memberMode) {
+		this.memberMode = memberMode;
+	}
 	public Integer getSh_admin_ny() {
 		return sh_admin_ny;
 	}

@@ -18,7 +18,7 @@ public class memberController {
 
 	// 리스트 페이지
 	@RequestMapping(value = "memberList")
-	public String codeGroupList(Model model,@ModelAttribute("vo") MemberVo vo) throws Exception {
+	public String memberList(Model model,@ModelAttribute("vo") MemberVo vo) throws Exception {
 		
 		vo.setParamsPaging(service.selectOneCount(vo));
 		
@@ -29,6 +29,22 @@ public class memberController {
 		return "infra/member/xdmin/memberList";
 	}	
 	
+	
+	// 폼 뷰
+	@RequestMapping(value = "memberView")
+	public String memberView(Model model,@ModelAttribute("vo") MemberVo vo) throws Exception {
+		vo.setMemberMode(0);
+		
+		
 
+		
+		return "infra/member/xdmin/memberForm";
+	}	
+	
+
+	
+	
+	
+	
 
 }
