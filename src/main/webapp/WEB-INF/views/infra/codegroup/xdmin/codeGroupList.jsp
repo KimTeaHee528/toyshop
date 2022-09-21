@@ -65,7 +65,7 @@
 		<div style="display: block; float: top; float: left; font-size: 30px; margin-top: 30px;">코드 그룹 관리
 		</div>
 			<div class="tab-pane" style="margin-bottom: 50px; margin-top: 40px;">
-				<form id="sh" name="ccgList" action="/codeGroup/codeGroupList">
+				<form id="sh" method="post" name="ccgList" action="/codeGroup/codeGroupList">
 					<div class="ccg-top">
 						<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
 <%-- 						<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>"> --%>

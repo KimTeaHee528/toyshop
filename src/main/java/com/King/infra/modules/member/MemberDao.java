@@ -29,4 +29,13 @@ public class MemberDao {
 		
 	}
 	
+	
+	public Member selectOne(MemberVo vo) {
+		return sqlSession.selectOne(namespace + ".selectListOne", vo);
+		
+	}
+	
+	
+	
+	
 }

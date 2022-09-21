@@ -22,7 +22,9 @@
 		    ,admin_ny
 		    ,reg_date
 		    ,mod_date
+		    ,del_date
 		    ,del_ny
+		    ,pw
 		FROM tb_member
 		where 1=1
 			<choose>
@@ -76,7 +78,28 @@
 			</choose>
 	</select>
 
-	
+	<select id="selectListOne" resultMap="resultMapObj">
+			SELECT
+			seq
+		    ,name
+		    ,id
+		    ,gender
+		    ,dob
+		    ,zip_code
+		    ,address
+		    ,address_detail
+		    ,tell
+		    ,email
+		    ,admin_ny
+		    ,reg_date
+		    ,mod_date
+		    ,del_date
+		    ,del_ny
+		    ,pw
+			From tb_member
+			where
+			seq = #{li_seq}
+	</select>
 	
 	
 	

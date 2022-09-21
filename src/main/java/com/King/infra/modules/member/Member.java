@@ -19,6 +19,7 @@ public class Member {
 	private String reg_date;
 	private String mod_date;
 	private String del_date;
+	private String del_ny;
 	
 	
 	

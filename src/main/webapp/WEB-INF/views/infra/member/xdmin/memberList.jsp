@@ -46,7 +46,7 @@
 		<div style="display: inline-block; text-align: center; width: 1500px;">
 		<div style="display: block; float: top; float: left; font-size: 30px; margin-top: 30px;">회원 관리</div>
 			<div class="tab-pane" style="margin-bottom: 50px; margin-top: 40px;">
-				<form id="sh" name="ccgList" action="/member/memberList">
+				<form id="sh" name="memberList" action="/member/memberList">
 				<div class="member-top">
 					<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
 					<div style="display: inline-block; margin-right: 25px; margin-bottom: 30px; float: left;">
@@ -155,7 +155,8 @@
 					</c:when>
 					<c:otherwise>
 						<c:forEach items="${list}" var="list" varStatus="status">
-							<a href="">
+							<input type="hidden" name="li_seq" value="<c:out value="${list.seq}"/>"/>
+							<a href="javascript:goForm(<c:out value="${list.seq}"/>)">
 								<div class="member-list-body">
 									<div class="list-1">
 										<input type="checkbox">
@@ -192,10 +193,10 @@
 										</c:choose>
 									</div>
 									<div class="list-11">
-										<fmt:formatDate value="${list.reg_date }" pattern="yy-MM-dd HH:mm:ss"/>
+										<fmt:formatDate value="${list.reg_date}" pattern="yy-MM-dd HH:mm:ss"/>
 									</div>
 									<div class="list-12">
-										<fmt:formatDate value="${list.del_date }" pattern="yy-MM-dd HH:mm:ss"/>
+										<fmt:formatDate value="${list.del_date}" pattern="yy-MM-dd HH:mm:ss"/>
 									</div>
 								</div>
 							</a>
@@ -302,5 +303,44 @@
 	<script type="text/javascript" src="/resources/rs-plugin/js/jquery.tp.min.js"></script>
 	<script src="/resources/js/main.js"></script>
 	<script src="/resources/js/main.js"></script>
+	
+	<script type="text/javascript">
+	
+		var goUrlView = "/member/memberView";
+		var goUrlList = "/member/memberList";
+		var goUrlReg = "/member/memberReg";
+		
+		
+		var form = $("form[name=memberList]");
+		var li_seq = $("input[name=li_seq]");
+		
+// 		function list_one(){
+// 			document.getElementById("first-name2").value
+// 		return false;
+// 		};
+		
+		goList = function(thisPage){
+			$("input:hidden[name=thisPage]").val(thisPage);
+			form.attr("action",goUrlList).submit();
+		}
+		goForm = function(seq){
+			li_seq.val(seq);
+			form.attr("action",goUrlView).submit();
+		}
+		
+		$("#list_view").on("click", function(){
+			form.attr("action", goUrlView).submit();
+		});
+		
+		$("#btn_reg").on("click", function(){
+			form.attr("action", goUrlReg).submit();
+		});
+		
+		
+
+	</script>
+	
+	
+	
 </body>
 </html>
