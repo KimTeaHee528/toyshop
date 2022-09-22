@@ -12,7 +12,9 @@
 	<script type="text/javascript" src="/resources/rs-plugin/js/jquery.tp.t.min.js"></script>
 	<script type="text/javascript" src="/resources/rs-plugin/js/jquery.tp.min.js"></script>
 	<script src="/resources/js/main.js"></script>
-	
+	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=10eb2423c0789bba7beb31339f47651a&libraries=services,clusterer,drawing"></script>
+
 
 	
 
