@@ -280,6 +280,12 @@
 						if (status == daum.maps.services.Status.OK) {
 							document.getElementById("sample4_y").value=result[0].y;
 							document.getElementById("sample4_x").value=result[0].x;
+							
+							
+							
+							
+							
+							
 						    var moveLatLon = new kakao.maps.LatLng(result[0].x, result[0].y);
 						    // 지도 중심을 이동 시킵니다
 						    map.setCenter(moveLatLon);
