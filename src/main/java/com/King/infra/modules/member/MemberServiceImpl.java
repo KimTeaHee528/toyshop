@@ -15,7 +15,7 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public List<Member> selectListService(MemberVo vo) throws Exception {
 		
-		vo.setSh_start_date(vo.getSh_start_date() + " 00:00:00");
+//		vo.setSh_start_date(vo.getSh_start_date() + " 00:00:00");
 		vo.setSh_end_date(vo.getSh_end_date() + " 23:59:59");
 		return dao.selectListDao(vo);
 	}

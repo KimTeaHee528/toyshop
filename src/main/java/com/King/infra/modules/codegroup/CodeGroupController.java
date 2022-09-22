@@ -99,16 +99,7 @@ public class CodeGroupController {
 	}	
 	
 	
-//	
-//	@RequestMapping(value="codeGroupUp")
-//	public String codeGroupUp(codeGroupVo vo, CodeGroup dto, RedirectAttributes RedirectAttributes) throws Exception {
-//		service.update(dto);
-//		RedirectAttributes.addFlashAttribute("vo", vo);
-//		
-//		return "redirect:/codeGroup/codeGroupList";
-//		
-//		
-//	}
+
 	
 
 }

@@ -40,10 +40,20 @@ public class memberController {
 		return "infra/member/xdmin/memberForm";
 	}	
 	
-
 	
+	// 유저 회원가입
+	@RequestMapping(value = "memberRegUser")
+	public String memberRegUser() throws Exception {
+		
+		return "infra/member/user/memberReg";
+	}	
 	
-	
+	// 로그인
+	@RequestMapping(value = "memberLogin")
+	public String memberLogin() throws Exception {
+		
+		return "infra/member/user/login";
+	}	
 	
 
 }

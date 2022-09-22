@@ -19,7 +19,8 @@ public class MemberDao {
 
 
 	public List<Member> selectListDao(MemberVo vo) {
-		return sqlSession.selectList(namespace + ".selectList", vo);
+//		return sqlSession.selectList(namespace + ".selectList", vo);
+		return sqlSession.selectList("com.King.infra.modules.member.MemberMapper.selectList", vo);
 
 	}
 	

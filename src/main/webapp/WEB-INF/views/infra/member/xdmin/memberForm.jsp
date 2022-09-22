@@ -60,7 +60,7 @@
               <!-- ESTIMATE SHIPPING & TAX -->
               <div class="col-sm-12">
 				<input type="hidden" name="li_seq" value="<c:out value="${item.seq }"/>">
-                <h6 style="padding-left: 50px;">회원정보 <span style="font-size: 17px; font-weight: lighter;">: <c:out value="${item.seq }"/></span> </h6>
+                <h6 style="padding-left: 50px;">회원정보 <span style="font-size: 17px; font-weight: lighter;">회원번호: <c:out value="${item.seq }"/></span> </h6>
                 <form>
                   <ul class="row">
                     <!-- Name -->
@@ -145,23 +145,48 @@
                     <div class="col-md-2"> 
                       <!-- ADDRESS -->
                       <label>&nbsp;
-                      	<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기">
+                      	<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기" id="btn_sh_ad">
                       </label>
                     </div>
                     <div class="col-md-12"> 
                       <!-- ADDRESS -->
                       <label>*도로명 주소
                      	<input type="text" id="sample4_roadAddress" name="address" value="<c:out value="${item.address }"/>" placeholder="도로명주소">
-<%--                         <input type="text" name="address" value="<c:out value="${item.address }"/>" placeholder=""> --%>
                       </label>
                     </div>
-                    <!-- TOWN/CITY -->
+                    <!-- ADDRESS_DETAil -->
                     <div class="col-md-12">
                       <label>*상세주소
                       	<input type="text" id="sample4_detailAddress" name="address" value="<c:out value="${item.address_detail }"/>" placeholder="상세주소">
-<%--                         <input type="text" name="address" value="<c:out value="${item.address_detail }"/>" placeholder=""> --%>
                       </label>
                     </div>
+                    <!-- x -->
+                    <div class="col-md-6">
+                      <label>*위도
+                      	<input type="text" id="sample4_x" name="get_x">
+                      </label>
+                    </div>
+                    <!-- y -->
+                    <div class="col-md-6">
+                      <label>*경도
+                      	<input type="text" id="sample4_y" name="get_y">
+                      </label>
+                    </div>
+                    
+                    
+                    
+                    
+                    <div class="col-md-12">
+						<div id="map" style="width:100%;height:350px;"></div>
+					</div>
+
+
+
+
+                    
+                    
+                    
+                    
                    <div class="col-md-6" style="margin-top: 0px;">
                      <label><span class="pwl" id="pwid">*비밀번호</span> 
                        <input type="password" class="pw" id="pw" name="" value="" placeholder="">
@@ -305,10 +330,9 @@
 	<script type="text/javascript" src="/resources/rs-plugin/js/jquery.tp.t.min.js"></script>
 	<script type="text/javascript" src="/resources/rs-plugin/js/jquery.tp.min.js"></script>
 	<script src="/resources/js/main.js"></script>
-	<script src="/resources/js/main.js"></script>
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-	
-	<script>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=10eb2423c0789bba7beb31339f47651a"></script>
+	<script type="text/javascript">
 	    //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
 	    function sample4_execDaumPostcode() {
 	        new daum.Postcode({
@@ -333,15 +357,14 @@
 	                if(extraRoadAddr !== ''){
 	                    extraRoadAddr = ' (' + extraRoadAddr + ')';
 	                }
-	
-	                
-	                
-	                
 	                
 // 	                위에 이런식으로 히든 넣어주기   name="voZipCode" id="sample4_postcode" value="vo.voZipCode"
 	                // 우편번호와 주소 정보를 해당 필드에 넣는다.
 	                document.getElementById('sample4_postcode').value = data.zonecode;
 	                document.getElementById("sample4_roadAddress").value = roadAddr;
+// 	                document.getElementById("sample4_x").value = result[0].x;
+// 	                document.getElementById("sample4_y").value = result[0].y;
+	                
 	                
 	                // 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
 	                if(roadAddr !== ''){
@@ -349,26 +372,28 @@
 	                } else {
 	                    document.getElementById("sample4_extraAddress").value = '';
 	                }
-	
-// 	                var guideTextBox = document.getElementById("guide");
-// 	                // 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
-// 	                if(data.autoRoadAddress) {
-// 	                    var expRoadAddr = data.autoRoadAddress + extraRoadAddr;
-// 	                    guideTextBox.innerHTML = '(예상 도로명 주소 : ' + expRoadAddr + ')';
-// 	                    guideTextBox.style.display = 'block';
-	
-// 	                } else if(data.autoJibunAddress) {
-// 	                    var expJibunAddr = data.autoJibunAddress;
-// 	                    guideTextBox.innerHTML = '(예상 지번 주소 : ' + expJibunAddr + ')';
-// 	                    guideTextBox.style.display = 'block';
-// 	                } else {
-// 	                    guideTextBox.innerHTML = '';
-// 	                    guideTextBox.style.display = 'none';
-// 	                }
 	            }
 	        }).open();
 	    }
 	</script>
+	
+	
+	<script>
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+		    mapOption = { 
+		        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+		        level: 3 // 지도의 확대 레벨
+		    };
+		
+		// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+		var map = new kakao.maps.Map(mapContainer, mapOption); 
+	</script>
+	
+	
+	
+	
+	
+	
 	
 	
 	
