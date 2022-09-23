@@ -181,22 +181,11 @@
 <!--   리스트 넣는곳   -->
 		</div>
 	</div>
-	<section class="news-letter padding-top-150 padding-bottom-150">
-		<div class="container">
-			<div class="heading light-head text-center margin-bottom-30">
-				<h4>NEWSLETTER</h4>
-				<span>Phasellus lacinia fermentum bibendum. Interdum et
-					malesuada fames ac ante ipsumien lacus, eu posuere odi </span>
-			</div>
-			<form>
-				<input type="email" placeholder="Enter your email address" required>
-				<button type="submit">SEND ME</button>
-			</form>
-		</div>
-	</section>
-
+	<!-- news s -->
+	<%@include file="../../common/comm/includeV1/newsLetter.jsp"%>
+	<!-- news e -->
 	<!-- foot s -->
-	<%@include file="../../common/xdmin/includeV1/foot.jsp"%>
+	<%@include file="../../common/comm/includeV1/foot.jsp"%>
 	<!-- foot e -->
 	<!-- script s -->
 	<%@include file="../../common/xdmin/includeV1/script.jsp"%>

@@ -141,21 +141,9 @@
                       	<input type="text" id="sample4_y" name="get_y">
                       </label>
                     </div>
-                    
-                    
-                    
-                    
                     <div class="col-md-12">
 						<div id="map" style="width:100%;height:350px;"></div>
 					</div>
-
-
-
-
-                    
-                    
-                    
-                    
                    <div class="col-md-6" style="margin-top: 0px;">
                      <label><span class="pwl" id="pwid">*비밀번호</span> 
                        <input type="password" class="pw" id="pw" name="" value="" placeholder="">
@@ -183,85 +171,15 @@
       </div>
     </section>
 
-	<!--======= FOOTER =========-->
-	<footer>
-		<div class="container">
-			<!-- ABOUT Location -->
-			<div class="col-md-3">
-				<div class="about-footer">
-					<img class="margin-bottom-30" src="/resources/images/logo-foot.png" alt="">
-					<p>
-						<i class="icon-pointer"></i> Street No. 12, Newyork 12, <br>
-						MD - 123, USA.
-					</p>
-					<p>
-						<i class="icon-call-end"></i> 1.800.123.456789
-					</p>
-					<p>
-						<i class="icon-envelope"></i> info@ecoshop.com
-					</p>
-				</div>
-			</div>
-
-			<!-- HELPFUL LINKS -->
-			<div class="col-md-3">
-				<h6>HELPFUL LINKS</h6>
-				<ul class="link">
-					<li><a href="#."> Products</a></li>
-					<li><a href="#."> Find a Store</a></li>
-					<li><a href="#."> Features</a></li>
-					<li><a href="#."> Privacy Policy</a></li>
-					<li><a href="#."> Blog</a></li>
-					<li><a href="#."> Press Kit </a></li>
-				</ul>
-			</div>
-
-			<!-- SHOP -->
-			<div class="col-md-3">
-				<h6>SHOP</h6>
-				<ul class="link">
-					<li><a href="#."> About Us</a></li>
-					<li><a href="#."> Career</a></li>
-					<li><a href="#."> Shipping Methods</a></li>
-					<li><a href="#."> Contact</a></li>
-					<li><a href="#."> Support</a></li>
-					<li><a href="#."> Retailer</a></li>
-				</ul>
-			</div>
-
-			<!-- MY ACCOUNT -->
-			<div class="col-md-3">
-				<h6>MY ACCOUNT</h6>
-				<ul class="link">
-					<li><a href="#."> Login</a></li>
-					<li><a href="#."> My Account</a></li>
-					<li><a href="#."> My Cart</a></li>
-					<li><a href="#."> Wishlist</a></li>
-					<li><a href="#."> Checkout</a></li>
-				</ul>
-			</div>
-			<!-- Rights -->
-			<div class="rights">
-				<p>© 2016 ecoshop All right reserved.</p>
-				<div class="scroll">
-					<a href="#wrap" class="go-up"><i class="lnr lnr-arrow-up"></i></a>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!--======= RIGHTS =========-->
-	<script src="/resources/js/jquery-1.11.3.min.js"></script>
-	<script src="/resources/js/bootstrap.min.js"></script>
-	<script src="/resources/js/own-menu.js"></script>
-	<script src="/resources/js/jquery.lighter.js"></script>
-	<script src="/resources/js/owl.carousel.min.js"></script>
-
-	<!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
-	<script type="text/javascript" src="/resources/rs-plugin/js/jquery.tp.t.min.js"></script>
-	<script type="text/javascript" src="/resources/rs-plugin/js/jquery.tp.min.js"></script>
-	<script src="/resources/js/main.js"></script>
-	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=10eb2423c0789bba7beb31339f47651a"></script>
+	<!-- news s -->
+	<%@include file="../../common/comm/includeV1/newsLetter.jsp"%>
+	<!-- news e -->
+	<!-- foot s -->
+	<%@include file="../../common/comm/includeV1/foot.jsp"%>
+	<!-- foot e -->
+	<!-- script s -->
+	<%@include file="../../common/xdmin/includeV1/script.jsp"%>
+	<!-- script e -->
 	<script type="text/javascript">
 	    //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
 	    var geocoder = new kakao.maps.services.Geocoder();
