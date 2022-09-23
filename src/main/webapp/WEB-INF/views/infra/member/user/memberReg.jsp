@@ -41,7 +41,7 @@
                     <!-- LAST NAME -->
                     <li class="col-md-5">
                       <label> *ID
-                        <input type="text" name="last-name" id="user_id" value="" placeholder="">
+                        <input type="text" name="user_id" id="user_id" value="" placeholder="">
                       </label>
                     </li>
                     <li class="col-md-1" style="padding-left: 0;">
@@ -193,7 +193,7 @@
 	</script>
 	
 	
-	<script>
+	<script type="text/javascript">
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 		    mapOption = { 
 		        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
@@ -204,10 +204,33 @@
 		var map = new kakao.maps.Map(mapContainer, mapOption); 
 	</script>
 	
-	
-	
-	
-	
+	<script type="text/javascript">
+		$("#user_id").on("focusout", function(){
+// 			if(!checkId('user_id', 2, 0, "영대소문자,숫자,특수문자(-_.),4~20자리만 입력 가능합니다")) {
+// 				return false;
+// 			} else {
+				$.ajax({
+// 					async: true 
+// 					,cache: false
+					type: "post"
+					/* ,dataType:"json" */
+					,url: "/member/checkId"
+					/* ,data : $("#formLogin").serialize() */
+					,data : { "id" : $("#user_id").val() }
+					,success: function(response) {
+						if(response.rt == "success") {
+							alert("맞음");
+						} else {
+							alert("틀림");
+						}
+					}
+// 					,error : function(jqXHR, textStatus, errorThrown){
+// 						alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+// 					}
+				});
+// 			}
+		});
+	</script>
 	
 	
 </body>

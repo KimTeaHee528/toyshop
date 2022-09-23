@@ -20,6 +20,7 @@ public class Member {
 	private String mod_date;
 	private String del_date;
 	private String del_ny;
+	private String rt; // 중복체크용 (컨트롤러에서 확인)
 	
 	
 	

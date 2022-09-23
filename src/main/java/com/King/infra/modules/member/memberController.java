@@ -1,12 +1,15 @@
 package com.King.infra.modules.member;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 
 @Controller
@@ -41,13 +44,26 @@ public class memberController {
 		return "infra/member/xdmin/memberForm";
 	}	
 	
-	
 	// 유저 회원가입
 	@RequestMapping(value = "memberRegUser")
 	public String memberRegUser() throws Exception {
 		
 		return "infra/member/user/memberReg";
 	}	
+	
+	@ResponseBody
+	@RequestMapping(value = "checkId")
+	public Map<String, Object> checkId(Member dto) throws Exception {
+		Map<String, Object> returnMap = new HashMap<String, Object>();
+		int result = service.selectDuplicate(dto);
+		if (result > 0) {
+			returnMap.put("rt", "success");
+		} else {
+			returnMap.put("rt", "fail");
+		}
+		return returnMap;
+	}
+	
 	
 	// 로그인
 	@RequestMapping(value = "memberLogin")

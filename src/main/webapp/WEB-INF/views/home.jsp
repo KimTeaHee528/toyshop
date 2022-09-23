@@ -130,8 +130,10 @@
 										<li>
 											<h6>김태희 회원님 환영합니다.</h6>
 										</li>
-										<li><a href="/login">로그인</a></li>
-										<li><a href="#">회원가입</a></li>
+						                  <li><a href="/member/memberFormUser">회원정보</a></li>
+						                  <li><a href="/member/memberLogin">로그인</a></li>
+						                  <li><a href="/member/memberRegUser">회원가입</a></li>
+						                  <li><a href="#">로그아웃</a></li>
 									</ul></li>
 
 								<!-- USER BASKET -->

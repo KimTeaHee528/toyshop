@@ -29,4 +29,9 @@ public class MemberServiceImpl implements MemberService {
 		return dao.selectOne(vo);
 	}
 	
+	@Override
+	public int selectDuplicate(Member dto) throws Exception {
+		return dao.selectDuplicate(dto);
+	}
+	
 }

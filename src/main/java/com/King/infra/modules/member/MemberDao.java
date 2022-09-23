@@ -24,19 +24,19 @@ public class MemberDao {
 
 	}
 	
-	
 	public int selectOneCount(MemberVo vo) {
 		return sqlSession.selectOne(namespace + ".selectOneCount", vo);
 		
 	}
-	
 	
 	public Member selectOne(MemberVo vo) {
 		return sqlSession.selectOne(namespace + ".selectListOne", vo);
 		
 	}
 	
-	
-	
+	public int selectDuplicate(Member dto) {
+		return sqlSession.selectOne(namespace + ".selectDuplicate", dto);
+		
+	}
 	
 }
