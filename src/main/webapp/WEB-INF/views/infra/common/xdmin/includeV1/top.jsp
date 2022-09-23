@@ -25,7 +25,7 @@
 				<!-- Login Info -->
 				<div class="login-info">
 					<ul>
-						<li><a href="#.">HOME</a></li>
+						<li><a href="/">HOME</a></li>
 						<li><a href="#.">LOG OUT</a></li>
 						<li><a href="#."> MY ACCOUNT</a></li>
 					</ul>

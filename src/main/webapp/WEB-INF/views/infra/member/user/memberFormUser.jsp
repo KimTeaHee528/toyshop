@@ -25,109 +25,155 @@
           <!-- SHOPPING INFORMATION -->
           <div class="cart-ship-info register">
             <div class="row"> 
-              
+             
               <!-- ESTIMATE SHIPPING & TAX -->
               <div class="col-sm-12">
-                <h6>회원가입</h6>
+				<input type="hidden" name="li_seq" value="<c:out value="${item.seq }"/>">
+                <h6 style="padding-left: 50px;">회원정보 <span style="font-size: 17px; font-weight: lighter;">회원번호: <c:out value="${item.seq }"/></span> </h6>
                 <form>
                   <ul class="row">
-                    
                     <!-- Name -->
-                    <li class="col-md-6">
-                      <label> *이름
-                        <input type="text" name="first-name" id="user_name" value="" placeholder="">
-                      </label>
-                    </li>
-                    <!-- LAST NAME -->
-                    <li class="col-md-5">
-                      <label> *ID
-                        <input type="text" name="last-name" id="user_id" value="" placeholder="">
-                      </label>
-                    </li>
-                    <li class="col-md-1" style="padding-left: 0;">
-                        <button type="submit" class="btn" style="padding: 0px; margin-top: 27px; height: 44px; font-size: 13px; width: 100%;">중복 확인</button>
-                    </li>
-                    <!-- EMAIL ADDRESS111 -->
-                    <li class="col-md-3" style="margin-right: 0px;">
+                    <div class="col-md-9" style="padding-left: 100px;">
+	                    <div class="col-md-4">
+	                      <label> *ID
+	                        <input type="text" name="first-name" value="<c:out value="${item.id }"/>" placeholder="">
+	                      </label>
+	                    </div>
+	                    <!-- LAST NAME -->
+	                    <div class="col-md-4">
+	                      <label> *이름
+	                        <input type="text" name="last-name" value="<c:out value="${item.name }"/>" placeholder="">
+	                      </label>
+	                    </div>
+	                    <!-- GENDER -->
+	                    <div class="col-md-4">
+	                      <label> *성별
+	                        <select class="selectpicker" name="contry-state">
+	                          <option>MALE</option>
+	                          <option>FEMALE</option>
+	                          <option>OTHER</option>
+	                        </select>
+	                      </label>
+	                    </div>
+	                <div class="col-md-4" style="margin-right: 0px;">
                       <label> *이메일
-                        <input type="text" name="contry-state" id="email_id" value="" placeholder="">
+                        <input type="text" name="contry-state" value="<c:out value="${item.email }"/>" placeholder="">
                       </label>                
-                    </li>
-                    <li class="col-md-3" id="email-box" name="selboxDirect" style="margin-right: 0px;">
+                    </div>
+                    <div class="col-md-4" id="email-box" name="selboxDirect" style="margin-right: 0px;">
                       <label> &nbsp;
-                        <input type="text" name="contry-state" id="email_div" value="" placeholder="@example.com">
-                      </label>                
-                    </li>
-                    
-                    
-                  <li class="col-md-3" style="margin-right: 0px;">
+                        <input type="text" name="contry-state" value="" placeholder="@example.com">
+                      </label>
+                    </div>
+                  <div class="col-md-4" style="margin-right: 0px;">
                       <label> &nbsp;
                         <select class="selectpicker" id="email-sel" name="e-mail-add">
-                          <option value="@gmail.com">@gmail.com</option>
-                          <option value="@naver.com">@naver.com</option>
-                          <option value="@hanmail.com">@hanmail.com</option>
+                          <option value="gmail.com">@gmail.com</option>
+                          <option value="naver.com">@naver.com</option>
+                          <option value="hanmail.com">@hanmail.com</option>
                           <option value="type">@직접입력</option>
                         </select>
                       </label>                
-                    </li>
-                    <li class="col-md-3" id="email-box2" name="selboxDirect" style="margin-right: 0px; height: 92px;">
-                      <label> &nbsp;</label>                
-                    </li>
-                    <!-- LAST NAME -->
-                    <li class="col-md-6" style="margin-top: 0px;">
-                      <label><span class="pwl" id="pwid">*비밀번호</span> 
-                        <input type="password" class="pw" id="pw" name="" value="" placeholder="">
-                      </label>
-                    </li>
-                    <li class="col-md-6" style="margin-top: 0px;">
-                      <label><span class="pwl" id="pwchid">*비밀번호 확인</span> 
-                        <input type="password" class="pw" id="pw_re" name="" value="" placeholder="">
-                      </label>
-                    </li>
-                                        <!-- PHONE -->
-                    <li class="col-md-6" style="margin-top: 0px;">
+                    </div>
+	                 <!-- PHONE -->
+                    <div class="col-md-6" style="margin-top: 0px;">
                       <label> *전화번호
-                        <input type="text" name="postal-code" id="tell" value="" placeholder="">
+                        <input type="text" name="postal-code" value="<c:out value="${item.tell }"/>" placeholder="">
                       </label>
-                    </li>
-                    <!-- GENDER -->
-                    <li class="col-md-6">
-                      <label> *성별
-                        <select class="selectpicker" id="gender" name="contry-state">
-                          <option>MALE</option>
-                          <option>FEMALE</option>
-                          <option>OTHER</option>
-                        </select>
-                      </label>
-                    </li>  
-                      <!-- ADDRESS -->
-                    <li class="col-md-6"> 
-                      <label>*ZIP 코드
-                        <input type="text" name="address" id="zip" value="" placeholder="">
-                      </label>
-                    </li>
-                    <li class="col-md-6"> 
-                      <!-- ADDRESS -->
-                      <label>*주소
-                        <input type="text" name="address" id="add" value="" placeholder="">
-                      </label>
-                    </li>
-                    <!-- TOWN/CITY -->
-                    <li class="col-md-6">
-                      <label>*상세주소
-                        <input type="text" name="town" id="add_detail" value="" placeholder="">
-                      </label>
-                    </li>
-                    <!-- DOB -->
-                    <li class="col-md-6">
+                    </div>
+                   <!-- DOB -->
+                    <div class="col-md-6">
                       <label> *생년월일
-                      	<input type="date" id="dob">
+                      	<input type="date" value="<c:out value="${item.dob }"/>">
                       </label>
-                    </li>   
-                    <!-- PHONE -->
+                    </div>  
+                   <!-- reg -->
+                    <div class="col-md-6">
+                      <label> *가입일
+                      	<input type="date" value="<c:out value="${item.reg_date }"/>">
+                      </label>
+                    </div>  
+                   <!-- mod -->
+                    <div class="col-md-6">
+                      <label> *수정일
+                      	<input type="date" value="<c:out value="${item.mod_date }"/>">
+                      </label>
+                    </div>
+                    <input type="hidden" id="sample4_extraAddress" placeholder="참고항목">
+<!--                     <span id="guide" style="color:#999;display:none"></span> -->
+                    
+                    
+                    
+                    <div class="col-md-6"> 
+                      <!-- ADDRESS -->
+                      <label>*ZIP 코드
+                      	<input type="text" id="sample4_postcode" name="zip_code" value="<c:out value="${item.zip_code }"/>" placeholder="우편번호">
+<%--                         <input type="text" name="address" value="<c:out value="${item.zip_code }"/>" placeholder=""> --%>
+                      </label>
+                    </div>
+                    <div class="col-md-2"> 
+                      <!-- ADDRESS -->
+                      <label>&nbsp;
+                      	<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기" id="btn_sh_ad">
+                      </label>
+                    </div>
+                    <div class="col-md-12"> 
+                      <!-- ADDRESS -->
+                      <label>*도로명 주소
+                     	<input type="text" id="sample4_roadAddress" name="address" value="<c:out value="${item.address }"/>" placeholder="도로명주소">
+                      </label>
+                    </div>
+                    <!-- ADDRESS_DETAil -->
+                    <div class="col-md-12">
+                      <label>*상세주소
+                      	<input type="text" id="sample4_detailAddress" name="address" value="<c:out value="${item.address_detail }"/>" placeholder="상세주소">
+                      </label>
+                    </div>
+                    <!-- x -->
+                    <div class="col-md-6">
+                      <label>*위도
+                      	<input type="text" id="sample4_x" name="get_x">
+                      </label>
+                    </div>
+                    <!-- y -->
+                    <div class="col-md-6">
+                      <label>*경도
+                      	<input type="text" id="sample4_y" name="get_y">
+                      </label>
+                    </div>
+                    
+                    
+                    
+                    
+                    <div class="col-md-12">
+						<div id="map" style="width:100%;height:350px;"></div>
+					</div>
+
+
+
+
+                    
+                    
+                    
+                    
+                   <div class="col-md-6" style="margin-top: 0px;">
+                     <label><span class="pwl" id="pwid">*비밀번호</span> 
+                       <input type="password" class="pw" id="pw" name="" value="" placeholder="">
+                     </label>
+                   </div>
+                   <div class="col-md-6" style="margin-top: 0px;">
+                     <label><span class="pwl" id="pwchid">*비밀번호 확인</span> 
+                       <input type="password" class="pw" id="pw_re" name="" value="" placeholder="">
+                     </label>
+                   </div>
                     <li class="col-md-12 text-center">
-                      <button type="button" class="btn" id="submit_btn">가입 완료</button>
+                      <button type="submit" class="btn" style="margin-bottom: 10px;">회원정보 수정</button>
                     </li>
+                  </div>
+                  <div class="col-md-3" style="text-align: center;">
+					<img alt="" src="/resources/images/man.png" style="border: 4px solid yellow;"><br>
+					<button type="submit" class="btn" style="margin-top: 10px;">사진변경</button>
+                  </div>
                   </ul>
                 </form>
               </div>

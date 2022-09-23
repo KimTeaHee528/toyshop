@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <!-- jstl s -->
-<%@include file="../../common/xdmin/includeV1/jstl.jsp"%>
+<%@include file="../../common/comm/includeV1/jstl.jsp"%>
 <!-- jstl e -->
 <!DOCTYPE html>
 <html lang="en">
@@ -264,11 +264,11 @@
 	</section>
 	
 	<!-- foot s -->
-	<%@include file="../../common/xdmin/includeV1/foot.jsp"%>
+	<%@include file="../../common/comm/includeV1/foot.jsp"%>
 	<!-- foot e -->
 	
 	<!-- script s -->
-	<%@include file="../../common/xdmin/includeV1/script.jsp"%>
+	<%@include file="../../common/comm/includeV1/script.jsp"%>
 	<!-- script e -->
 	
 	<script type="text/javascript">

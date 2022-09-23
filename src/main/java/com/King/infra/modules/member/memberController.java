@@ -56,5 +56,12 @@ public class memberController {
 		return "infra/member/user/login";
 	}	
 	
+	// 유저 회원정보
+	@RequestMapping(value = "memberFormUser")
+	public String memberFormUser() throws Exception {
+		
+		return "infra/member/user/memberFormUser";
+	}	
+	
 
 }
