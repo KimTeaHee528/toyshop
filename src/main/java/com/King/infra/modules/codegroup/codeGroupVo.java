@@ -9,6 +9,7 @@ import lombok.Data;
 public class codeGroupVo extends BaseVo {
 
 	private String sh_seq;
+	private String seq;
 	private Integer sh_div;
 	private String sh_val;
 	private Integer sh_use_ny;

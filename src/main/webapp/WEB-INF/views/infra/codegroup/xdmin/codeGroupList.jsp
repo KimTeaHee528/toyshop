@@ -110,9 +110,9 @@
 						</div>
 					</c:when>
 						<c:otherwise>
+							<input type="hidden" name="li_seq" value="<c:out value="${seq}"/>"/>
 							<c:forEach items="${list}" var="list" varStatus="status">
 <%-- 								<a href="/codeGroup/codeGroupView?li_seq=<c:out value="${list.seq }"/>"> --%>
-								<input type="hidden" name="li_seq" value="<c:out value="${list.seq}"/>"/>
 								<a href="javascript:goForm(<c:out value="${list.seq}"/>)">
 									<div class="ccg-list-body">
 										<div class="list-1">
@@ -277,7 +277,7 @@
 		
 		
 		var form = $("form[name=ccgList]");
-		var li_seq = $("input[name=li_seq]");
+		var li_seq = $("input:hidden[name=li_seq]");
 		
 // 		function list_one(){
 // 			document.getElementById("first-name2").value

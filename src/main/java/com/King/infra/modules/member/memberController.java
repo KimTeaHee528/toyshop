@@ -32,7 +32,8 @@ public class memberController {
 	
 	// 폼 뷰
 	@RequestMapping(value = "memberView")
-	public String memberView(Model model,@ModelAttribute("vo") MemberVo vo) throws Exception {
+//	public String memberView(Model model,@ModelAttribute("vo") MemberVo vo) throws Exception {
+	public String memberView(Model model,MemberVo vo) throws Exception {
 		vo.setMemberFormMode(0);
 		
 		Member item = service.selectOne(vo);

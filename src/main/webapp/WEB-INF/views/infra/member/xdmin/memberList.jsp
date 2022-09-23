@@ -124,8 +124,8 @@
 						</div>
 					</c:when>
 					<c:otherwise>
+						<input type="hidden" name="li_seq" value="<c:out value="${seq}"/>"/>
 						<c:forEach items="${list}" var="list" varStatus="status">
-							<input type="hidden" name="li_seq" value="<c:out value="${list.seq}"/>"/>
 							<a href="javascript:goForm(<c:out value="${list.seq}"/>)">
 								<div class="member-list-body">
 									<div class="list-1">

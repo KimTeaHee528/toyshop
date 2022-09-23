@@ -280,24 +280,30 @@
 						if (status == daum.maps.services.Status.OK) {
 							document.getElementById("sample4_y").value=result[0].y;
 							document.getElementById("sample4_x").value=result[0].x;
+
 							
 							
-							
-							
-							
-							
-						    var moveLatLon = new kakao.maps.LatLng(result[0].x, result[0].y);
-						    // 지도 중심을 이동 시킵니다
-						    map.setCenter(moveLatLon);
+							setCenter();
+						    
+						    
 						}
 					});
 					/* lat and lng from address e */
+					
+	        function setCenter() {            
+	            // 이동할 위도 경도 위치를 생성합니다 
+	            var moveLatLon = new kakao.maps.LatLng(33.452613, 126.570888);
+	            
+	            // 지도 중심을 이동 시킵니다
+	            map.setCenter(moveLatLon);
+	        }
+					
+					
+					
 	            }
 	        }).open();
 	    }
 	</script>
-	
-	
 	<script>
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 		    mapOption = { 
@@ -308,14 +314,5 @@
 		// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
 		var map = new kakao.maps.Map(mapContainer, mapOption); 
 	</script>
-	
-	
-	
-	
-	
-	
-	
-	
-	
 </body>
 </html>
