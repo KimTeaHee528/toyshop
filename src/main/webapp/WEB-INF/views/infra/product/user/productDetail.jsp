@@ -109,7 +109,7 @@
                   <li class="col-xs-2" style="margin-left: 20px; padding: 0px;">
                   	<a href="#." class="like-us">
                   		<span style="color: black;">찜하기 💛</span>
-<!--                   		🖤💛🖤💛 -->
+												<!-- 🖤💛🖤💛 -->
                   	</a>
                   </li>
                 </ul>
