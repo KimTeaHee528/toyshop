@@ -34,6 +34,20 @@
 	<select id="selectDuplicate" resultType="Integer">
 		SELECT COUNT(*) From tb_member where id = #{id}
 	</select>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	<sql id="AllCol">
 		    ,name
