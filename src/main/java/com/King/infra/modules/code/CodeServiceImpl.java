@@ -62,6 +62,27 @@ public class CodeServiceImpl implements CodeService {
 		return rt;
 	}
 	
+	
+	
+	
+	
+	
+//	public static List<Code> selectListCachedCodeGroupNmae(String p_ccg_Seq) throws Exception {
+//		List<Code> ccgName = new ArrayList<Code>();
+//		for(Code ccgnRow : Code.cachedCodeGroupArrayList) {
+//			if (ccgnRow.getCcg_seq().equals(p_ccg_Seq)) {
+//				ccgName.add(ccgnRow);
+//			} else {
+//				// by pass
+//			}
+//		}
+//		return ccgName;
+//	}
+	
+	
+	
+	
+	
 	public static String selectOneCachedCode(int code) throws Exception {
 		String rt = "";
 		for(Code codeRow : Code.cachedCodeArrayList) {

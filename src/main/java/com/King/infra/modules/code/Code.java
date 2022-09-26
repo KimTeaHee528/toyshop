@@ -22,6 +22,7 @@ public class Code {
 	
 //	for cache
 	public static List<Code> cachedCodeArrayList = new ArrayList<Code>();
+	public static List<Code> cachedCodeGroupArrayList = new ArrayList<Code>();
 	
 //	
 //	private String seq;
