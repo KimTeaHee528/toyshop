@@ -108,20 +108,20 @@
                     <div class="col-md-6"> 
                       <!-- ADDRESS -->
                       <label>*ZIP 코드
-                      	<input type="text" id="sample4_postcode" name="zip_code" value="<c:out value="${item.zip_code }"/>" placeholder="우편번호">
+                      	<input type="text" id="sample4_postcode" onclick="sample4_execDaumPostcode()" name="zip_code" value="<c:out value="${item.zip_code }"/>" placeholder="우편번호" readonly>
 <%--                         <input type="text" name="address" value="<c:out value="${item.zip_code }"/>" placeholder=""> --%>
                       </label>
                     </div>
                     <div class="col-md-2"> 
                       <!-- ADDRESS -->
-                      <label>&nbsp;
-                      	<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기" id="btn_sh_ad">
-                      </label>
+<!--                       <label>&nbsp; -->
+<!--                       	<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기" id="btn_sh_ad"> -->
+<!--                       </label> -->
                     </div>
-                    <div class="col-md-12"> 
+                    <div class="col-md-6"> 
                       <!-- ADDRESS -->
                       <label>*도로명 주소
-                     	<input type="text" id="sample4_roadAddress" name="address" value="<c:out value="${item.address }"/>" placeholder="도로명주소">
+                     	<input type="text" id="sample4_roadAddress" onclick="sample4_execDaumPostcode()" name="address" value="<c:out value="${item.address }"/>" placeholder="도로명주소" readonly>
                       </label>
                     </div>
                     <!-- ADDRESS_DETAil -->
@@ -142,21 +142,9 @@
                       	<input type="text" id="sample4_y" name="get_y">
                       </label>
                     </div>
-                    
-                    
-                    
-                    
                     <div class="col-md-12">
 						<div id="map" style="width:100%;height:350px;"></div>
 					</div>
-
-
-
-
-                    
-                    
-                    
-                    
                    <div class="col-md-6" style="margin-top: 0px;">
                      <label><span class="pwl" id="pwid">*비밀번호</span> 
                        <input type="password" class="pw" id="pw" name="" value="" placeholder="">
