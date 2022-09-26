@@ -45,15 +45,15 @@ public class CodeServiceImpl implements CodeService {
 //		codeListFromDb = (ArrayList<Code>) dao.selectListCachedCodeArrayList();
 		Code.cachedCodeArrayList.clear(); 
 		Code.cachedCodeArrayList.addAll(codeListFromDb);
-		System.out.println("cachedCodeArrayList: " + Code.cachedCodeArrayList.size() + " chached !");
+//		System.out.println("cachedCodeArrayList: " + Code.cachedCodeArrayList.size() + " chached !");
 	}
 	
 	
 	
-	public static List<Code> selectListCachedCode(String ccg_Seq) throws Exception {
+	public static List<Code> selectListCachedCode(String p_ccg_Seq) throws Exception {
 		List<Code> rt = new ArrayList<Code>();
 		for(Code codeRow : Code.cachedCodeArrayList) {
-			if (codeRow.getCcg_seq().equals(ccg_Seq)) {
+			if (codeRow.getCcg_seq().equals(p_ccg_Seq)) {
 				rt.add(codeRow);
 			} else {
 				// by pass

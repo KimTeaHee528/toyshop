@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <!-- jstl s -->
-<%@include file="../../common/xdmin/includeV1/jstl.jsp"%>
+<%@include file="../../common/comm/includeV1/jstl.jsp"%>
 <!-- jstl e -->
 <!DOCTYPE html>
 <html lang="ko">
@@ -174,7 +174,7 @@
 					</c:otherwise>
 				</c:choose>
 				<!-- pagination s -->
-				<%@include file="../../common/xdmin/includeV1/pagination.jsp"%>
+				<%@include file="../../common/comm/includeV1/pagination.jsp"%>
 				<!-- pagination e -->
 				</form>
 			</div>
@@ -188,7 +188,7 @@
 	<%@include file="../../common/comm/includeV1/foot.jsp"%>
 	<!-- foot e -->
 	<!-- script s -->
-	<%@include file="../../common/xdmin/includeV1/script.jsp"%>
+	<%@include file="../../common/comm/includeV1/script.jsp"%>
 	<!-- script e -->
 	
 	<script type="text/javascript">

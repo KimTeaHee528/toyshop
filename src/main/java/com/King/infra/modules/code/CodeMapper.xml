@@ -7,6 +7,7 @@
 <mapper namespace="com.King.infra.modules.code.CodeMapper">
 
     <resultMap id="resultMapObj" type="com.King.infra.modules.code.Code"></resultMap>
+    <resultMap id="resultMapCcg" type="com.King.infra.modules.codegroup.CodeGroup"></resultMap>
 	<select id="selectList" resultMap="resultMapObj">
 		select
 			c.seq
@@ -43,7 +44,7 @@
 			</choose>
 	</select>
 	
-	<select id="selectCcgName" resultMap="resultMapObj">
+	<select id="selectCcgName" resultMap="resultMapCcg">
 		select
 			seq
 			,code_group_name
@@ -54,16 +55,16 @@
 	<select id="selectOne" resultMap="resultMapObj">
 		select
 			seq
-			,ccg_seq
-			,code_group_name
+<!-- 			,ccg_seq -->
+<!-- 			,code_group_name -->
 			,code_name
 			,code_name_en
 			,use_ny
 			,sort
 			,reg_date
 			,mod_date
-		from tb_ccg
-		where seq=li_seq
+		from tb_cc
+		where seq=#{li_seq}
 		
 	</select>
 	

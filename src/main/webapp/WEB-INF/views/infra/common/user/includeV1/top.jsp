@@ -28,8 +28,9 @@
               <li> <a href="/" style="margin-right: 20px;">Home</a> </li>
               <li> <a href="event.html" style="margin-right: 20px;">Event</a> </li>
               
-              <!-- MEGA MENU -->
-              <li class="dropdown megamenu" style="margin-right: 20px;"> <a href="#." class="dropdown-toggle" data-toggle="dropdown">store</a>
+				<!-- MEGA MENU -->
+				<li class="dropdown megamenu" style="margin-right: 20px;"> 
+					<a href="/product/productListUser" class="dropdown-toggle" data-toggle="dropdown">store</a>
                 <div class="dropdown-menu">
                   <div class="row"> 
                     
@@ -37,13 +38,13 @@
                     <div class="col-md-3">
                       <h6>Shop Pages</h6>
                       <ul>
-                        <li> <a href="shop.html">전체 </a> </li>
-                        <li> <a href="shop.html">유아용 </a> </li>
-                        <li> <a href="shop.html">남자아이 </a> </li>
-                        <li> <a href="shop.html">여자아이 </a> </li>
-                        <li> <a href="shop.html">청소년 </a> </li>
-                        <li> <a href="shop.html">가족 </a> </li>
-                        <li> <a href="shop.html">어덜트</a> </li>
+                        <li> <a href="/product/productListUser">전체 </a> </li>
+                        <li> <a href="/product/productListUser">유아용 </a> </li>
+                        <li> <a href="/product/productListUser">남자아이 </a> </li>
+                        <li> <a href="/product/productListUser">여자아이 </a> </li>
+                        <li> <a href="/product/productListUser">청소년 </a> </li>
+                        <li> <a href="/product/productListUser">가족 </a> </li>
+                        <li> <a href="/product/productListUser">어덜트</a> </li>
                       </ul>
                     </div>
                     
@@ -54,7 +55,7 @@
                         <ul>
                           <li>
                             <div class="media-left">
-                              <div class="cart-img"> <a href="product_detail.html"> <img class="media-object img-responsive" src="/resources/images/cart-1.png" alt="..."> </a> </div>
+                              <div class="cart-img"> <a href="/product/productDetailUser"> <img class="media-object img-responsive" src="/resources/images/cart-1.png" alt="..."> </a> </div>
                             </div>
                             <div class="media-body">
                               <h6 class="media-heading">rocket</h6>
@@ -63,7 +64,7 @@
                           </li>
                           <li>
                             <div class="media-left">
-                              <div class="cart-img"> <a href="product_detail.html"> <img class="media-object img-responsive" src="/resources/images/cart-2.png" alt="..."> </a> </div>
+                              <div class="cart-img"> <a href="/product/productDetailUser"> <img class="media-object img-responsive" src="/resources/images/cart-2.png" alt="..."> </a> </div>
                             </div>
                             <div class="media-body">
                               <h6 class="media-heading">SUSPENDERS DOLL</h6>
@@ -72,7 +73,7 @@
                           </li>
                           <li>
                             <div class="media-left">
-                              <div class="cart-img"> <a href="product_detail.html"> <img class="media-object img-responsive" src="/resources/images/cart-3.png" alt="..."> </a> </div>
+                              <div class="cart-img"> <a href="/product/productDetailUser"> <img class="media-object img-responsive" src="/resources/images/cart-3.png" alt="..."> </a> </div>
                             </div>
                             <div class="media-body">
                               <h6 class="media-heading">BIG BEAR</h6>

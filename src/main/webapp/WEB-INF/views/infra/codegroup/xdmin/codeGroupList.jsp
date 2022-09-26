@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <!-- jstl s -->
-<%@include file="../../common/xdmin/includeV1/jstl.jsp"%>
+<%@include file="../../common/comm/includeV1/jstl.jsp"%>
 <!-- jstl e -->
 <!DOCTYPE html>
 <html lang="en">
@@ -158,7 +158,7 @@
 						</c:otherwise>
 					</c:choose>
 					<!-- pagination s -->
-					<%@include file="../../common/xdmin/includeV1/pagination.jsp"%>
+					<%@include file="../../common/comm/includeV1/pagination.jsp"%>
 					<!-- pagination e -->
 					</form>
 					<div class="col-md-12 text-center" style="margin-bottom: 50px; margin-top: 20px;">

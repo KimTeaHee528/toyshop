@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <!-- jstl s -->
-<%@include file="../../common/xdmin/includeV1/jstl.jsp"%>
+<%@include file="../../common/comm/includeV1/jstl.jsp"%>
 <!-- jstl e -->
 <!DOCTYPE html>
 <html lang="ko">

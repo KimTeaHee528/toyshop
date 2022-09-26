@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <!-- jstl s -->
-<%@include file="../../common/xdmin/includeV1/jstl.jsp"%>
+<%@include file="../../common/comm/includeV1/jstl.jsp"%>
 <!-- jstl e -->
 <!DOCTYPE html>
 <html lang="ko">
@@ -213,7 +213,7 @@
 	<%@include file="../../common/comm/includeV1/foot.jsp"%>
 	<!-- foot e -->
 	<!-- script s -->
-	<%@include file="../../common/xdmin/includeV1/script.jsp"%>
+	<%@include file="../../common/comm/includeV1/script.jsp"%>
 	<!-- script e -->
 	<script type="text/javascript">
 	    //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
