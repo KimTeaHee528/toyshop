@@ -1,9 +1,12 @@
 package com.King.infra.modules.member;
 
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.King.infra.common.utill.UtillSecurity;
 
 
 
@@ -37,5 +40,13 @@ public class MemberServiceImpl implements MemberService {
 	public int insertOne(Member dto) throws Exception {
 		return dao.insertOne(dto);
 	}
+	
+	// PW암호화 및 ID/PW확인
+	public Member selectOneLogin(Member dto) throws NoSuchAlgorithmException {
+		dto.setPw(UtillSecurity.encryptSha256(dto.getPw()));
+		return dao.selectLogin(dto);
+	}
+	
+	
 	
 }

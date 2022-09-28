@@ -18,6 +18,9 @@
 	<include refid="Base.selectListLowerForMysql" />
 	</select>
 	
+	
+	
+	
 <!-- 	리스트에서 하나만 선택 -->
 	<select id="selectListOne" resultMap="resultMapObj">
 		SELECT
@@ -28,16 +31,36 @@
 			seq = #{li_seq}
 	</select>
 	
+	
+	
+	
 <!-- 	페이지네이션 갯수 확인용 -->
 	<select id="selectOneCount" resultType="Integer">
 		SELECT COUNT(*) as totalRows
 		<include refid="selectCommon" />
 	</select>
 	
+	
+	
+	
 <!-- 	중복확인용 1이면 중복됨 / 0이면 중복아님 -->
 	<select id="selectDuplicate" resultType="Integer">
 		SELECT COUNT(*) From tb_member where id = #{id}
 	</select>
+	
+	
+<!-- 	로그인시 아이디패스워드 확인용 -->
+	<select id="selectLogin" resultMap="resultMapObj">
+		SELECT 
+			seq
+			,id
+			,name
+		From tb_member 
+		where 1=1
+			,id = #{id}
+			,pw = #{pw}
+	</select>
+
 	
 	<insert id="insertOne">
 		<selectKey resultType="String" keyProperty="seq" order="AFTER">
@@ -91,6 +114,10 @@
 		)
 	</insert>
 
+	
+	
+	
+	
 	
 <!-- 	멤버 전체 셀렉트용 -->
 	<sql id="AllCol">

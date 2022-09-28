@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +13,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.King.infra.common.constants.Constants;
 
 
 @Controller
@@ -92,11 +96,38 @@ public class memberController {
 	}
 	
 	
-	// 로그인
+	// 로그인화면
 	@RequestMapping(value = "memberLogin")
 	public String memberLogin() throws Exception {
+		
+		
 		return "infra/member/user/login";
 	}	
+	
+	
+	// 로그인동작
+	@ResponseBody
+	@RequestMapping(value = "loginProc")
+	public Map<String, Object> loginProc(Member dto, HttpSession httpSession) throws Exception {
+		Map<String, Object> returnMap = new HashMap<String, Object>();
+
+			// 아이디 비밀번호 확인
+			Member rtMember = service.selectOneLogin(dto);
+			if (rtMember != null) {
+				httpSession.setMaxInactiveInterval(60 * Constants.SESSION_MINUTE); // 60second * 30 = 30minute
+				httpSession.setAttribute("sessSeq", rtMember.getSeq());
+				httpSession.setAttribute("sessId", rtMember.getId());
+				httpSession.setAttribute("sessName", rtMember.getName());
+				returnMap.put("rt", "success");
+			} else {
+				// 비밀번호 실패
+				returnMap.put("rt", "fail");
+			}
+		return returnMap;
+	}
+	
+	
+	
 	
 	// 유저 회원정보
 	@RequestMapping(value = "memberFormUser")
