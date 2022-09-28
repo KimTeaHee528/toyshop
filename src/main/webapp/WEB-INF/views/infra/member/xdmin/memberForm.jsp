@@ -12,7 +12,6 @@
 	<%@include file="../../common/xdmin/includeV1/top.jsp"%>
 	<!-- top e -->
 		<!--=========내용=========-->
-
   <!-- Content -->
   <div id="content"> 
     
@@ -30,35 +29,35 @@
               <!-- ESTIMATE SHIPPING & TAX -->
               <div class="col-sm-12">
 				<input type="hidden" name="li_seq" value="<c:out value="${item.seq }"/>">
-                <h6 style="padding-left: 50px;">회원정보 <span style="font-size: 17px; font-weight: lighter;">회원번호: <c:out value="${item.seq }"/></span> </h6>
-                <form>
+                <h6 style="padding-left: 50px;">회원정보 <span style="font-size: 17px; font-weight: lighter;">회원번호: <c:out value="${item.seq }"/></span></h6>
+                <form name="memberForm" method="post">
                   <ul class="row">
                     <!-- Name -->
                     <div class="col-md-9" style="padding-left: 100px;">
 	                    <div class="col-md-4">
 	                      <label> *ID
-	                        <input type="text" name="first-name" value="<c:out value="${item.id }"/>" placeholder="">
+	                        <input type="text" name="id" value="<c:out value="${item.id }"/>" placeholder="">
 	                      </label>
 	                    </div>
 	                    <!-- LAST NAME -->
 	                    <div class="col-md-4">
 	                      <label> *이름
-	                        <input type="text" name="last-name" value="<c:out value="${item.name }"/>" placeholder="">
+	                        <input type="text" name="name" value="<c:out value="${item.name }"/>" placeholder="">
 	                      </label>
 	                    </div>
 	                    <!-- GENDER -->
 	                    <div class="col-md-4">
 	                      <label> *성별
-	                        <select class="selectpicker" name="contry-state">
-	                          <option>MALE</option>
-	                          <option>FEMALE</option>
-	                          <option>OTHER</option>
+	                        <select class="selectpicker" name="gender">
+	                          <option value="0">MALE</option>
+	                          <option value="1">FEMALE</option>
+	                          <option value="2">OTHER</option>
 	                        </select>
 	                      </label>
 	                    </div>
 	                <div class="col-md-4" style="margin-right: 0px;">
                       <label> *이메일
-                        <input type="text" name="contry-state" value="<c:out value="${item.email }"/>" placeholder="">
+                        <input type="text" name="email" value="<c:out value="${item.email}"/>" placeholder="">
                       </label>                
                     </div>
                     <div class="col-md-4" id="email-box" name="selboxDirect" style="margin-right: 0px;">
@@ -79,25 +78,28 @@
 	                 <!-- PHONE -->
                     <div class="col-md-6" style="margin-top: 0px;">
                       <label> *전화번호
-                        <input type="text" name="postal-code" value="<c:out value="${item.tell }"/>" placeholder="">
+                        <input type="text" name="tell" value="<c:out value="${item.tell }"/>" placeholder="">
                       </label>
                     </div>
                    <!-- DOB -->
                     <div class="col-md-6">
                       <label> *생년월일
-                      	<input type="date" value="<c:out value="${item.dob }"/>">
+	                  	<input type="date" name="dob">
                       </label>
                     </div>  
                    <!-- reg -->
                     <div class="col-md-6">
                       <label> *가입일
-                      	<input type="date" value="<c:out value="${item.reg_date }"/>">
+<%--                       	<fmt:formatDate value="${item.reg_date}" pattern="yy-MM-dd HH:mm:ss"/> --%>
+<%--                       	<input type="date" name="reg_date" value="<c:out value="${item.reg_date }"/>"> --%>
                       </label>
                     </div>  
                    <!-- mod -->
                     <div class="col-md-6">
                       <label> *수정일
-                      	<input type="date" value="<c:out value="${item.mod_date }"/>">
+<%--                       	<input type="date" value="<c:out value="${item.mod_date }"/>"> --%>
+<%--                       	<fmt:formatDate value="${item.mod_date }" pattern="yy-MM-dd HH:mm:ss"/> --%>
+<%--                       	<input type="date" name="mod_date" value="<c:out value="${item.mod_date }"/>"> --%>
                       </label>
                     </div>
                     <input type="hidden" id="sample4_extraAddress" placeholder="참고항목">
@@ -127,7 +129,7 @@
                     <!-- ADDRESS_DETAil -->
                     <div class="col-md-12">
                       <label>*상세주소
-                      	<input type="text" id="sample4_detailAddress" name="address" value="<c:out value="${item.address_detail }"/>" placeholder="상세주소">
+                      	<input type="text" id="sample4_detailAddress" name="address_detail" value="<c:out value="${item.address_detail }"/>" placeholder="상세주소">
                       </label>
                     </div>
                     <!-- x -->
@@ -146,7 +148,7 @@
 						<div id="map" style="width:100%;height:350px;"></div>
 					</div>
                    <div class="col-md-6" style="margin-top: 0px;">
-                     <label><span class="pwl" id="pwid">*비밀번호</span> 
+                     <label><span class="pwl" id="pwid">*비밀번호</span>
                        <input type="password" class="pw" id="pw" name="" value="" placeholder="">
                      </label>
                    </div>
@@ -156,7 +158,9 @@
                      </label>
                    </div>
                     <li class="col-md-12 text-center">
-                      <button type="submit" class="btn" style="margin-bottom: 10px;">회원정보 수정</button>
+<!--                       <button type="submit" class="btn" style="margin-bottom: 10px;">회원정보 수정</button> -->
+						<button type="button" class="btn" id="btn_list">목록</button>
+						<button type="button" class="btn" id="btn_save">저장</button>
                     </li>
                   </div>
                   <div class="col-md-3" style="text-align: center;">
@@ -203,6 +207,35 @@
 	<!-- script s -->
 	<%@include file="../../common/comm/includeV1/script.jsp"%>
 	<!-- script e -->
+	
+	<script type="text/javascript">
+	
+		var goUrlView = "/member/memberView";
+// 		var goUrlUpdt = "/member/codeGroupUp";	
+		var goUrlInst = "/member/memberInst";	
+		var goUrlList = "/member/memberList";	
+// 		var goUrlmod = "/member/codeGroupMod";	
+		var form = $("form[name=memberForm]");
+		var form_back = $("form[name=form_back]");
+		
+		var dobA = $("input[name=dob]");
+		
+		$("#btn_mod").on("click", function(){
+			form.attr("action", goUrlmod).submit();
+		});
+		$("#btn_up").on("click", function(){
+			form.attr("action", goUrlUpdt).submit();
+		});
+		$("#btn_save").on("click", function(){
+			form.attr("action", goUrlInst).submit();
+		});
+		$("#btn_list").on("click", function(){
+			form_back.attr("action", goUrlList).submit();
+		});
+		$("#list_view").on("click", function(){
+			form.attr("action", goUrlView).submit();
+		});
+	</script>
 	<script type="text/javascript">
 	    //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
 	    function sample4_execDaumPostcode() {
@@ -236,15 +269,12 @@
 // 	                document.getElementById("sample4_x").value = result[0].x;
 // 	                document.getElementById("sample4_y").value = result[0].y;
 	                
-	                
 	                // 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
 	                if(roadAddr !== ''){
 	                    document.getElementById("sample4_extraAddress").value = extraRoadAddr;
 	                } else {
 	                    document.getElementById("sample4_extraAddress").value = '';
 	                }
-	                
-	                
 						/* lat and lng from address s */
 					// 주소-좌표 변환 객체를 생성
 					var geocoder = new daum.maps.services.Geocoder();
@@ -254,25 +284,18 @@
 						if (status == daum.maps.services.Status.OK) {
 							document.getElementById("sample4_y").value=result[0].y;
 							document.getElementById("sample4_x").value=result[0].x;
-
-							
 							
 							setCenter();
-						    
 						    
 						}
 					});
 					/* lat and lng from address e */
-					
 	        function setCenter() {            
 	            // 이동할 위도 경도 위치를 생성합니다 
 	            var moveLatLon = new kakao.maps.LatLng(33.452613, 126.570888);
-	            
 	            // 지도 중심을 이동 시킵니다
 	            map.setCenter(moveLatLon);
 	        }
-					
-					
 					
 	            }
 	        }).open();

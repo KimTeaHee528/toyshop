@@ -140,7 +140,6 @@
 											<c:out value="${list.cnt }"/>
 										</div>
 										<div class="list-7">
-											
 											<c:choose>
 												<c:when test="${not empty list.reg_date}"><fmt:formatDate value="${list.reg_date }" pattern="yy-MM-dd HH:mm:ss"/></c:when>
 												<c:otherwise>--</c:otherwise>

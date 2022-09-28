@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
 @Controller
@@ -36,13 +37,39 @@ public class memberController {
 	// 폼 뷰
 	@RequestMapping(value = "memberView")
 //	public String memberView(Model model,@ModelAttribute("vo") MemberVo vo) throws Exception {
-	public String memberView(Model model,MemberVo vo) throws Exception {
+	public String memberView(Model model,@ModelAttribute("vo") MemberVo vo) throws Exception {
 		vo.setMemberFormMode(0);
 		
 		Member item = service.selectOne(vo);
 		model.addAttribute("item", item);
 		return "infra/member/xdmin/memberForm";
-	}	
+	}
+	
+	
+	
+	// 멤버 등록 페이지
+	@RequestMapping(value = "memberReg")
+	public String memberRegForm(Model model,@ModelAttribute("vo") MemberVo vo) throws Exception {
+		vo.setMemberFormMode(1);
+		Member item = service.selectOne(vo);
+		model.addAttribute("item", item);
+		return "infra/member/xdmin/memberForm";
+	}
+	
+	
+	// 코드그룹 인서트
+	@RequestMapping(value = "memberInst")
+	public String memberInst(Member dto, MemberVo vo, RedirectAttributes redirectAttributes) throws Exception {
+		int result = service.insertOne(dto);
+		System.out.println("result=========="+result);
+		vo.setLi_seq(dto.getSeq());
+		System.out.println("vo.getLi_seq()" + vo.getLi_seq());
+		redirectAttributes.addFlashAttribute("vo", vo);
+		
+//		return "redirect:/codeGroup/codeGroupList";
+		return "redirect:/member/memberView";
+	}
+	
 	
 	// 유저 회원가입
 	@RequestMapping(value = "memberRegUser")
@@ -68,7 +95,6 @@ public class memberController {
 	// 로그인
 	@RequestMapping(value = "memberLogin")
 	public String memberLogin() throws Exception {
-		
 		return "infra/member/user/login";
 	}	
 	

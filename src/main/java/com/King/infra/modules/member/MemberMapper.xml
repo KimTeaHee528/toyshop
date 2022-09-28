@@ -6,51 +6,95 @@
 
 <mapper namespace="com.King.infra.modules.member.MemberMapper">
 
+<!-- 	리스트 불러오기용 -->
     <resultMap id="resultMapObj" type="com.King.infra.modules.member.Member"></resultMap>
     
 	<select id="selectList" resultMap="resultMapObj">
 	<include refid="Base.selectListUpperForMysql" />
 		SELECT
 			seq
-		<include refid="AllCol" />
+		,<include refid="AllCol" />
 		<include refid="selectCommon" />
 	<include refid="Base.selectListLowerForMysql" />
 	</select>
 	
+<!-- 	리스트에서 하나만 선택 -->
 	<select id="selectListOne" resultMap="resultMapObj">
 		SELECT
 			seq
-		<include refid="AllCol" />
+		,<include refid="AllCol" />
 			From tb_member
 			where
 			seq = #{li_seq}
 	</select>
 	
+<!-- 	페이지네이션 갯수 확인용 -->
 	<select id="selectOneCount" resultType="Integer">
 		SELECT COUNT(*) as totalRows
 		<include refid="selectCommon" />
 	</select>
 	
+<!-- 	중복확인용 1이면 중복됨 / 0이면 중복아님 -->
 	<select id="selectDuplicate" resultType="Integer">
 		SELECT COUNT(*) From tb_member where id = #{id}
 	</select>
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	<insert id="insertOne">
+		<selectKey resultType="String" keyProperty="seq" order="AFTER">
+			SELECT last_insert_id()
+		</selectKey>
+		INSERT INTO tb_member(
+		    name
+		    ,id
+		    ,gender
+			<if test="dob != null and !dob.equals('')"> 
+				,dob
+			</if>
+		    ,zip_code
+		    ,address
+		    ,address_detail
+		    ,tell
+		    ,email
+		    ,admin_ny
+		    ,reg_date
+			<if test="mod_date != null and !mod_date.equals('')"> 
+				,mod_date
+			</if>
+			<if test="del_date != null and !del_date.equals('')"> 
+				,del_date
+			</if>
+		    ,del_ny
+		    ,pw
+		)
+		VALUES(
+			#{name}
+			,#{id}
+			,#{gender}
+			<if test="dob != null and !dob.equals('')"> 
+				,#{dob}
+			</if>
+			,#{zip_code}
+			,#{address}
+			,#{address_detail}
+			,#{tell}
+			,#{email}
+			,#{admin_ny}
+			,now()
+			<if test="mod_date != null and !mod_date.equals('')"> 
+				,#{mod_date}
+			</if>
+			<if test="del_date != null and !del_date.equals('')"> 
+				,#{del_date}
+			</if>
+			,#{del_ny}
+			,#{pw}
+		)
+	</insert>
 
+	
+<!-- 	멤버 전체 셀렉트용 -->
 	<sql id="AllCol">
-		    ,name
+		    name
 		    ,id
 		    ,gender
 		    ,dob
@@ -66,6 +110,8 @@
 		    ,del_ny
 		    ,pw
 	</sql>
+	
+<!-- 	멤버리스트 검색조건용 -->
 	<sql id="selectCommon">
 		FROM tb_member
 		where 1=1

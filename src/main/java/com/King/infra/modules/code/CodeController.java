@@ -51,7 +51,6 @@ public class CodeController {
 		return "redirect:/code/codeList";
 	}
 	
-
 	@RequestMapping(value = "codeView")
 	public String codeView(Model model, @ModelAttribute("vo") codeVo vo) throws Exception {
 		
@@ -59,8 +58,6 @@ public class CodeController {
 		model.addAttribute("item", item);
 		return "infra/code/xdmin/codeRegForm";
 	}
-	
-	
 
 }
 

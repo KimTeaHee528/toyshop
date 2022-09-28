@@ -7,5 +7,6 @@ public interface MemberService {
 	public int selectOneCount(MemberVo vo) throws Exception; 
 	public Member selectOne(MemberVo vo) throws Exception; 
 	public int selectDuplicate(Member dto) throws Exception; 
+	public int insertOne(Member dto) throws Exception; 
 	
 }

@@ -145,7 +145,7 @@
 										<c:out value="${list.gender }"/>
 									</div>
 									<div class="list-6">
-										<c:out value="${list.dob }"/>
+										${fn:substring(list.dob,0,10)}
 									</div>
 									<div class="list-7">
 										<c:out value="${list.address }"/>
@@ -163,7 +163,9 @@
 										</c:choose>
 									</div>
 									<div class="list-11">
-										<fmt:formatDate value="${list.reg_date}" pattern="yy-MM-dd HH:mm:ss"/>
+										${fn:substring(list.reg_date,0,10)}
+<%-- 										<c:out value=""/> --%>
+<%-- 										<fmt:formatDate value="${list.reg_date}" pattern="yy-MM-dd HH:mm:ss"/> --%>
 									</div>
 									<div class="list-12">
 										<fmt:formatDate value="${list.del_date}" pattern="yy-MM-dd HH:mm:ss"/>
@@ -177,6 +179,10 @@
 				<%@include file="../../common/comm/includeV1/pagination.jsp"%>
 				<!-- pagination e -->
 				</form>
+				<div class="col-md-12 text-center" style="margin-bottom: 50px; margin-top: 20px;">
+					<button type="button" class="btn" id="btn_reg">등록</button>
+					<button type="submit" class="btn">삭제</button>
+				</div>
 			</div>
 <!--   리스트 넣는곳   -->
 		</div>
@@ -190,6 +196,9 @@
 	<!-- script s -->
 	<%@include file="../../common/comm/includeV1/script.jsp"%>
 	<!-- script e -->
+	
+	
+	
 	
 	<script type="text/javascript">
 	

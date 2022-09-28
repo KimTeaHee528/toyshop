@@ -194,7 +194,7 @@
 											<li class="col-md-6">
 												<label>
 													등록일
-													<input type="date" value="2022-08-30" disabled>
+													<input type="date" value="<c:out value="${item.reg_date }"/>" disabled>
 												</label>
 											</li>
 											<li class="col-md-6">
@@ -234,16 +234,16 @@
 									<li class="col-md-12 text-center">
 										<c:choose>
 											<c:when test="${vo.ccgFormMode eq 1}">
-												<button type="button" class="btn" id="btn_list">목록</button></a>
+												<button type="button" class="btn" id="btn_list">목록</button>
 												<button type="button" class="btn" id="btn_save">저장</button>
 											</c:when>
 											<c:when test="${vo.ccgFormMode eq 2}">
-												<button type="button" class="btn" id="btn_list">목록</button></a>
+												<button type="button" class="btn" id="btn_list">목록</button>
 												<button type="button" class="btn" id="list_view">뒤로가기</button>
 												<button type="button" class="btn" id="btn_up">수정완료</button>
 											</c:when>
 											<c:otherwise>
-												<button type="button" class="btn" id="btn_list">목록</button></a>
+												<button type="button" class="btn" id="btn_list">목록</button>
 												<button type="button" class="btn">삭제</button>
 												<button type="button" class="btn" id="btn_mod">수정</button>
 											</c:otherwise>

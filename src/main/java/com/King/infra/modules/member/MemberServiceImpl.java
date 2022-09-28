@@ -33,5 +33,9 @@ public class MemberServiceImpl implements MemberService {
 	public int selectDuplicate(Member dto) throws Exception {
 		return dao.selectDuplicate(dto);
 	}
+	@Override
+	public int insertOne(Member dto) throws Exception {
+		return dao.insertOne(dto);
+	}
 	
 }

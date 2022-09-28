@@ -39,4 +39,14 @@ public class MemberDao {
 		
 	}
 	
+	public int insertOne(Member dto) {
+		return sqlSession.insert(namespace + ".insertOne", dto);
+		
+	}
+	
+	
+	
+	
+	
+	
 }
