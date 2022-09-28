@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <!-- head s -->
-<%@include file="../../common/xdmin/includeV1/head.jsp"%>
+<%@include file="../../common/user/includeV1/head.jsp"%>
 <!-- head e -->
 <body>
 	<!-- top s -->
@@ -145,72 +145,9 @@
 		</div>
 	</section>
 
-	<!--======= FOOTER =========-->
-	<footer>
-		<div class="container">
-			<!-- ABOUT Location -->
-			<div class="col-md-3">
-				<div class="about-footer">
-					<img class="margin-bottom-30" src="/resources/images/logo-foot.png" alt="">
-					<p>
-						<i class="icon-pointer"></i> Street No. 12, Newyork 12, <br>
-						MD - 123, USA.
-					</p>
-					<p>
-						<i class="icon-call-end"></i> 1.800.123.456789
-					</p>
-					<p>
-						<i class="icon-envelope"></i> info@ecoshop.com
-					</p>
-				</div>
-			</div>
-
-			<!-- HELPFUL LINKS -->
-			<div class="col-md-3">
-				<h6>HELPFUL LINKS</h6>
-				<ul class="link">
-					<li><a href="#."> Products</a></li>
-					<li><a href="#."> Find a Store</a></li>
-					<li><a href="#."> Features</a></li>
-					<li><a href="#."> Privacy Policy</a></li>
-					<li><a href="#."> Blog</a></li>
-					<li><a href="#."> Press Kit </a></li>
-				</ul>
-			</div>
-
-			<!-- SHOP -->
-			<div class="col-md-3">
-				<h6>SHOP</h6>
-				<ul class="link">
-					<li><a href="#."> About Us</a></li>
-					<li><a href="#."> Career</a></li>
-					<li><a href="#."> Shipping Methods</a></li>
-					<li><a href="#."> Contact</a></li>
-					<li><a href="#."> Support</a></li>
-					<li><a href="#."> Retailer</a></li>
-				</ul>
-			</div>
-
-			<!-- MY ACCOUNT -->
-			<div class="col-md-3">
-				<h6>MY ACCOUNT</h6>
-				<ul class="link">
-					<li><a href="#."> Login</a></li>
-					<li><a href="#."> My Account</a></li>
-					<li><a href="#."> My Cart</a></li>
-					<li><a href="#."> Wishlist</a></li>
-					<li><a href="#."> Checkout</a></li>
-				</ul>
-			</div>
-			<!-- Rights -->
-			<div class="rights">
-				<p>© 2016 ecoshop All right reserved.</p>
-				<div class="scroll">
-					<a href="#wrap" class="go-up"><i class="lnr lnr-arrow-up"></i></a>
-				</div>
-			</div>
-		</div>
-	</footer>
+	<!-- foot s -->
+	<%@include file="../../common/comm/includeV1/foot.jsp"%>
+	<!-- foot e -->
 	<!--======= RIGHTS =========-->
 	<script src="/resources/js/jquery-1.11.3.min.js"></script>
 	<script src="/resources/js/bootstrap.min.js"></script>
@@ -224,36 +161,5 @@
 	<script src="/resources/js/main.js"></script>
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=10eb2423c0789bba7beb31339f47651a"></script>
-
-	<script type="text/javascript">
-	const sessSeq = $("input[name=sessSeq]").val();
-	const sessId = $("input[name=sessId]").val();
-	const sessName = $("input[name=sessName]").val();
-		$("#btnLogin").on("click", function(){
-			$.ajax({
-				cache: false
-				,type: "post"
-				/* ,dataType:"json" */
-				,url: "/member/loginProc"
-				/* ,data : $("#formLogin").serialize() */
-				,data : { "id" : $("#id").val(), "pw" : $("#pw").val()}
-				,success: function(response) {
-					if(response.rt == "success") {
-						alert("로그인성공");
-// 						alert("sessSeq : " + sessSeq);
-// 						alert("sessId : " + sessId);
-// 						alert("sessName : " + sessName);
-						
-// 						location.href = "/"
-					} else {
-						alert("로그인실패ㅠㅠ");
-					}
-				}
-				,error : function(jqXHR, textStatus, errorThrown){
-					alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
-				}
-			});
-		});
-	</script>
 </body>
 </html>

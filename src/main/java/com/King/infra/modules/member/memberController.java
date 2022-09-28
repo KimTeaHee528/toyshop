@@ -118,6 +118,7 @@ public class memberController {
 				httpSession.setAttribute("sessSeq", rtMember.getSeq());
 				httpSession.setAttribute("sessId", rtMember.getId());
 				httpSession.setAttribute("sessName", rtMember.getName());
+				httpSession.setAttribute("sessAdminNy", rtMember.getAdmin_ny());
 				returnMap.put("rt", "success");
 			} else {
 				// 비밀번호 실패
@@ -125,6 +126,18 @@ public class memberController {
 			}
 		return returnMap;
 	}
+	
+	// 로그아웃 동작
+	@ResponseBody
+	@RequestMapping(value = "logoutProc")
+	public Map<String, Object> logoutProc(HttpSession httpSession) throws Exception {
+		Map<String, Object> returnMap = new HashMap<String, Object>();
+		httpSession.invalidate();
+		returnMap.put("rt", "success");
+		return returnMap;
+	}
+	
+	
 	
 	
 	

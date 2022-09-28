@@ -8,6 +8,6 @@ public class Constants {
 	
 //	세션관련
 	public static final int SESSION_MINUTE = 30; 
-	
+	public static final String URL_LOGINFORM = "/member/memberLogin";
 	
 }

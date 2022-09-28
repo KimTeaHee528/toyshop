@@ -16,7 +16,7 @@
       <div class="container"> 
         
         <!-- Logo -->
-        <div class="logo"> <a href="home.html"><img class="img-responsive" src="/resources/images/logo.png" alt="" ></a> </div>
+        <div class="logo"> <a href="/"><img class="img-responsive" src="/resources/images/logo.png" alt="" ></a> </div>
         <nav class="navbar ownmenu">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-open-btn" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"><i class="fa fa-navicon"></i></span> </button>
@@ -113,8 +113,8 @@
 						<li>
 							<h6><c:out value="${sessName}"/> 회원님 환영합니다.</h6>
 						</li>
-						<li><a href="/member/memberFormUser?li_seq=<c:out value="${sessName}"/>">회원정보</a></li>
-						<li><a href="#" id="btnLogout">로그아웃</a></li>
+						<li><a href="/member/memberFormUser?li_seq=<c:out value="${sessSeq}"/>">회원정보</a></li>
+						<li><a id="btnLogout">로그아웃</a></li>
 					</c:when>
 					<c:otherwise>
 						<li><a href="/member/memberLogin">로그인</a></li>

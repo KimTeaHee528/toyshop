@@ -402,4 +402,50 @@ var noc = 1;
     return $(this).lighter();
   });
 
+		$("#btnLogin").on("click", function(){
+			$.ajax({
+				cache: false
+				,type: "post"
+				/* ,dataType:"json" */
+				,url: "/member/loginProc"
+				/* ,data : $("#formLogin").serialize() */
+				,data : { "id" : $("#id").val(), "pw" : $("#pw").val()}
+				,success: function(response) {
+					if(response.rt == "success") {
+// 						alert("로그인성공");
+// 						alert("sessSeq : " + sessSeq);
+// 						alert("sessId : " + sessId);
+// 						alert("sessName : " + sessName);
+						location.href = '/';
+					} else {
+						alert("로그인실패ㅠㅠ");
+					}
+				}
+				,error : function(jqXHR, textStatus, errorThrown){
+					alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+				}
+			});
+		});
+		
+		$("#btnLogout").on("click", function(){
+			$.ajax({
+				cache: false
+				,type: "post"
+				,url: "/member/logoutProc"
+				,data: {}
+				,success: function(response) {
+					if(response.rt == "success") {
+						location.href = '/';
+					} else {
+						// by pass
+					}
+				}
+				,error : function(jqXHR, textStatus, errorThrown){
+					alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+				}
+			});
+		});
+
+
+
 }).call(this);
