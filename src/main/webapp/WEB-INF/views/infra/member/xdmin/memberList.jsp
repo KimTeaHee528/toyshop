@@ -16,7 +16,7 @@
 		<div style="display: inline-block; text-align: center; width: 1500px;">
 		<div style="display: block; float: top; float: left; font-size: 30px; margin-top: 30px;">회원 관리</div>
 			<div class="tab-pane" style="margin-bottom: 50px; margin-top: 40px;">
-				<form id="sh" name="memberList" action="/member/memberList">
+				<form id="sh" name="memberList" action="/member/memberList" method="post">
 				<div class="member-top">
 					<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
 					<div style="display: inline-block; margin-right: 25px; margin-bottom: 30px; float: left;">

@@ -108,13 +108,19 @@
               <!-- USER INFO -->
               <li class="dropdown user-acc"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" ><i class="icon-user">&nbsp;&nbsp;</i> </a>
                 <ul class="dropdown-menu">
-                  <li>
-                    <h6>김태희 회원님 환영합니다.</h6>
-                  </li>
-                  <li><a href="/member/memberFormUser">회원정보</a></li>
-                  <li><a href="/member/memberLogin">로그인</a></li>
-                  <li><a href="/member/memberRegUser">회원가입</a></li>
-                  <li><a href="#">로그아웃</a></li>
+				<c:choose>
+                	<c:when test="${not empty sessSeq || sessSeq ne null}">
+						<li>
+							<h6><c:out value="${sessName}"/> 회원님 환영합니다.</h6>
+						</li>
+						<li><a href="/member/memberFormUser?li_seq=<c:out value="${sessName}"/>">회원정보</a></li>
+						<li><a href="#" id="btnLogout">로그아웃</a></li>
+					</c:when>
+					<c:otherwise>
+						<li><a href="/member/memberLogin">로그인</a></li>
+						<li><a href="/member/memberRegUser">회원가입</a></li>
+					</c:otherwise>
+				</c:choose>
                 </ul>
               </li>
               

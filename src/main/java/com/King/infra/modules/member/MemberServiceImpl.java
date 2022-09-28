@@ -42,7 +42,8 @@ public class MemberServiceImpl implements MemberService {
 	}
 	
 	// PW암호화 및 ID/PW확인
-	public Member selectOneLogin(Member dto) throws NoSuchAlgorithmException {
+	@Override
+	public Member selectOneLogin(Member dto) throws Exception {
 		dto.setPw(UtillSecurity.encryptSha256(dto.getPw()));
 		return dao.selectLogin(dto);
 	}

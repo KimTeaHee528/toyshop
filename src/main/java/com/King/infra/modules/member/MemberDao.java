@@ -46,6 +46,7 @@ public class MemberDao {
 	
 //	아이디 패스워드 확인결과
 	public Member selectLogin(Member dto) {
+		System.out.println("dto.getPw()"+dto.getPw());
 		return sqlSession.selectOne(namespace + ".selectLogin", dto);
 		
 	}

@@ -34,21 +34,28 @@
                     <!-- Name -->
                     <li class="col-md-12">
                       <label> 아이디
-                        <input type="text" name="first-name" value="" placeholder="">
+                        <input type="text" name="id" id="id" value="" placeholder="">
                       </label>
                     </li>
          
                     <!-- LAST NAME -->
                     <li class="col-md-12">
                       <label> 비밀번호
-                        <input type="password" name="last-name" value="" placeholder="">
+                        <input type="password" name="pw" id="pw" value="" placeholder="">
                       </label>
                     </li>
                     
                     <!-- LOGIN -->
                     <li class="col-md-4">
-                      <button type="submit" class="btn">LOGIN</button>
+                      <button type="button" class="btn" id="btnLogin">LOGIN</button>
                     </li>
+                    
+                    
+					<!-- 세션확인용 -->
+                    <input type="hidden" name="sessSeq" value="<c:out value="${sessSeq}"/>">
+                    <input type="hidden" name="sessName" value="<c:out value="${sessName}"/>">
+                    <input type="hidden" name="sessId" value="<c:out value="${sessId}"/>">
+                    
                     
                     <!-- CREATE AN ACCOUNT -->
                     <li class="col-md-4">
@@ -218,11 +225,35 @@
 	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=10eb2423c0789bba7beb31339f47651a"></script>
 
-	
-	
-	
-	
-	
-	
+	<script type="text/javascript">
+	const sessSeq = $("input[name=sessSeq]").val();
+	const sessId = $("input[name=sessId]").val();
+	const sessName = $("input[name=sessName]").val();
+		$("#btnLogin").on("click", function(){
+			$.ajax({
+				cache: false
+				,type: "post"
+				/* ,dataType:"json" */
+				,url: "/member/loginProc"
+				/* ,data : $("#formLogin").serialize() */
+				,data : { "id" : $("#id").val(), "pw" : $("#pw").val()}
+				,success: function(response) {
+					if(response.rt == "success") {
+						alert("로그인성공");
+// 						alert("sessSeq : " + sessSeq);
+// 						alert("sessId : " + sessId);
+// 						alert("sessName : " + sessName);
+						
+// 						location.href = "/"
+					} else {
+						alert("로그인실패ㅠㅠ");
+					}
+				}
+				,error : function(jqXHR, textStatus, errorThrown){
+					alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+				}
+			});
+		});
+	</script>
 </body>
 </html>
