@@ -110,7 +110,6 @@ public class memberController {
 	@RequestMapping(value = "loginProc")
 	public Map<String, Object> loginProc(Member dto, HttpSession httpSession) throws Exception {
 		Map<String, Object> returnMap = new HashMap<String, Object>();
-
 			// 아이디 비밀번호 확인
 			Member rtMember = service.selectOneLogin(dto);
 			if (rtMember != null) {
