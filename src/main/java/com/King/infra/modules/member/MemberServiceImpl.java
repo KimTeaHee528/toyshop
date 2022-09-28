@@ -46,7 +46,4 @@ public class MemberServiceImpl implements MemberService {
 		dto.setPw(UtillSecurity.encryptSha256(dto.getPw()));
 		return dao.selectLogin(dto);
 	}
-	
-	
-	
 }
