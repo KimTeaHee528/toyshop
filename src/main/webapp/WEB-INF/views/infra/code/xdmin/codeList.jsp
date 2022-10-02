@@ -17,8 +17,7 @@
 <title>관리 페이지</title>
 
 <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
-<link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css"
-	media="screen" />
+<link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css" media="screen" />
 
 <!-- Bootstrap Core CSS -->
 <link href="/resources/css/bootstrap.min.css" rel="stylesheet">

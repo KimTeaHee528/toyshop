@@ -26,8 +26,15 @@ public class CodeGroupDao {
 		
 		return sqlSession.insert(namespace + ".insert", dto);
 	}
-	
-	
+//	
+//	public int insertTest(CodeGroup dto) {
+//		
+//		int a = sqlSession.insert(namespace + ".insertTest1", dto);
+//		int b = sqlSession.insert(namespace + ".insertTest2", dto);
+//		
+//		return a*b;
+//	}
+//	
 	public CodeGroup selectOne(codeGroupVo vo) {
 		return sqlSession.selectOne(namespace + ".selectListOne", vo);
 		

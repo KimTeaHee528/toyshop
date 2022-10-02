@@ -41,7 +41,6 @@ public class memberController {
 	
 	// 폼 뷰
 	@RequestMapping(value = "memberView")
-//	public String memberView(Model model,@ModelAttribute("vo") MemberVo vo) throws Exception {
 	public String memberView(Model model,@ModelAttribute("vo") MemberVo vo) throws Exception {
 		vo.setMemberFormMode(0);
 		
@@ -93,6 +92,7 @@ public class memberController {
 		} else {
 			returnMap.put("rt", "fail");
 		}
+		System.out.println("컨트롤러에서 rt : "+returnMap.get("rt"));
 		return returnMap;
 	}
 	
@@ -138,14 +138,13 @@ public class memberController {
 	}
 	
 	
-	
-	
-	
-	
 	// 유저 회원정보
 	@RequestMapping(value = "memberFormUser")
-	public String memberFormUser() throws Exception {
+	public String memberFormUser(Model model,@ModelAttribute("vo") MemberVo vo) throws Exception {
+		vo.setMemberFormMode(0);
 		
+		Member item = service.selectOne(vo);
+		model.addAttribute("item", item);
 		return "infra/member/user/memberFormUser";
 	}	
 	

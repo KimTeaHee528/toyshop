@@ -35,18 +35,18 @@
                     <!-- Name -->
                     <li class="col-md-6">
                       <label> *이름
-                        <input type="text" name="first-name" id="user_name" value="" placeholder="">
+                        <input type="text" id="user_name" value="" placeholder="">
                       </label>
                     </li>
                     <!-- LAST NAME -->
-                    <li class="col-md-5">
-                      <label> *ID
+                    <li class="col-md-6">
+                      <label><span id="idl">*ID</span> 
                         <input type="text" name="user_id" id="user_id" value="" placeholder="">
                       </label>
                     </li>
-                    <li class="col-md-1" style="padding-left: 0;">
-                        <button type="submit" class="btn" style="padding: 0px; margin-top: 27px; height: 44px; font-size: 13px; width: 100%;">중복 확인</button>
-                    </li>
+<!--                     <li class="col-md-1" style="padding-left: 0;"> -->
+<!--                         <button type="submit" class="btn" style="padding: 0px; margin-top: 27px; height: 44px; font-size: 13px; width: 100%;">중복 확인</button> -->
+<!--                     </li> -->
                     <!-- EMAIL ADDRESS111 -->
                     <li class="col-md-3" style="margin-right: 0px;">
                       <label> *이메일
@@ -205,30 +205,67 @@
 	</script>
 	
 	<script type="text/javascript">
-		$("#user_id").on("focusout", function(){
-// 			if(!checkId('user_id', 2, 0, "영대소문자,숫자,특수문자(-_.),4~20자리만 입력 가능합니다")) {
-// 				return false;
-// 			} else {
-				$.ajax({
-// 					async: true 
-// 					,cache: false
-					type: "post"
-					/* ,dataType:"json" */
-					,url: "/member/checkId"
-					/* ,data : $("#formLogin").serialize() */
-					,data : { "id" : $("#user_id").val() }
-					,success: function(response) {
-						if(response.rt == "success") {
-							alert("맞음");
-						} else {
-							alert("틀림");
-						}
+		 $("#user_id").keyup(function () {
+			const pwd1 = $("#user_id").val();
+		    //아이디 영문숫자 4~12자리
+		    const regul1 = /^[a-zA-Z0-9]{4,12}$/;
+		    var rech = regul1.test(pwd1);
+		    if(pwd1 == ''){
+				$("#user_id").css("border-color","black");
+				$("#user_id").css("color","black");
+				$("#user_id").text("color","black");
+				$("#idl").text("*ID");
+				$("#idl").css("color","black");
+		    }
+		    if ( rech == false) {
+				$("#user_id").css("border-color","red");
+				$("#user_id").css("color","red");
+				$("#user_id").text("color","red");
+				$("#idl").text("*대소문자 또는 숫자만,4-12자");
+				$("#idl").css("color","red");
+		    }else{
+				$("#user_id").css("border-color","black");
+				$("#user_id").css("color","black");
+				$("#user_id").text("color","black");
+				$("#idl").text("*일단맞음");
+				$("#idl").css("color","black");
+				$("#user_id").on("focusout", function(){
+					const pwd2 = $("#user_id").val();
+					if(pwd2 != null || pwd2 != ''){
+						$.ajax({
+							type: "post"
+							/* ,dataType:"json" */
+							,url: "/member/checkId"
+							/* ,data : $("#formLogin").serialize() */
+							,data : { "id" : $("#user_id").val() }
+							,success: function(response) {
+								if(response.rt == "success") {
+									$(function(){
+										$("#user_id").css("border-color","red");
+										$("#user_id").css("color","red");
+										$("#user_id").text("color","red");
+										$("#idl").text("*ID 중복");
+										$("#idl").css("color","red");
+									})
+								} else {
+									$("#user_id").css("border-color","black");
+									$("#user_id").css("color","black");
+									$("#user_id").text("color","black");
+									$("#idl").text("*사용가능");
+									$("#idl").css("color","black");
+								}
+							}
+						});
+
+					} else{
+						$("#user_id").css("border-color","black");
+						$("#user_id").css("color","black");
+						$("#user_id").text("color","black");
+						$("#idl").text("*ID");
+						$("#idl").css("color","black");
 					}
-// 					,error : function(jqXHR, textStatus, errorThrown){
-// 						alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
-// 					}
 				});
-// 			}
+		    }
 		});
 	</script>
 	

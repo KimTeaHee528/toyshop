@@ -28,9 +28,14 @@
 		<interceptor>
 			<mapping path="/**"/>
 			<exclude-mapping path="/" />
+			<exclude-mapping path="/game/test" />
 			<exclude-mapping path="/resources/**" />
 			<exclude-mapping path="/member/memberLogin" />
 			<exclude-mapping path="/member/loginProc" />
+			<exclude-mapping path="/member/checkId" />
+			<exclude-mapping path="/member/memberRegUser" />
+			<exclude-mapping path="/product/productListUser" />
+			<exclude-mapping path="/product/productDetailUser" />
 			<beans:bean id="checkLoginSessionInterception" class="com.King.infra.common.interceptor.CheckLoginSessionInterception"/>
 		</interceptor>
 	</interceptors>	
