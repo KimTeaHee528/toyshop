@@ -32,6 +32,9 @@
 <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900' rel='stylesheet' type='text/css'>
 
+<!-- WebGl -->
+<link rel="shortcut icon" href="/resources/WebGlFallBack/TemplateData/favicon.ico">
+<link rel="stylesheet" href="/resources/WebGlFallBack/TemplateData/styleGame.css">
 
 
 </head>

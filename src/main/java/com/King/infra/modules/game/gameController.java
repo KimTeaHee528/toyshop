@@ -11,7 +11,6 @@ public class gameController {
 	// 리스트 페이지
 	@RequestMapping(value = "test")
 	public String test() throws Exception {
-		System.out.println("asfasdfsadfasdfasdfasdfasdfasdfs");
-		return "infra/game/test";
+		return "infra/game/test1/gameTest1";
 	}	
 }
