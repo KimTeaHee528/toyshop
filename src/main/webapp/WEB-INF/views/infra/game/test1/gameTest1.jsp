@@ -31,7 +31,7 @@
 				<div id="unity-footer" style="position: relative">
 					<div id="unity-webgl-logo" style="float:left; width: 204px; height: 38px; background: url('/resources/WebGlFallBack/TemplateData/webgl-logo.png') no-repeat center"></div>
 					<div id="unity-fullscreen-button" style="float: right; width: 38px; height: 38px; background: url('/resources/WebGlFallBack/TemplateData/fullscreen-button.png') no-repeat center"></div>
-					<div id="unity-build-title" style="float: right; margin-right: 10px; line-height: 38px; font-family: arial; font-size: 18px">WebGl</div>
+					<div id="unity-build-title" style="float: right; margin-right: 10px; line-height: 38px; font-family: arial; font-size: 18px">2dRun</div>
 				</div>
 			</div>
 		</div>
@@ -147,29 +147,29 @@
       // the canvas DOM size and WebGL render target sizes yourself.
       // config.matchWebGLToCanvasSize = false;
 
-//       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-//         // Mobile device style: fill the whole browser client area with the game canvas:
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        // Mobile device style: fill the whole browser client area with the game canvas:
 
-//         var meta = document.createElement('meta');
-//         meta.name = 'viewport';
-//         meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-//         document.getElementsByTagName('head')[0].appendChild(meta);
-//         container.className = "unity-mobile";
-//         canvas.className = "unity-mobile";
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        document.getElementsByTagName('head')[0].appendChild(meta);
+        container.className = "unity-mobile";
+        canvas.className = "unity-mobile";
 
-//         // To lower canvas resolution on mobile devices to gain some
-//         // performance, uncomment the following line:
-//         // config.devicePixelRatio = 1;
+        // To lower canvas resolution on mobile devices to gain some
+        // performance, uncomment the following line:
+        // config.devicePixelRatio = 1;
 
-//         unityShowBanner('WebGL builds are not supported on mobile devices.');
-//       } else {
-//         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
+        unityShowBanner('WebGL builds are not supported on mobile devices.');
+      } else {
+        // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
-//         canvas.style.width = "960px";
-//         canvas.style.height = "600px";
-//       }
+        canvas.style.width = "960px";
+        canvas.style.height = "600px";
+      }
 
-//       loadingBar.style.display = "block";
+      loadingBar.style.display = "block";
 
       var script = document.createElement("script");
       script.src = loaderUrl;
@@ -187,12 +187,7 @@
       };
       document.body.appendChild(script);
     </script>
-	
-	
-	
-	
-	
-	
+
 	
 </body>
 </html>
