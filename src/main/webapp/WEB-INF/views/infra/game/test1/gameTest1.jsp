@@ -36,7 +36,12 @@
 			</div>
 		</div>
 	</div>
-
+<!-- 	<div style="display:block; margin-top:0px; width: 100%; text-align: center;"> -->
+<!-- 		<div style="display: inline-block; text-align: center; width: 960px; overflow: auto;"> -->
+<!-- 			<canvas id="modelA" style="border: 1px solid black"></canvas> -->
+<!-- 		</div> -->
+<!-- 	</div> -->
+<canvas id="c"></canvas>
 
 					
 <!--   리스트 넣는곳   -->
@@ -111,27 +116,27 @@
       // the canvas DOM size and WebGL render target sizes yourself.
       // config.matchWebGLToCanvasSize = false;
 
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device style: fill the whole browser client area with the game canvas:
+//       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+//         // Mobile device style: fill the whole browser client area with the game canvas:
 
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
-        container.className = "unity-mobile";
-        canvas.className = "unity-mobile";
+//         var meta = document.createElement('meta');
+//         meta.name = 'viewport';
+//         meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+//         document.getElementsByTagName('head')[0].appendChild(meta);
+//         container.className = "unity-mobile";
+//         canvas.className = "unity-mobile";
 
-        // To lower canvas resolution on mobile devices to gain some
-        // performance, uncomment the following line:
-        // config.devicePixelRatio = 1;
+//         // To lower canvas resolution on mobile devices to gain some
+//         // performance, uncomment the following line:
+//         // config.devicePixelRatio = 1;
 
-        unityShowBanner('WebGL builds are not supported on mobile devices.');
-      } else {
-        // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
+//         unityShowBanner('WebGL builds are not supported on mobile devices.');
+//       } else {
+//         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
-      }
+//         canvas.style.width = "960px";
+//         canvas.style.height = "600px";
+//       }
 
       loadingBar.style.display = "block";
 
@@ -162,16 +167,126 @@
 				keyLock = 1;
 			}
 		});
-		jQuery(document).keydown(function(e)
-			{
-				if(keyLock == 1)
-					{
-						if(e.keyCode === 37 || e.keyCode === 38 || e.keyCode === 39 || e.keyCode === 40 || e.keyCode === 32)
-							{
-								event.preventDefault();
-							}
-					} 
+		jQuery(document).keydown(function(e){
+			if(keyLock == 1){
+				if(e.keyCode === 37 || e.keyCode === 38 || e.keyCode === 39 || e.keyCode === 40 || e.keyCode === 32){
+						event.preventDefault();
+					}
+				} 
 		});
 	</script>
+	
+	<!--=======모델적용=======-->
+	<script src="https://r105.threejsfundamentals.org/threejs/resources/threejs/r105/three.min.js"></script>
+	<script type="text/javascript">
+	  'use strict';
+
+	  /* global THREE */
+
+	  function main() {
+	    const canvas = document.querySelector('#c');
+	    const renderer = new THREE.WebGLRenderer({canvas});
+
+	    const fov = 75;
+	    const aspect = 2;  // the canvas default
+	    const near = 0.1;
+	    const far = 5;
+	    const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+	    camera.position.z = 2;
+
+	    const scene = new THREE.Scene();
+
+	    const boxWidth = 1;
+	    const boxHeight = 1;
+	    const boxDepth = 1;
+	    const geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
+
+	    const cubes = [];  // just an array we can use to rotate the cubes
+	    const loader = new THREE.TextureLoader();
+
+	    const material = new THREE.MeshBasicMaterial({
+	      map: loader.load('/resources/3D/gltfTest/source/face.gltf'),
+// 	      map: loader.load('https://r105.threejsfundamentals.org/threejs/resources/images/wall.jpg'),
+	    });
+	    const cube = new THREE.Mesh(geometry, material);
+	    scene.add(cube);
+	    cubes.push(cube);  // add to our list of cubes to rotate
+
+	    function resizeRendererToDisplaySize(renderer) {
+	      const canvas = renderer.domElement;
+	      const width = canvas.clientWidth;
+	      const height = canvas.clientHeight;
+	      const needResize = canvas.width !== width || canvas.height !== height;
+	      if (needResize) {
+	        renderer.setSize(width, height, false);
+	      }
+	      return needResize;
+	    }
+
+	    function render(time) {
+	      time *= 0.001;
+
+	      if (resizeRendererToDisplaySize(renderer)) {
+	        const canvas = renderer.domElement;
+	        camera.aspect = canvas.clientWidth / canvas.clientHeight;
+	        camera.updateProjectionMatrix();
+	      }
+
+	      cubes.forEach((cube, ndx) => {
+	        const speed = .2 + ndx * .1;
+	        const rot = time * speed;
+	        cube.rotation.x = rot;
+	        cube.rotation.y = rot;
+	      });
+
+	      renderer.render(scene, camera);
+
+	      requestAnimationFrame(render);
+	    }
+
+	    requestAnimationFrame(render);
+	  }
+
+	  main();
+	
+	
+	</script>
+	<!-- 
+	<script type="importmap">
+		{
+			"imports":{
+				"three":"https://unpkg.com/three@0.141.0/build/three.module.js",
+				"GLTFLoader" : "https://unpkg.com/three@0.141.0/examples/jsm/loaders/GLTFLoader.js"
+			}
+		}
+	</script>
+	<script type="module">
+		import {GLTFLoader} from 'GLTFLoader';
+		import * as THREE from 'three';
+
+		let scene = new THREE.Scene();
+		let renderer = new THREE.WebGLRenderer({
+			canvas : document.querySelector('#modelA')
+		});
+
+		let camera = new THREE.PerspectiveCamera(30,1);
+		camera.posirion.set(0,0,5);
+
+		scene.background = new THREE.Color('white');
+		let light = new THREE.DirectionalLight(0xffff00, 10);
+		scene.add(light);
+
+		let load = new GLTFLoader();
+		loader.load('resources/3D/gltfTest/source/face.gltf', function(gltf){
+			scene.add(gltf.scene);
+			renderer.render(scene);
+		});
+		
+		renderer.render(scene, camera);
+	</script>	
+	 -->
+	
+	
+	
 </body>
 </html>

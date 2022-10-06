@@ -160,7 +160,26 @@
                   </div>
                   <div class="col-md-3" style="text-align: center;">
 					<img alt="" src="/resources/images/man.png" style="border: 4px solid yellow;"><br>
-					<button type="submit" class="btn" style="margin-top: 10px;">사진변경</button>
+					<input type="file" class="btn" style="margin-top: 10px;">사진변경</button>
+					<br><br>
+					<div class="col-md-4" style="text-align: center;">
+						<a>
+							<img alt="" src="/resources/images/man.png" style="border: 1px solid black; margin-left: 0px; margin-right: 0px;">
+							<br>X
+						</a>
+					</div>
+					<div class="col-md-4" style="text-align: center;">
+						<a>
+							<img alt="" src="/resources/images/man.png" style="border: 1px solid black; margin-left: 0px; margin-right: 0px;">
+							<br>X
+						</a>
+					</div>
+					<div class="col-md-4" style="text-align: center;">
+						<a>
+							<img alt="" src="/resources/images/man.png" style="border: 1px solid black; margin-left: 0px; margin-right: 0px;">
+							<br>X
+						</a>
+					</div>
                   </div>
                   </ul>
                 </form>
