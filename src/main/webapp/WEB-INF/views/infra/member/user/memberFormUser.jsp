@@ -165,7 +165,7 @@
 					<div class="col-md-4" style="text-align: center;">
 						<a>
 							<img alt="" src="/resources/images/man.png" style="border: 1px solid black; margin-left: 0px; margin-right: 0px;">
-							<br>X
+							<br>X 
 						</a>
 					</div>
 					<div class="col-md-4" style="text-align: center;">
