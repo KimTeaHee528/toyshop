@@ -152,7 +152,7 @@
       document.body.appendChild(script);
     </script>
     
-	<!--=======게임관련=======-->
+	<!--=======게임 키보드 제어 관련=======-->
 	<script type="text/javascript">
 		var keyLock = 0;
 		jQuery(document).click(function(l){
@@ -173,8 +173,5 @@
 					}
 		});
 	</script>
-	<script type="text/javascript">
-	</script>
-	
 </body>
 </html>
