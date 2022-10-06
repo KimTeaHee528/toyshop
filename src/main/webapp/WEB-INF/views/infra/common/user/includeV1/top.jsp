@@ -26,7 +26,7 @@
           <div class="collapse navbar-collapse" id="nav-open-btn">
             <ul class="nav">
               <li> <a href="/" style="margin-right: 20px;">Home</a> </li>
-              <li> <a href="event.html" style="margin-right: 20px;">Event</a> </li>
+              <li> <a href="/game/test" style="margin-right: 20px;">Event</a> </li>
               
 				<!-- MEGA MENU -->
 				<li class="dropdown megamenu" style="margin-right: 20px;"> 

@@ -18,7 +18,7 @@
 	<br>
 	<h1>WebGl</h1>
 	<div style="display:block; margin-top:0px; width: 100%; text-align: center;">
-		<div style="display: inline-block; text-align: center; width: 960px;">
+		<div style="display: inline-block; text-align: center; width: 960px; overflow: auto;">
 			<div id="unity-container" class="unity-desktop" style="width:960px;">
 				<canvas id="unity-canvas" style="width:960px; height:600px;"></canvas>
 				<div id="unity-loading-bar">
@@ -58,42 +58,6 @@
 	<script type="text/javascript" src="/resources/rs-plugin/js/jquery.tp.min.js"></script>
 	<script src="/resources/js/main.js"></script>
 	<script src="https://kit.fontawesome.com/0089819b08.js" crossorigin="anonymous"></script>
-	
-	<script type="text/javascript">
-	
-		var goUrlView = "/codeGroup/codeGroupView";
-		var goUrlList = "/codeGroup/codeGroupList";
-		var goUrlReg = "/codeGroup/codeGroupReg";
-		
-		
-		var form = $("form[name=ccgList]");
-		var li_seq = $("input:hidden[name=li_seq]");
-		
-// 		function list_one(){
-// 			document.getElementById("first-name2").value
-// 		return false;
-// 		};
-		
-		goList = function(thisPage){
-			$("input:hidden[name=thisPage]").val(thisPage);
-			form.attr("action",goUrlList).submit();
-		}
-		goForm = function(seq){
-			li_seq.val(seq);
-			form.attr("action",goUrlView).submit();
-		}
-		
-		$("#list_view").on("click", function(){
-			form.attr("action", goUrlView).submit();
-		});
-		
-		$("#btn_reg").on("click", function(){
-			form.attr("action", goUrlReg).submit();
-		});
-		
-		
-
-	</script>
 	
     <script>
       var container = document.querySelector("#unity-container");
@@ -187,7 +151,30 @@
       };
       document.body.appendChild(script);
     </script>
-
+    
+	<!--=======게임관련=======-->
+	<script type="text/javascript">
+		var keyLock = 0;
+		jQuery(document).click(function(l){
+			if(l.target.nodeName != "CANVAS" || l.target.nodeName != "CANVAS"){
+				keyLock = 0;
+			}else{
+				keyLock = 1;
+			}
+		});
+		jQuery(document).keydown(function(e)
+			{
+				if(keyLock == 1)
+					{
+						if(e.keyCode === 37 || e.keyCode === 38 || e.keyCode === 39 || e.keyCode === 40 || e.keyCode === 32)
+							{
+								event.preventDefault();
+							}
+					}
+		});
+	</script>
+	<script type="text/javascript">
+	</script>
 	
 </body>
 </html>
