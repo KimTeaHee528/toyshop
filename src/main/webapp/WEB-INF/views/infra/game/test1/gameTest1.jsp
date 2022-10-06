@@ -170,7 +170,7 @@
 							{
 								event.preventDefault();
 							}
-					}
+					} 
 		});
 	</script>
 </body>
