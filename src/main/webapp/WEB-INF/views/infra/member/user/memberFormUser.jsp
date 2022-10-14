@@ -8,6 +8,7 @@
 <%@include file="../../common/xdmin/includeV1/head.jsp"%>
 <!-- head e -->
 <body>
+
 	<!-- top s -->
 	<%@include file="../../common/user/includeV1/top.jsp"%>
 	<!-- top e -->
@@ -160,8 +161,10 @@
                   </div>
                   <div class="col-md-3" style="text-align: center;">
 					<img alt="" src="/resources/images/man.png" style="border: 4px solid yellow;"><br>
-					<input type="file" class="btn" style="margin-top: 10px;">사진변경</button>
-					<br><br>
+					<label for="profile" style="margin-top:10px; border: 1px solid black; cursor: pointer;">파일찾기</label> 
+					<input type="file" id="profile" class="btn" 
+						style="margin-top: 10px; border: none; width: 0; height: 0; padding: 0; overflow: hidden;">
+					<br>
 					<div class="col-md-4" style="text-align: center;">
 						<a>
 							<img alt="" src="/resources/images/man.png" style="border: 1px solid black; margin-left: 0px; margin-right: 0px;">

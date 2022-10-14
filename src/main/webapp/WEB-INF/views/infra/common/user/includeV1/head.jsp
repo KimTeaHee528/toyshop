@@ -36,5 +36,4 @@
 <link rel="shortcut icon" href="/resources/WebGlFallBack/TemplateData/favicon.ico">
 <link rel="stylesheet" href="/resources/WebGlFallBack/TemplateData/styleGame.css">
 
-
 </head>
